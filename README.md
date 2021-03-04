@@ -1,12 +1,17 @@
-# algorithm
-
 # Introduction to the Design and Analysis of Algorithms算法的设计和分析
 
 ![](https://img1.doubanio.com/view/subject/l/public/s6944177.jpg)
 
-[toc]
+<!-- TOC -->
 
-### Preface前言
+- [Introduction to the Design and Analysis of Algorithms算法的设计和分析](#introduction-to-the-design-and-analysis-of-algorithms%E7%AE%97%E6%B3%95%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%88%86%E6%9E%90)
+  - [Preface前言](#preface%E5%89%8D%E8%A8%80)
+  - [Introduction介绍](#introduction%E4%BB%8B%E7%BB%8D)
+    - [What Is an Algorithm什么是算法](#what-is-an-algorithm%E4%BB%80%E4%B9%88%E6%98%AF%E7%AE%97%E6%B3%95)
+
+<!-- /TOC -->
+
+## Preface前言
 
 我们提出算法时遵循两种选择, 一是面对具体问题的解决办法, 二是算法设计思想.
 
@@ -24,7 +29,7 @@
 
 学习顺序可参考前言里的计划, 大体和顺序学习差不多
 
-### 1 Introduction介绍
+## 1 Introduction介绍
 
 学习算法的重要性: 不只是计算机科学的核心, 并且是一种思想, 和其他学科共同的思想, 解决问题的思想
 
@@ -36,7 +41,7 @@
 
 1.4 数据结构的介绍
 
-#### 1.1 What Is an Algorithm什么是算法
+### 1.1 What Is an Algorithm什么是算法
 
 *An algorithm is a sequence of unambiguous instructions for solving a problem, i.e., for obtaining a required output for any legitimate input in a finite amount of time.*
 
@@ -169,4 +174,3 @@
   ​		i $$\gets$$ i + 1
 
   return L
-

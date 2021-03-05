@@ -68,13 +68,11 @@
   // Computers gcd(m, n) by Euclid's algorithm  
 ​	 // Input: Two nonnegative, not-both-zero integers m and n  
 ​	 // Output: Greatest common divisor of m and n  
-  ```math
 ​	 while $n \neq 0$ do  
 ​	 　r $\gets$ m mod n  
 ​	 　m $\gets$ n  
 ​	 　n $\gets$ r  
   return m  
-  ```
 
 - Consecutive integer checking algorithm连续整数检查算法  
 

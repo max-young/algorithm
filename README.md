@@ -64,11 +64,11 @@
   第二步:  m除以n, 余数赋值给r  
   第三步: 将n赋值给m, r赋值给n, 执行第一步  
   
-  ```math
   算法 Euclid(m, n)  
   // Computers gcd(m, n) by Euclid's algorithm  
 ​	 // Input: Two nonnegative, not-both-zero integers m and n  
 ​	 // Output: Greatest common divisor of m and n  
+  ```math
 ​	 while $n \neq 0$ do  
 ​	 　r $\gets$ m mod n  
 ​	 　m $\gets$ n  

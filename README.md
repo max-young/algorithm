@@ -72,25 +72,15 @@
 
   第三步: 将n赋值给m, r赋值给n, 执行第一步
 
-
-
-​		算法 Euclid(m, n)
-
-​		// Computers gcd(m, n) by Euclid's algorithm
-
-​		// Input: Two nonnegative, not-both-zero integers m and n
-
-​		// Output: Greatest common divisor of m and n
-
-​		while $n \neq 0$ do
-
-​			r $\gets$ m mod n
-
-​			m $\gets$ n
-
-​			n $\gets$ r
-
-​		return m
+  算法 Euclid(m, n)  
+  // Computers gcd(m, n) by Euclid's algorithm
+  // Input: Two nonnegative, not-both-zero integers m and n
+  // Output: Greatest common divisor of m and n\
+  while $n \neq 0$ do
+      r $\gets$ m mod n
+​		   m $\gets$ n
+  ​	   n $\gets$ r
+​  return m
 
 - Consecutive integer checking algorithm连续整数检查算法
 

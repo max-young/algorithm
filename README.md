@@ -2,7 +2,14 @@
 
 ![](https://img1.doubanio.com/view/subject/l/public/s6944177.jpg)
 
-[toc]
+<!-- TOC -->
+
+- [Introduction to the Design and Analysis of Algorithms算法的设计和分析](#introduction-to-the-design-and-analysis-of-algorithms算法的设计和分析)
+    - [Preface前言](#preface前言)
+    - [1 Introduction介绍](#1-introduction介绍)
+      - [1.1 What Is an Algorithm什么是算法](#11-what-is-an-algorithm什么是算法)
+
+<!-- /TOC -->
 
 ### Preface前言
 
@@ -50,19 +57,18 @@
 
 **greatest common divisor最大公约数**
 
-两个不都为0的正整数m, n, 他们的最大公约数表示为$$gcd(m, n)$$, 
+两个不都为0的正整数m, n, 他们的最大公约数表示为gcd(m, n), 
 
 - Euclid欧几里得的算法
 
   欧几里得的算法基于:
 
-  $$gcd(m, n) = gcd(n, m\ mod\ n)$$
+  gcd(m, n) = gcd(n, m\ mod\ n)
+  gcd(m, n) = gcd(n, m\ mod\ n)
 
   循环执行, 直到m mod n = 0, 然后gcd(m, 0) = m, 例如:
 
-  $$gcd(60, 24) = gcd(24, 12) = gcd(12, 0) = 12$$
-
-  
+  gcd(60, 24) = gcd(24, 12) = gcd(12, 0) = 12
 
   结构化的描述是:
 
@@ -72,15 +78,24 @@
 
   第三步: 将n赋值给m, r赋值给n, 执行第一步
 
-  算法 Euclid(m, n)  
+  **算法 Euclid(m, n)**
   // Computers gcd(m, n) by Euclid's algorithm
   // Input: Two nonnegative, not-both-zero integers m and n
-  // Output: Greatest common divisor of m and n\
-  while $n \neq 0$ do
-      r $\gets$ m mod n
-​		   m $\gets$ n
-  ​	   n $\gets$ r
-​  return m
+  // Output: Greatest common divisor of m and n
+
+<!-- $$
+\begin{aligned}
+&while\ n \neq 0\ do\\
+&\space \space \space \space r \gets m\ mod\ n\\
+&\space \space \space \space m \gets n\\
+&\space \space \space \space n \gets r\\
+&return\ m
+\end{aligned}
+$$ --> 
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Baligned%7D%0A%26while%5C%20n%20%5Cneq%200%5C%20do%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20r%20%5Cgets%20m%5C%20mod%5C%20n%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20m%20%5Cgets%20n%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20n%20%5Cgets%20r%5C%5C%0A%26return%5C%20m%0A%5Cend%7Baligned%7D"></div> 
+
+
 
 - Consecutive integer checking algorithm连续整数检查算法
 
@@ -114,11 +129,11 @@
 
   举例如下:
 
-  $$60 = 2.2.3.5 $$
+  60 = 2.2.3.5
 
-  $$24=2.2.2.3$$
+  24=2.2.2.3
 
-  $$gcd(m, n) = 2.2.3 = 12$$
+  gcd(m, n) = 2.2.3 = 12
 
   这个算法不是合法的, 因为我们在上面解释算法的要点时, 需要满足算法的每一步都必须明确无误, 我们看到这个算法的1-3步, 都不是明确的. 我们如何执行这三步呢? 恐怕是要打问号的.
 
@@ -132,29 +147,21 @@
 
   // Output: Array L of  all prime numbers less than or equal to n
 
-  for p $\gets$ 2 to n do A[p] $\gets$ p
-
-  for p $$\gets$$ 2 to $\lfloor \sqrt{n} \rfloor$ do
-
-  ​	if A[p] $$\neq	$$ 0
-
-  ​		j $$\gets$$ p*p
-
-  ​		while j $$\le$$ n do
-
-  ​			A[j] $$\gets$$ 0
-
-  ​			j $$\gets$$ j + p
-
-  i $$\gets$$ 0
-
-  for p $$\gets$$ 2 to n do
-
-  ​	if A[p] $$\neq$$ 0
-
-  ​		L[i] $$\gets$$ A[p]
-
-  ​		i $$\gets$$ i + 1
-
-  return L
+$$
+\begin{aligned}
+&for p \gets 2 to n do A[p] \gets p\\
+&\space \space \space \space for p \gets 2 to \lfloor \sqrt{n} \rfloor do\\
+&if A[p] \neq 0\\
+&j \gets p*p\\
+&while j \le n do\\
+&A[j] \gets 0\\
+&j \gets j + p\\
+&i \gets 0\\
+&for p \gets 2 to n do\\
+&if A[p] \neq 0\\
+&L[i] \gets A[p]\\
+&i \gets i + 1\\
+&return L
+\end{aligned}
+$$
 

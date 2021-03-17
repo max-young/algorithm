@@ -23,7 +23,7 @@ vector<int> common_of_two_list(vector<int> m, vector<int> n) {
 }
 
 int main() {
-  vector<int> m = {2, 5, 5, 5, 7};
+  vector<int> m = {2, 5, 5, 5};
   vector<int> n = {2, 2, 3, 5, 5, 7};
   cout << "the common elements of {";
   copy(m.begin(), m.end(), ostream_iterator<int>(cout, " "));

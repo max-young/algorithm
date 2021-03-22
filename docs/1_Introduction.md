@@ -467,3 +467,4 @@ while n != 0
     n = x  
     s = str(y) + s  
 return s
+代码见: [decimal to binary](../code/1_Introduction/1.2_1.2_Fundamental_of_Algorithmic_Problem_Solving/e5_decimal_to_binary.cpp)

@@ -12,17 +12,21 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
-    }
-  </script>
-  <script>
-    window.$docsify = {
+      name: 'algorithm',
+      repo: 'https://github.com/max-young/algorithm',
       loadSidebar: true,
-      subMaxLevel: 3
+      mergeNavbar: true,
+      subMaxLevel: 2,
+      search: {
+            paths: 'auto',
+            placeholder: '🔍 Type to search ',
+            noData: '😞 No Results! ',
+            depth: 6
+        },
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 </body>
 </html>

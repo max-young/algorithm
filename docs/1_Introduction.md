@@ -452,7 +452,7 @@ while n != 0
     n = x  
     s = str(y) + s  
 return s
-代码见: <a href="./code/1_Introduction/1.2_Fundamental_of_Algorithmic_Problem_Solving/e5_decimal_to_binary.cpp">decimal to binary</a>
+代码见: <a href="../code/1_Introduction/1.2_Fundamental_of_Algorithmic_Problem_Solving/e5_decimal_to_binary.cpp">decimal to binary</a>
 
 6. ATM algorithm  
     我没搞明白这个问题, 姑且认为是取钱的步骤吧  

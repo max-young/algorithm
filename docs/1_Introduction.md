@@ -17,6 +17,14 @@
   - [Analyzing an Algorithm](#analyzing-an-algorithm)
   - [Coding an Algorithm](#coding-an-algorithm)
   - [Excecises](#excecises)
+- [1.3 Important Problem Types](#13-important-problem-types)
+  - [Sorting排序](#sorting排序)
+  - [Searching查找](#searching查找)
+  - [String processing字符串处理](#string-processing字符串处理)
+  - [Graph problems图形问题](#graph-problems图形问题)
+  - [Combinatorial problems组合问题](#combinatorial-problems组合问题)
+  - [Geometric problems几何问题](#geometric-problems几何问题)
+  - [Numerical problems数值问题](#numerical-problems数值问题)
 
 <!-- /TOC -->
 
@@ -464,4 +472,40 @@ return s
     Step5: 吐出钞票, 执行Step2
 
 7. $\pi$ is irrational
-$\pi$1776年, Johann Heinrich Lambert证明了$\pi$是无理数
+$\pi$1776年, Johann Heinrich Lambert证明了$\pi$是无理数, 对于这道题我就了解到这儿吧...
+
+8. sort algorithm
+  
+9. finding the distance between the two closest elements in an array of numbers
+　- j可以从i+1开始循环  
+　- 重新设计算法, 暂时想不出来, 待以后再想
+
+10. how to solve it. 回头再看看这本书
+  
+
+<a id="markdown-13-important-problem-types" name="13-important-problem-types"></a>
+## 1.3 Important Problem Types
+
+问题多种多样, 浩如烟海, 但是有些类型的问题熠熠生辉:
+- Sorting排序
+- Searching查找
+- String processing字符串处理
+- Graph problems图形问题
+- Combinatorial problems组合问题
+- Geometric problems几何问题
+- Numerical problems数值问题
+
+<a id="markdown-sorting排序" name="sorting排序"></a>
+### Sorting排序
+<a id="markdown-searching查找" name="searching查找"></a>
+### Searching查找
+<a id="markdown-string-processing字符串处理" name="string-processing字符串处理"></a>
+### String processing字符串处理
+<a id="markdown-graph-problems图形问题" name="graph-problems图形问题"></a>
+### Graph problems图形问题
+<a id="markdown-combinatorial-problems组合问题" name="combinatorial-problems组合问题"></a>
+### Combinatorial problems组合问题
+<a id="markdown-geometric-problems几何问题" name="geometric-problems几何问题"></a>
+### Geometric problems几何问题
+<a id="markdown-numerical-problems数值问题" name="numerical-problems数值问题"></a>
+### Numerical problems数值问题

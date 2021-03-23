@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [1.1 What Is an Algorithm什么是算法](#11-what-is-an-algorithm什么是算法)
+- [1.1 What Is an Algorithm](#11-what-is-an-algorithm)
   - [greatest common divisor最大公约数](#greatest-common-divisor最大公约数)
     - [Euclid欧几里得的算法](#euclid欧几里得的算法)
     - [Consecutive integer checking algorithm连续整数检查算法](#consecutive-integer-checking-algorithm连续整数检查算法)
@@ -27,8 +27,8 @@
 1.3 算法问题类型  
 1.4 数据结构的介绍  
 
-<a id="markdown-11-what-is-an-algorithm什么是算法" name="11-what-is-an-algorithm什么是算法"></a>
-## 1.1 What Is an Algorithm什么是算法
+<a id="markdown-11-what-is-an-algorithm" name="11-what-is-an-algorithm"></a>
+## 1.1 What Is an Algorithm
 
 *An algorithm is a sequence of unambiguous instructions for solving a problem, i.e., for obtaining a required output for any legitimate input in a finite amount of time.*
 
@@ -65,18 +65,11 @@
   // Computers gcd(m, n) by Euclid's algorithm  
   // Input: Two nonnegative, not-both-zero integers m and n  
   // Output: Greatest common divisor of m and n  
-
-  <!-- $$
-  \begin{aligned}
-  &while\ n \neq 0\ do\\
-  &\space \space \space \space r \gets m\ mod\ n\\
-  &\space \space \space \space m \gets n\\
-  &\space \space \space \space n \gets r\\
-  &return\ m
-  \end{aligned}
-  $$ -->
-
-  <div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Baligned%7D%0A%26while%5C%20n%20%5Cneq%200%5C%20do%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20r%20%5Cgets%20m%5C%20mod%5C%20n%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20m%20%5Cgets%20n%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20n%20%5Cgets%20r%5C%5C%0A%26return%5C%20m%0A%5Cend%7Baligned%7D"></div>
+  while n != 0 do  
+      r = m mod n  
+      m = n  
+      n = r  
+  return m
 
 <a id="markdown-consecutive-integer-checking-algorithm连续整数检查算法" name="consecutive-integer-checking-algorithm连续整数检查算法"></a>
 #### Consecutive integer checking algorithm连续整数检查算法
@@ -94,11 +87,11 @@
   // 用consecutive integer check连续整数检察法来计算gcd(m, n)  
   // Input: Two nonnegtive, not noth zero integers m, n  
   // Output: Greatest common divisor of m and n  
-  t <!-- $\gets$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgets"> min(m, n)  
+  $t \gets min(m, n)$  
   while true  
-      if m mod t == 0  
-          if n mod t == 0  
-              return t  
+      if m mod t == 0  
+          if n mod t == 0  
+              return t  
     t -= 1  
 
 <a id="markdown-middle-school-procedure中学算法" name="middle-school-procedure中学算法"></a>
@@ -130,27 +123,19 @@
   // Implements the sieve of Erathosthenes  
   // Input: A positive integer n > 1  
   // Output: Array L of  all prime numbers less than or equal to n
-
-<!-- $$
-\begin{aligned}
-&for\ p \gets 2\ to\ n\ do\ A[p] \gets p\\
-&for\ p \gets 2\ to \lfloor \sqrt{n} \rfloor\ do\\
-&\space \space \space \space if\ A[p] \neq 0\\
-&\space \space \space \space \space \space \space \space j \gets p*p\\
-&\space \space \space \space \space \space \space \space while\ j \le n\ do\\
-&\space \space \space \space \space \space \space \space \space \space \space \space A[j] \gets 0\\
-&\space \space \space \space \space \space \space \space \space \space \space \space j \gets j + p\\
-&i \gets 0\\
-&for p \gets 2\ to\ n\ do\\
-&\space \space \space \space if\ A[p] \neq 0\\
-&\space \space \space \space \space \space \space \space L[i] \gets A[p]\\
-&\space \space \space \space \space \space \space \space i \gets i + 1\\
-&return\ L
-\end{aligned}
-$$ --> 
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbegin%7Baligned%7D%0A%26for%5C%20p%20%5Cgets%202%5C%20to%5C%20n%5C%20do%5C%20A%5Bp%5D%20%5Cgets%20p%5C%5C%0A%26for%5C%20p%20%5Cgets%202%5C%20to%20%5Clfloor%20%5Csqrt%7Bn%7D%20%5Crfloor%5C%20do%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20if%5C%20A%5Bp%5D%20%5Cneq%200%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20j%20%5Cgets%20p*p%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20while%5C%20j%20%5Cle%20n%5C%20do%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20A%5Bj%5D%20%5Cgets%200%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20j%20%5Cgets%20j%20%2B%20p%5C%5C%0A%26i%20%5Cgets%200%5C%5C%0A%26for%20p%20%5Cgets%202%5C%20to%5C%20n%5C%20do%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20if%5C%20A%5Bp%5D%20%5Cneq%200%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20L%5Bi%5D%20%5Cgets%20A%5Bp%5D%5C%5C%0A%26%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20%5Cspace%20i%20%5Cgets%20i%20%2B%201%5C%5C%0A%26return%5C%20L%0A%5Cend%7Baligned%7D"></div>
-
+  for p = 2 to n do A[p] = p  
+  for p = 2 to $\lfloor \sqrt{n} \rfloor$ do  
+      if A[p] != 0  
+          j = p*p  
+          while j <= n do  
+              A[j] = 0  
+              j = j + p  
+  i = 0  
+  for p = 2 to n do  
+      if A[p] != 0  
+          L[i] = A[p]  
+          i = i + 1  
+  return L
 
 > 个人感悟:
 > 通过对greatest common divisor的三种算法的学习, 我们可以把算法的设计归结为3个步骤:
@@ -164,10 +149,10 @@ $$ -->
 ### Excercises
 
 1. al-Khorezmi  
-  中译花拉子米, 波斯数学家, 活跃在大约公元前800年. 代数algebra一次来源于他的著作《代数学》, 而算法algorithm一词是花拉米子的拉丁译名.
+    中译花拉子米, 波斯数学家, 活跃在大约公元前800年. 代数algebra一次来源于他的著作《代数学》, 而算法algorithm一词是花拉米子的拉丁译名.
 
 2. 算法可以申请专利吗?  
-  根据我国的情况, 算法属于治理活动, 不能申请专利, 但是有其他办法, 比如与硬件结合, 或者申请著作权
+    根据我国的情况, 算法属于治理活动, 不能申请专利, 但是有其他办法, 比如与硬件结合, 或者申请著作权
 
 3. 算法要求每一步都是明确无误的, 那么尝试按照此要求描述从家到学校(公司)的路线, 以及做一道菜 
     - 从家到公司的路线
@@ -184,7 +169,7 @@ $$ -->
       7. 加蒜末, 拌匀
       8. 盛出装盘
 
-4. 设计一个算法, 求出一个正整数n的floor square root, 即<!-- $\lfloor \sqrt{n} \rfloor$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Clfloor%20%5Csqrt%7Bn%7D%20%5Crfloor">, 只能用基本的四种运算  
+4. 设计一个算法, 求出一个正整数n的floor square root, 即$\lfloor \sqrt{n} \rfloor$, 只能用基本的四种运算  
     floor square root算法:  
     第一步: 将1赋值给i  
     第二步: 将i的平方大于n, 则返回i-1  
@@ -196,7 +181,7 @@ $$ -->
     // Output: a positive integer  
     i = 1  
     while i * i <= n  
-        i += 1  
+        i += 1  
     return i - 1
 
 5. Design an algorithm to find all the common elements in two sorted lists of numbers. For example, for the lists 2, 5, 5, 5 and 2, 2, 3, 5, 5, 7, the output should be 2, 5, 5. What is the maximum number of comparisons your algorithm makes if the lengths of the two given lists are m and n, respectively?  
@@ -205,9 +190,9 @@ $$ -->
     Step2: 定义初始化index, m_index = 0, n_index = 0  
     Step3: 如果m_index = len(m) - 1或者n_index = len(n) - 1, 则返回r  
     Step4: 如果m[m_index] > n[n_index], 则n_index自增1;  
-                如果m[m_index] = n[n_index], 则将m[m_index]加入到list r, m_index和n_index都自增1;  
-                如果m[m_index] < n[n_index], 则m_index自增1;  
-                执行Step3  
+                如果m[m_index] = n[n_index], 则将m[m_index]加入到list r, m_index和n_index都自增1;  
+                如果m[m_index] < n[n_index], 则m_index自增1;  
+                执行Step3  
     Step5: 返回list r
 
     Preseudocode  
@@ -217,14 +202,14 @@ $$ -->
     r = []  
     m_index = n_index = 0  
     while m_index < len(m) || n_index < len(n)  
-        if m[m_index] < n[n_index]:  
-            m_index ++  
-        elif m[m_index] == n[n_index]:  
-            r.append(m[m_index])  
-            m_index ++  
-            n_index ++  
-        elif m[m_index] > n[n_index]:  
-            n_index ++  
+        if m[m_index] < n[n_index]:  
+            m_index ++  
+        elif m[m_index] == n[n_index]:  
+            r.append(m[m_index])  
+            m_index ++  
+            n_index ++  
+        elif m[m_index] > n[n_index]:  
+            n_index ++  
     return r
 
 6. Find gcd(31415, 14142) by applying Euclid’s algorithm. 执行代码可知答案是1; 用Euclid的方法运行2次即可, 用sonsecutive integer check的方法要运行14142次, 差距悬殊
@@ -253,16 +238,16 @@ $$ -->
     // Input: grater than zero integer m, n  
     // Out: greatest common divisor of m, n  
     while true:  
-        if m == 0:  
-            return n  
-        if n == 0:  
-            return m  
-        if m > n:  
-            m = m - n  
-        elif m == n:  
-            return m  
-        else:  
-            n = n - m  
+        if m == 0:  
+            return n  
+        if n == 0:  
+            return m  
+        if m > n:  
+            m = m - n  
+        elif m == n:  
+            return m  
+        else:  
+            n = n - m  
     实际代码请看代码仓库  
     b. 看两个数是的倍数是多大, 偶数倍, 则第二个选择. 方法是从最小的数字开始计算, 从1、2开始, 来做总结
 
@@ -281,19 +266,19 @@ $$ -->
     // Output: three integer r, s, t that r is the greatest common divisor of m, n and r = m * s + n *t  
     ro = m, r1 = n, s0 = 1, s1 = 0, t0 = 0, t1 = 1  
     while true  
-        if r1 == 0  
-            assert r0 = s0 * m + t0 * n  
-            return r0, s0, t0  
-        y = r0 mod r1  
-        x = r0 - x * r1  
-        r0 = r1  
-        r1 = y  
-        s2 = s0 - x * s1  
-        s0 = s1  
-        s1 = s2  
-        t2 = t0 - x * t1  
-        t0 = t1  
-        t1 = t2
+        if r1 == 0  
+            assert r0 = s0 * m + t0 * n  
+            return r0, s0, t0  
+        y = r0 mod r1  
+        x = r0 - x * r1  
+        r0 = r1  
+        r1 = y  
+        s2 = s0 - x * s1  
+        s0 = s1  
+        s1 = s2  
+        t2 = t0 - x * t1  
+        t0 = t1  
+        t1 = t2
 
 12. locker doors  
     locker doors algorithm  
@@ -310,11 +295,11 @@ $$ -->
     array = [0, ..., 0]  
     i = 0  
     while i < n  
-        j = 0  
-        while j <= i  
-            array[j] = array[j] == 0?: 1, 0  
-            j ++  
-        i ++  
+        j = 0  
+        while j <= i  
+            array[j] = array[j] == 0?: 1, 0  
+            j ++  
+        i ++  
     return array
 
 <a id="markdown-12-fundamentals-of-algorithmic-problem-solving" name="12-fundamentals-of-algorithmic-problem-solving"></a>
@@ -409,57 +394,57 @@ Input一个输入实际上指的是算法要解决的一个instance实例, 如�
 
 > As a rule, a good algorithm is a result of repeated effort and rework.
 
-好像和很多事情一样, repeated effor and rework is important, not genious
+好像和很多事情一样, repeated effort and rework is important, not genious
 
 代码实现之外, 测试程序必不可少
 
-最后, 算法设计不是一项枯燥的活动, 事实上, 算法设计是一项非常体现创造力和成绩感的事情. 
+最后, 算法设计不是一项枯燥的活动, 事实上, 算法设计是一项非常体现创造力和成就感的事情. 
 
 <a id="markdown-excecises" name="excecises"></a>
 ### Excecises
 
 1. wolves, goat, cabbage puzzle  
-  Step1: move goat to the other side  
-  Step2: boat back to the origin  
-  Step3: move wolve to the other side  
-  Step4: move goat back to the origin  
-  Step5: move cabbage to the other side  
-  Step6: boat back to the origin  
-  Step7: move goat to the other side  
+    Step1: move goat to the other side  
+    Step2: boat back to the origin  
+    Step3: move wolve to the other side  
+    Step4: move goat back to the origin  
+    Step5: move cabbage to the other side  
+    Step6: boat back to the origin  
+    Step7: move goat to the other side  
 
 2. modernn puzzle  
-  // Input: {A: 1, B: 2, C: 5, D: 10}  
-  // Outpuy: total time t  
-  Step1: A and B move to the other side, t = 2  
-  Step2: A move back, t += 1, t = 3  
-  Step3: C and D move to the other side , t += 10, t = 13  
-  Step4: B move back, t += 2, t = 15  
-  Step5: A and B move to the other side , t += 2, t = 17  
-  // 这个问题想的时间比较长, 尝试了好多种移动的方法, 最后解出来的关键是时间长的两个人, 最好一起走, 会节省时间
+    // Input: {A: 1, B: 2, C: 5, D: 10}  
+    // Outpuy: total time t  
+    Step1: A and B move to the other side, t = 2  
+    Step2: A move back, t += 1, t = 3  
+    Step3: C and D move to the other side , t += 10, t = 13  
+    Step4: B move back, t += 2, t = 15  
+    Step5: A and B move to the other side , t += 2, t = 17  
+    // 这个问题想的时间比较长, 尝试了好多种移动的方法, 最后解出来的关键是时间长的两个人, 最好一起走, 会节省时间
 
  做到这里, 虽然上面两个问题都解决了, 但是都是通过自然语言描述, 无法做到伪代码描述, 为什么做不到? 我觉得很大原因是没有合适的数据结构, 我看看之后怎么解决这个问题
 
  3. abc都是正确的公式, 但是我们的已知元素是三边边长, 所以a是正确答案, 这是heron's formula(海伦公式)
 
  4. 二次方程  
-x的解是: <!-- $\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D">  
+x的解是: $\frac{-b\pm\sqrt{b^2-4ac}}{2a}$  
 这个很容易就能推导出来, 下面我们用伪代码来计算这个结果:  
 Pseudocode  
-// Input: 实数a, b, c, 满足<!-- $ax^2 + bx + c = 0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=ax%5E2%20%2B%20bx%20%2B%20c%20%3D%200">  
+// Input: 实数a, b, c, 满足$ax^2 + bx + c = 0$  
 // Output: 两个实数  
-　<!-- $s = b^2 - 4ac$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=s%20%3D%20b%5E2%20-%204ac">  
+　$s = b^2 - 4ac$  
 　if s1 < 0  
 　　raise exception  
 　else  
-　　return <!-- $\frac{-b+\sqrt{s}}{2a},\frac{-b+\sqrt{s}}{2a}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cfrac%7B-b%2B%5Csqrt%7Bs%7D%7D%7B2a%7D%2C%5Cfrac%7B-b%2B%5Csqrt%7Bs%7D%7D%7B2a%7D">  
+　　return $\frac{-b+\sqrt{s}}{2a},\frac{-b+\sqrt{s}}{2a}$
 
 5. decimal integer to binary representation  
-**natural language**  
+natural language  
 Step1: s赋值空字符串  
 Step2: 如果n等于0, 则返回s, 负责执行下一步  
 Step3: n除以2, 得到整数商x, 和余数y  
 Step4: 将x赋值给n, s前面加上字符串y, 执行Step2  
-**Pseudocode**  
+Pseudocode  
 s = ""  
 while n != 0  
     x = floor(n / 2)  
@@ -467,4 +452,16 @@ while n != 0
     n = x  
     s = str(y) + s  
 return s
-代码见: [decimal to binary](../code/1_Introduction/1.2_1.2_Fundamental_of_Algorithmic_Problem_Solving/e5_decimal_to_binary.cpp)
+代码见: [decimal to binary](https://github.com/max-young/algorithm/blob/master/code/1_Introduction/1.2_Fundamental_of_Algorithmic_Problem_Solving/e5_decimal_to_binary.cpp)
+
+6. ATM algorithm  
+    我没搞明白这个问题, 姑且认为是取钱的步骤吧  
+    natural language  
+    Step1: 查询余额为m, m >= 0  
+    Step2: 输入取现金额n, n > 0; 或者退卡  
+    Step3: 如果n > m, raise exception, 执行Step2; 如果n < m, 则执行下一步  
+    Step4: 余额m -= n  
+    Step5: 吐出钞票, 执行Step2
+
+7. $\pi$ is irrational
+$\pi$1776年, Johann Heinrich Lambert证明了$\pi$是无理数

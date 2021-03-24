@@ -1,12 +1,12 @@
 <!-- TOC -->
 
-- [1.1 What Is an Algorithm](#11-what-is-an-algorithm)
+- [_1.1 What Is an Algorithm](#_11-what-is-an-algorithm)
   - [greatest common divisor最大公约数](#greatest-common-divisor最大公约数)
     - [Euclid欧几里得的算法](#euclid欧几里得的算法)
     - [Consecutive integer checking algorithm连续整数检查算法](#consecutive-integer-checking-algorithm连续整数检查算法)
     - [Middle-school procedure中学算法](#middle-school-procedure中学算法)
   - [Excercises](#excercises)
-- [1.2 Fundamentals of Algorithmic Problem Solving](#12-fundamentals-of-algorithmic-problem-solving)
+- [_1.2 Fundamentals of Algorithmic Problem Solving](#_12-fundamentals-of-algorithmic-problem-solving)
   - [Understanding the Problem](#understanding-the-problem)
   - [Ascertaining the Capabilities of the Computational Device确定计算设备](#ascertaining-the-capabilities-of-the-computational-device确定计算设备)
   - [Choosing between Exact and Approximate Problem Solving在精确还是近似解决问题之间做选择](#choosing-between-exact-and-approximate-problem-solving在精确还是近似解决问题之间做选择)
@@ -17,7 +17,7 @@
   - [Analyzing an Algorithm](#analyzing-an-algorithm)
   - [Coding an Algorithm](#coding-an-algorithm)
   - [Excecises](#excecises)
-- [1.3 Important Problem Types](#13-important-problem-types)
+- [_1.3 Important Problem Types](#_13-important-problem-types)
   - [Sorting排序](#sorting排序)
   - [Searching查找](#searching查找)
   - [String processing字符串处理](#string-processing字符串处理)
@@ -25,6 +25,7 @@
   - [Combinatorial problems组合问题](#combinatorial-problems组合问题)
   - [Geometric problems几何问题](#geometric-problems几何问题)
   - [Numerical problems数值问题](#numerical-problems数值问题)
+  - [Exercises](#exercises)
 
 <!-- /TOC -->
 
@@ -35,8 +36,8 @@
 1.3 算法问题类型  
 1.4 数据结构的介绍  
 
-<a id="markdown-11-what-is-an-algorithm" name="11-what-is-an-algorithm"></a>
-## 1.1 What Is an Algorithm
+<a id="markdown-_11-what-is-an-algorithm" name="_11-what-is-an-algorithm"></a>
+## _1.1 What Is an Algorithm
 
 *An algorithm is a sequence of unambiguous instructions for solving a problem, i.e., for obtaining a required output for any legitimate input in a finite amount of time.*
 
@@ -310,8 +311,8 @@
         i ++  
     return array
 
-<a id="markdown-12-fundamentals-of-algorithmic-problem-solving" name="12-fundamentals-of-algorithmic-problem-solving"></a>
-## 1.2 Fundamentals of Algorithmic Problem Solving
+<a id="markdown-_12-fundamentals-of-algorithmic-problem-solving" name="_12-fundamentals-of-algorithmic-problem-solving"></a>
+## _1.2 Fundamentals of Algorithmic Problem Solving
 
 *"We can consider algorithms to be procedural solutions to problems"*  
 精确定义每一步步骤, 至关重要
@@ -483,8 +484,8 @@ $\pi$1776年, Johann Heinrich Lambert证明了$\pi$是无理数, 对于这道题
 10. how to solve it. 回头再看看这本书
   
 
-<a id="markdown-13-important-problem-types" name="13-important-problem-types"></a>
-## 1.3 Important Problem Types
+<a id="markdown-_13-important-problem-types" name="_13-important-problem-types"></a>
+## _1.3 Important Problem Types
 
 问题多种多样, 浩如烟海, 但是有些类型的问题熠熠生辉:
 - Sorting排序
@@ -497,15 +498,79 @@ $\pi$1776年, Johann Heinrich Lambert证明了$\pi$是无理数, 对于这道题
 
 <a id="markdown-sorting排序" name="sorting排序"></a>
 ### Sorting排序
+
+为什么要排序?  
+- 现实的需要, 比如排名
+- 利于查找
+- 其他算法的辅助手段
+
+排序算法的两个特征需要特别提及:
+- stable  
+  如果一个排序算法, 在排序之后仍然保持了原来list里两个相等元素的相对位置, 那么我们称这个算法stable  
+  换句话说, 在原来list里两个想等元素的位置是i, j, i < j, 经过排序之后, 它们的位置是i1, j1, 仍然满足i1 < j1
+- in-place  
+  这个特征表示一个排序算法是否需要额外内存, 如果不需要额外内存, 那么称这个算法in-place
+
 <a id="markdown-searching查找" name="searching查找"></a>
 ### Searching查找
+
+查找算法, 包括顺序查找, 效率更高但是有限制性的二分查找, 已经基于不同组织形式的基础数据的查找. 后一种算法对于现实世界尤其重要.
+
 <a id="markdown-string-processing字符串处理" name="string-processing字符串处理"></a>
 ### String processing字符串处理
+
+字符串处理算法长期以来对于计算机科学领域的计算机语言和编译问题都很重要.
+
+很典型的一个问题: 如何在文本中搜索一个特定的单词? 我们称之为string matching字符串匹配. 在第3章和第7章有介绍.
+
 <a id="markdown-graph-problems图形问题" name="graph-problems图形问题"></a>
 ### Graph problems图形问题
+
+Graph图形是vertices(顶点)的集合, 它们用edges边连接.
+
+图形应用广泛, 感兴趣的可以参照[Fundamentals of Computer Graphics](https://max-young.github.io/computer_graphics/)
+
+基本的图形算法包括:
+- graph-traversal algorithms图形遍历算法  
+  如何到达所有点
+- shortest-path algorithm最短路径算法
+- topological sorting for graph with directed edges有向图形的拓扑排序  
+
+一些图形算法非常困难, 著名的两个问题:
+- travelling salesman problem(TSP)  
+  这个问题需要解决在只能停留一次的情况下到达所有城市的最短路径.  
+  这个算法还能应用在芯片制造、晶体学、基因工程等领域, awesome!!
+- graph-coloring problem  
+  这个算法要解决用最小数量的颜色分配给图的顶点, 相邻顶点的颜色不能相同
+
 <a id="markdown-combinatorial-problems组合问题" name="combinatorial-problems组合问题"></a>
 ### Combinatorial problems组合问题
+
+上面提到的travelling salesman problem和graph-coloring problem就是组合问题
+
+组合问题非常难以解决. 一些组合问题能够被高效的算法解决, 比如最短路径问题, 但这只是幸运的例外
+
 <a id="markdown-geometric-problems几何问题" name="geometric-problems几何问题"></a>
 ### Geometric problems几何问题
+
+这一段描述很有意思:  
+集合算法处理几何对象, 例如点、线、面、多边形  
+古希腊人热衷于解决几何问题, 用没有刻度的尺子和指南针来构建图形.  
+但是之后的两千年, 人类对这类问题的热情消失了...  
+直到近世进入计算机时代, 我们重燃热情, 我们不再使用尺子和指南针了, 而是字节和大脑
+
+我们将讨论两个经典问题:
+- the closest-pair problem  
+  平面上有n个点, 找到相隔距离最近的两个点
+- convex-hull problem  
+  再给点的点的集合里, 找到最小的凸多边形
+
 <a id="markdown-numerical-problems数值问题" name="numerical-problems数值问题"></a>
 ### Numerical problems数值问题
+
+很重要的领域, 不再详述
+
+<a id="markdown-exercises" name="exercises"></a>
+### Exercises
+
+1. comparison counting sort

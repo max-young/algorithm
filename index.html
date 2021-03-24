@@ -7,12 +7,15 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- latex -->
+  <script src="https://cdn.jsdelivr.net/npm/katex-copytex@1.0.2/dist/katex-copytex.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/katex-copytex@1.0.2/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div id="app"></div>
   <!-- latex -->
-  <script>window.texme = { style: 'none' }</script>
-  <script src="https://cdn.jsdelivr.net/npm/texme@0.9.0"></script>
+  <!-- <script>window.texme = { style: 'none' }</script>
+  <script src="https://cdn.jsdelivr.net/npm/texme@0.9.0"></script> -->
   <script>
     window.$docsify = {
       name: 'algorithm',
@@ -29,6 +32,9 @@
       loadFooter: true,
     }
   </script>
+  <!-- latex -->
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>

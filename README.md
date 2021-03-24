@@ -5,6 +5,4 @@
 
 笔记用[docsify](https://docsify.js.org/)进行了部署, 地址是: <https://max-young.github.io/algorithm/>
 
-文档中的公式用latex实现, 用[texme](https://github.com/susam/texme)渲染
-
 文中代码由C++实现

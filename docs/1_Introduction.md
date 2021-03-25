@@ -573,4 +573,24 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
 <a id="markdown-exercises" name="exercises"></a>
 ### Exercises
 
-1. comparison counting sort
+1. comparison counting sort  
+  ALGORITHM ComparisonCountingSort(A[0...n-1])  
+  //Sorts an array by comparison counting  
+  //Input: Array A[0...n-1] of orderable values  
+  //Output: Array S[0...n-1] of A's element sorted in nondecreasing order  
+  for i = 0 to n-1 do  
+      Count[i] = 0  
+  for i = 0 to n-2 do  
+      for j = i+1 to n-1 do  
+          if A[i] < A[j]  
+              Count[j] = Count[j] + 1  
+          else  
+              Count[i] = Count[i] + 1  
+  for i = 0 to n-1 do  
+      C[Count[i]] = A[i]  
+  return s  
+  代码见[comparisonCountingSort](../code/1_Introduction/1.3_Important_Problem_Types/e1_comparison_counting_sort.cpp)  
+  is this algorithm stable?  
+      no. 如A[i] < A[j]改成A[i] <= A[j], 则是stable  
+  is it in-place?  
+      no. 因为额外用到了Count这个数组

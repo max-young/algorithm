@@ -1,63 +1,59 @@
-<a id="markdown-discrete-mathematics-with-application" name="discrete-mathematics-with-application"></a>
-## Discrete Mathematics with Application
-
 ![](https://img3.doubanio.com/view/subject/l/public/s11240220.jpg)
 
 <!-- TOC -->
 
-- [Discrete Mathematics with Application](#discrete-mathematics-with-application)
-  - [Preface](#preface)
-  - [Chapter1 Speaking Mathematically](#chapter1-speaking-mathematically)
-    - [1.1 Variables](#11-variables)
-    - [1.2 The Language of Sets](#12-the-language-of-sets)
-    - [1.3 The language of Relations and Functions](#13-the-language-of-relations-and-functions)
-  - [Chapter2 The logic of compound statements](#chapter2-the-logic-of-compound-statements)
-    - [2.1 Logical Form and Logical Equivalence](#21-logical-form-and-logical-equivalence)
-    - [2.2 Conditional Statements](#22-conditional-statements)
-    - [2.3 Valid and Invalid Arguments](#23-valid-and-invalid-arguments)
-    - [2.4 Application: Digital Logic Circuits](#24-application-digital-logic-circuits)
-    - [2.5 Application: Number Systems and Circuits for Addition](#25-application-number-systems-and-circuits-for-addition)
-  - [Chapter3 The Logic of Quantified Statements](#chapter3-the-logic-of-quantified-statements)
-    - [3.1 Predicates and Quantified Statements I](#31-predicates-and-quantified-statements-i)
-    - [3.2 Predicates and Quantified Statements II](#32-predicates-and-quantified-statements-ii)
-    - [3.3 Statements with Multiple Quantifiers](#33-statements-with-multiple-quantifiers)
-  - [Chapter4 ELEMENTARY NUMBER THEORY AND METHODS OF PROOF](#chapter4-elementary-number-theory-and-methods-of-proof)
-    - [4.1 Direct Proof and Counterexample I: Introduction](#41-direct-proof-and-counterexample-i-introduction)
-    - [4.8 Applications: Algorithms](#48-applications-algorithms)
-  - [Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION](#chapter5-sequences-mathmatical-induction-and-recursion)
-    - [5.1 Sequences](#51-sequences)
-    - [5.5 Application: Correctness of Algorithms](#55-application-correctness-of-algorithms)
-    - [5.9 General Recursive Definitions and Structural Induction](#59-general-recursive-definitions-and-structural-induction)
-  - [Chapter 6 SET THEORY](#chapter-6-set-theory)
-    - [6.1 Set Theory: Definition and the Element Method of Proof](#61-set-theory-definition-and-the-element-method-of-proof)
-    - [6.4 Boolean Algebras, Russell's Paradox, and the Halting Problem](#64-boolean-algebras-russells-paradox-and-the-halting-problem)
-  - [Chapter 7 FUNCTIONS函数](#chapter-7-functions函数)
-    - [7.1 Function Defined on General Sets](#71-function-defined-on-general-sets)
-    - [7.2 Ont-to-One and Onto, Inverse Functions](#72-ont-to-one-and-onto-inverse-functions)
-    - [7.4 Cardinality with Applications to Computability](#74-cardinality-with-applications-to-computability)
-  - [Chapter 8 RELATIONS](#chapter-8-relations)
-    - [8.1 Relation on Sets](#81-relation-on-sets)
-    - [8.2 Reflexivity, Symmetry, and Transitivity自反性, 对称性, 传递性](#82-reflexivity-symmetry-and-transitivity自反性-对称性-传递性)
-    - [8.3 Equivalence Relations](#83-equivalence-relations)
-    - [8.4 Modular Arithmetic with Applications to Cryptopraphy模块化算法在密码学中的应用](#84-modular-arithmetic-with-applications-to-cryptopraphy模块化算法在密码学中的应用)
-    - [8.5 Partial Order Relations偏序关系](#85-partial-order-relations偏序关系)
-  - [Chapter 9 COUNTING AND PROBABILITY 计数和概率](#chapter-9-counting-and-probability-计数和概率)
-    - [9.1 Introduction 介绍](#91-introduction-介绍)
-    - [9.2 Possibility Trees and the Multiplication Rule](#92-possibility-trees-and-the-multiplication-rule)
-    - [9.3 Counting Elements of Disjoint Sets: The Addition Rule加法法则](#93-counting-elements-of-disjoint-sets-the-addition-rule加法法则)
-    - [9.4 The Pigeonhole Principle鸽洞原理](#94-the-pigeonhole-principle鸽洞原理)
-  - [Chapter 10 GRAPHS AND TREES 图和树](#chapter-10-graphs-and-trees-图和树)
-    - [10.1 Graphs: Definitions and Basic Properties 图](#101-graphs-definitions-and-basic-properties-图)
-    - [10.2 Trails, Paths, and Circuits](#102-trails-paths-and-circuits)
-    - [10.5 Trees 树](#105-trees-树)
-    - [10.6 Rooted Trees](#106-rooted-trees)
-    - [10.7 Spanning Trees and Shortest Paths](#107-spanning-trees-and-shortest-paths)
-  - [Chapter 11 ANALYSIS OF ALGORITHM EFFICIENCY](#chapter-11-analysis-of-algorithm-efficiency)
-    - [11.1 Real-Valued Functions of a Real Variable and Their Graphs](#111-real-valued-functions-of-a-real-variable-and-their-graphs)
-    - [11.2 $\mathcal{O}$-, $\Omega$-, and $\Theta$- Notations](#112-mathcalo--omega--and-theta--notations)
-    - [11.3 Application: Analysis of Algorithm Efficiency](#113-application-analysis-of-algorithm-efficiency)
-    - [11.5 Application: Alalysis of Algorithm Efficiency 2](#115-application-alalysis-of-algorithm-efficiency-2)
-  - [Chapter 12: Regular Expressions and Finite-State Automata](#chapter-12-regular-expressions-and-finite-state-automata)
+- [Preface](#preface)
+- [Chapter1 Speaking Mathematically](#chapter1-speaking-mathematically)
+  - [1.1 Variables](#11-variables)
+  - [1.2 The Language of Sets](#12-the-language-of-sets)
+  - [1.3 The language of Relations and Functions](#13-the-language-of-relations-and-functions)
+- [Chapter2 The logic of compound statements](#chapter2-the-logic-of-compound-statements)
+  - [2.1 Logical Form and Logical Equivalence](#21-logical-form-and-logical-equivalence)
+  - [2.2 Conditional Statements](#22-conditional-statements)
+  - [2.3 Valid and Invalid Arguments](#23-valid-and-invalid-arguments)
+  - [2.4 Application: Digital Logic Circuits](#24-application-digital-logic-circuits)
+  - [2.5 Application: Number Systems and Circuits for Addition](#25-application-number-systems-and-circuits-for-addition)
+- [Chapter3 The Logic of Quantified Statements](#chapter3-the-logic-of-quantified-statements)
+  - [3.1 Predicates and Quantified Statements I](#31-predicates-and-quantified-statements-i)
+  - [3.2 Predicates and Quantified Statements II](#32-predicates-and-quantified-statements-ii)
+  - [3.3 Statements with Multiple Quantifiers](#33-statements-with-multiple-quantifiers)
+- [Chapter4 ELEMENTARY NUMBER THEORY AND METHODS OF PROOF](#chapter4-elementary-number-theory-and-methods-of-proof)
+  - [4.1 Direct Proof and Counterexample I: Introduction](#41-direct-proof-and-counterexample-i-introduction)
+  - [4.8 Applications: Algorithms](#48-applications-algorithms)
+- [Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION](#chapter5-sequences-mathmatical-induction-and-recursion)
+  - [5.1 Sequences](#51-sequences)
+  - [5.5 Application: Correctness of Algorithms](#55-application-correctness-of-algorithms)
+  - [5.9 General Recursive Definitions and Structural Induction](#59-general-recursive-definitions-and-structural-induction)
+- [Chapter 6 SET THEORY](#chapter-6-set-theory)
+  - [6.1 Set Theory: Definition and the Element Method of Proof](#61-set-theory-definition-and-the-element-method-of-proof)
+  - [6.4 Boolean Algebras, Russell's Paradox, and the Halting Problem](#64-boolean-algebras-russells-paradox-and-the-halting-problem)
+- [Chapter 7 FUNCTIONS函数](#chapter-7-functions函数)
+  - [7.1 Function Defined on General Sets](#71-function-defined-on-general-sets)
+  - [7.2 Ont-to-One and Onto, Inverse Functions](#72-ont-to-one-and-onto-inverse-functions)
+  - [7.4 Cardinality with Applications to Computability](#74-cardinality-with-applications-to-computability)
+- [Chapter 8 RELATIONS](#chapter-8-relations)
+  - [8.1 Relation on Sets](#81-relation-on-sets)
+  - [8.2 Reflexivity, Symmetry, and Transitivity自反性, 对称性, 传递性](#82-reflexivity-symmetry-and-transitivity自反性-对称性-传递性)
+  - [8.3 Equivalence Relations](#83-equivalence-relations)
+  - [8.4 Modular Arithmetic with Applications to Cryptopraphy模块化算法在密码学中的应用](#84-modular-arithmetic-with-applications-to-cryptopraphy模块化算法在密码学中的应用)
+  - [8.5 Partial Order Relations偏序关系](#85-partial-order-relations偏序关系)
+- [Chapter 9 COUNTING AND PROBABILITY 计数和概率](#chapter-9-counting-and-probability-计数和概率)
+  - [9.1 Introduction 介绍](#91-introduction-介绍)
+  - [9.2 Possibility Trees and the Multiplication Rule](#92-possibility-trees-and-the-multiplication-rule)
+  - [9.3 Counting Elements of Disjoint Sets: The Addition Rule加法法则](#93-counting-elements-of-disjoint-sets-the-addition-rule加法法则)
+  - [9.4 The Pigeonhole Principle鸽洞原理](#94-the-pigeonhole-principle鸽洞原理)
+- [Chapter 10 GRAPHS AND TREES 图和树](#chapter-10-graphs-and-trees-图和树)
+  - [10.1 Graphs: Definitions and Basic Properties 图](#101-graphs-definitions-and-basic-properties-图)
+  - [10.2 Trails, Paths, and Circuits](#102-trails-paths-and-circuits)
+  - [10.5 Trees 树](#105-trees-树)
+  - [10.6 Rooted Trees](#106-rooted-trees)
+  - [10.7 Spanning Trees and Shortest Paths](#107-spanning-trees-and-shortest-paths)
+- [Chapter 11 ANALYSIS OF ALGORITHM EFFICIENCY](#chapter-11-analysis-of-algorithm-efficiency)
+  - [_11.1 Real-Valued Functions of a Real Variable and Their Graphs以实数作为变量的函数和图](#_111-real-valued-functions-of-a-real-variable-and-their-graphs以实数作为变量的函数和图)
+  - [_11.2 $\mathcal{O}$-, $\Omega$-, and $\Theta$- Notations](#_112-mathcalo--omega--and-theta--notations)
+  - [_11.3 Application: Analysis of Algorithm Efficiency](#_113-application-analysis-of-algorithm-efficiency)
+  - [_11.5 Application: Alalysis of Algorithm Efficiency 2](#_115-application-alalysis-of-algorithm-efficiency-2)
+- [Chapter 12: Regular Expressions and Finite-State Automata](#chapter-12-regular-expressions-and-finite-state-automata)
 
 <!-- /TOC -->
 
@@ -939,30 +935,26 @@ A graph is said to be circuit-free if, and only if, it has no circuits. A graph 
 ### Chapter 11 ANALYSIS OF ALGORITHM EFFICIENCY
 
 <a id="markdown-111-real-valued-functions-of-a-real-variable-and-their-graphs" name="111-real-valued-functions-of-a-real-variable-and-their-graphs"></a>
-#### 11.1 Real-Valued Functions of a Real Variable and Their Graphs
+#### _11.1 Real-Valued Functions of a Real Variable and Their Graphs以实数作为变量的函数和图
 
-- 笛卡尔平面坐标系
+- 笛卡尔平面坐标系  
+Let $f$ be a real-valued function of a real variable. The graph of $f$ is the set of all points (x, y) in the Cartesian coordinate plane with the property that $x$ is in the domain of $f$ and $y= f(x)$.
 
-Let $$f$$ be a real-valued function of a real variable. The graph of $$f$$ is the set of all points (x, y) in the Cartesian coordinate plane with the property that $$x$$ is in the domain of $$f$$ and $$y= f(x)$$.
+- power functions幂函数  
+Let $a$ be any nonnegative real number. Define $p_a$, the power function with exponent a, as follows:
+$p_a(x) = x^a$ for each nonnegative real number x.
 
-- power functions幂函数
-
-Let $$a$$ be any nonnegative real number. Define $$p_a$$, the power function with exponent a, as follows:
-$$p_a(x) = x^a$$ for each nonnegative real number x.
-
-- Increasing and Decreasing Functions
-
-  $$x_1 < x_2, f(x_1) < f(x_2)$$ Then increasing function
-
-  $$x_1 < x_2, f(x_1) > f(x_2)$$ Then descreasing function
+- Increasing and Decreasing Functions  
+  $x_1 < x_2, f(x_1) < f(x_2)$ Then increasing function  
+  $x_1 < x_2, f(x_1) > f(x_2)$ Then descreasing function
 
 <a id="markdown-112-\mathcalo--\omega--and-\theta--notations" name="112-\mathcalo--\omega--and-\theta--notations"></a>
-#### 11.2 $\mathcal{O}$-, $\Omega$-, and $\Theta$- Notations
+#### _11.2 $\mathcal{O}$-, $\Omega$-, and $\Theta$- Notations
 
 同一项工作用不同的算法需要的时间和空间是不一样的, 这三个符号就可以来表示这种差别
 
 <a id="markdown-113-application-analysis-of-algorithm-efficiency" name="113-application-analysis-of-algorithm-efficiency"></a>
-#### 11.3 Application: Analysis of Algorithm Efficiency 
+#### _11.3 Application: Analysis of Algorithm Efficiency 
 
 - The Sequential Search Algorithm 顺序查找算法
 
@@ -993,7 +985,7 @@ $$p_a(x) = x^a$$ for each nonnegative real number x.
   
   $$2*(n-2+1)=2n-2$$
   
-  $$2n-2$$可能大于n, 也可能小于n, 所以这个算法的效率可以表示为$$\Theta(n)$$
+  $2n-2$可能大于n, 也可能小于n, 所以这个算法的效率可以表示为$\Theta(n)$
   
 - **The Insertion Sort Algorithm插入算法详解**
 
@@ -1004,7 +996,7 @@ $$p_a(x) = x^a$$ for each nonnegative real number x.
   那就是a[k]前面的数字都小于a[k], 那么
 
 <a id="markdown-115-application-alalysis-of-algorithm-efficiency-2" name="115-application-alalysis-of-algorithm-efficiency-2"></a>
-#### 11.5 Application: Alalysis of Algorithm Efficiency 2
+#### _11.5 Application: Alalysis of Algorithm Efficiency 2
 
 divide and conquer分而治之
 

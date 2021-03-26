@@ -594,3 +594,19 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
       no. 如A[i] < A[j]改成A[i] <= A[j], 则是stable  
   is it in-place?  
       no. 因为额外用到了Count这个数组
+
+2. sequential search algorithm and binary search algorithm
+
+3. string-matching problem  
+  ALGORITHM stringMatchingAlgorithm  
+  //string matching algorithm  
+  //Input: a string s, a alpha a 
+  //Output: a integer what the alpha's index in string  
+  index = -1  
+  for i in s:  
+    if i == a:  
+      return s.index(i)  
+  return index  
+
+4. Königsberg bridge
+   

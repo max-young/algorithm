@@ -173,7 +173,7 @@ Z不是连续的, 因为各个整数之间是有距离的, 我们称之为discre
 <a id="markdown-21-logical-form-and-logical-equivalence" name="21-logical-form-and-logical-equivalence"></a>
 #### 2.1 Logical Form and Logical Equivalence
 
-在此书中用~代表not, $$\lor$$代表or, $$\land$$代表and
+在此书中用~代表not, $\lor$代表or, $\land$代表and
 
 - De Morgan's Laws
 
@@ -902,21 +902,12 @@ An edge is said to be **incident** on each of it's endpoints, and two edges inci
 <a id="markdown-102-trails-paths-and-circuits" name="102-trails-paths-and-circuits"></a>
 #### 10.2 Trails, Paths, and Circuits
 
-案例和定义很有趣
-
-G是一个Graph, v、w是两个顶点
-
-从v到w:
-
-如果没有重复的边, 则叫**trail**
-
-没有重复的顶点, 则叫**path**
-
-如果v和w是同一个点, 则叫**closed walk**
-
-一个closed walk, 如果至少包括一条边, 且不重复, 则是**circuit**
-
-一个circuit, 除了起点和终点重复, 没有其他的重复的顶点, 则称为**simple curcuit**
+G是一个Graph, v、w是两个顶点, 从v到w:  
+如果没有重复的边, 则叫**trail**  
+没有重复的顶点, 则叫**path**  
+如果v和w是同一个点, 则叫**closed walk**  
+一个closed walk, 如果至少包括一条边, 且不重复, 则是**circuit**  
+一个circuit, 除了起点和终点重复, 没有其他的重复的顶点, 则称为**simple curcuit**  
 
 <a id="markdown-105-trees-树" name="105-trees-树"></a>
 #### 10.5 Trees 树

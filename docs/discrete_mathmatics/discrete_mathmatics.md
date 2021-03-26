@@ -4,61 +4,61 @@
 
 - [Preface](#preface)
 - [Chapter1 Speaking Mathematically](#chapter1-speaking-mathematically)
-  - [1.1 Variables](#11-variables)
-  - [1.2 The Language of Sets](#12-the-language-of-sets)
-  - [1.3 The language of Relations and Functions](#13-the-language-of-relations-and-functions)
+    - [1.1 Variables](#11-variables)
+    - [1.2 The Language of Sets](#12-the-language-of-sets)
+    - [1.3 The language of Relations and Functions](#13-the-language-of-relations-and-functions)
 - [Chapter2 The logic of compound statements](#chapter2-the-logic-of-compound-statements)
-  - [2.1 Logical Form and Logical Equivalence](#21-logical-form-and-logical-equivalence)
-  - [2.2 Conditional Statements](#22-conditional-statements)
-  - [2.3 Valid and Invalid Arguments](#23-valid-and-invalid-arguments)
-  - [2.4 Application: Digital Logic Circuits](#24-application-digital-logic-circuits)
-  - [2.5 Application: Number Systems and Circuits for Addition](#25-application-number-systems-and-circuits-for-addition)
+    - [2.1 Logical Form and Logical Equivalence](#21-logical-form-and-logical-equivalence)
+    - [2.2 Conditional Statements](#22-conditional-statements)
+    - [2.3 Valid and Invalid Arguments](#23-valid-and-invalid-arguments)
+    - [2.4 Application: Digital Logic Circuits](#24-application-digital-logic-circuits)
+    - [2.5 Application: Number Systems and Circuits for Addition](#25-application-number-systems-and-circuits-for-addition)
 - [Chapter3 The Logic of Quantified Statements](#chapter3-the-logic-of-quantified-statements)
-  - [3.1 Predicates and Quantified Statements I](#31-predicates-and-quantified-statements-i)
-  - [3.2 Predicates and Quantified Statements II](#32-predicates-and-quantified-statements-ii)
-  - [3.3 Statements with Multiple Quantifiers](#33-statements-with-multiple-quantifiers)
+    - [3.1 Predicates and Quantified Statements I](#31-predicates-and-quantified-statements-i)
+    - [3.2 Predicates and Quantified Statements II](#32-predicates-and-quantified-statements-ii)
+    - [3.3 Statements with Multiple Quantifiers](#33-statements-with-multiple-quantifiers)
 - [Chapter4 ELEMENTARY NUMBER THEORY AND METHODS OF PROOF](#chapter4-elementary-number-theory-and-methods-of-proof)
-  - [4.1 Direct Proof and Counterexample I: Introduction](#41-direct-proof-and-counterexample-i-introduction)
-  - [4.8 Applications: Algorithms](#48-applications-algorithms)
+    - [4.1 Direct Proof and Counterexample I: Introduction](#41-direct-proof-and-counterexample-i-introduction)
+    - [4.8 Applications: Algorithms](#48-applications-algorithms)
 - [Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION](#chapter5-sequences-mathmatical-induction-and-recursion)
-  - [5.1 Sequences](#51-sequences)
-  - [5.5 Application: Correctness of Algorithms](#55-application-correctness-of-algorithms)
-  - [5.9 General Recursive Definitions and Structural Induction](#59-general-recursive-definitions-and-structural-induction)
+    - [5.1 Sequences](#51-sequences)
+    - [5.5 Application: Correctness of Algorithms](#55-application-correctness-of-algorithms)
+    - [5.9 General Recursive Definitions and Structural Induction](#59-general-recursive-definitions-and-structural-induction)
 - [Chapter 6 SET THEORY](#chapter-6-set-theory)
-  - [6.1 Set Theory: Definition and the Element Method of Proof](#61-set-theory-definition-and-the-element-method-of-proof)
-  - [6.4 Boolean Algebras, Russell's Paradox, and the Halting Problem](#64-boolean-algebras-russells-paradox-and-the-halting-problem)
+    - [6.1 Set Theory: Definition and the Element Method of Proof](#61-set-theory-definition-and-the-element-method-of-proof)
+    - [6.4 Boolean Algebras, Russell's Paradox, and the Halting Problem](#64-boolean-algebras-russells-paradox-and-the-halting-problem)
 - [Chapter 7 FUNCTIONS函数](#chapter-7-functions函数)
-  - [7.1 Function Defined on General Sets](#71-function-defined-on-general-sets)
-  - [7.2 Ont-to-One and Onto, Inverse Functions](#72-ont-to-one-and-onto-inverse-functions)
-  - [7.4 Cardinality with Applications to Computability](#74-cardinality-with-applications-to-computability)
+    - [7.1 Function Defined on General Sets](#71-function-defined-on-general-sets)
+    - [7.2 Ont-to-One and Onto, Inverse Functions](#72-ont-to-one-and-onto-inverse-functions)
+    - [7.4 Cardinality with Applications to Computability](#74-cardinality-with-applications-to-computability)
 - [Chapter 8 RELATIONS](#chapter-8-relations)
-  - [8.1 Relation on Sets](#81-relation-on-sets)
-  - [8.2 Reflexivity, Symmetry, and Transitivity自反性, 对称性, 传递性](#82-reflexivity-symmetry-and-transitivity自反性-对称性-传递性)
-  - [8.3 Equivalence Relations](#83-equivalence-relations)
-  - [8.4 Modular Arithmetic with Applications to Cryptopraphy模块化算法在密码学中的应用](#84-modular-arithmetic-with-applications-to-cryptopraphy模块化算法在密码学中的应用)
-  - [8.5 Partial Order Relations偏序关系](#85-partial-order-relations偏序关系)
+    - [8.1 Relation on Sets](#81-relation-on-sets)
+    - [8.2 Reflexivity, Symmetry, and Transitivity自反性, 对称性, 传递性](#82-reflexivity-symmetry-and-transitivity自反性-对称性-传递性)
+    - [8.3 Equivalence Relations](#83-equivalence-relations)
+    - [8.4 Modular Arithmetic with Applications to Cryptopraphy模块化算法在密码学中的应用](#84-modular-arithmetic-with-applications-to-cryptopraphy模块化算法在密码学中的应用)
+    - [8.5 Partial Order Relations偏序关系](#85-partial-order-relations偏序关系)
 - [Chapter 9 COUNTING AND PROBABILITY 计数和概率](#chapter-9-counting-and-probability-计数和概率)
-  - [9.1 Introduction 介绍](#91-introduction-介绍)
-  - [9.2 Possibility Trees and the Multiplication Rule](#92-possibility-trees-and-the-multiplication-rule)
-  - [9.3 Counting Elements of Disjoint Sets: The Addition Rule加法法则](#93-counting-elements-of-disjoint-sets-the-addition-rule加法法则)
-  - [9.4 The Pigeonhole Principle鸽洞原理](#94-the-pigeonhole-principle鸽洞原理)
+    - [9.1 Introduction 介绍](#91-introduction-介绍)
+    - [9.2 Possibility Trees and the Multiplication Rule](#92-possibility-trees-and-the-multiplication-rule)
+    - [9.3 Counting Elements of Disjoint Sets: The Addition Rule加法法则](#93-counting-elements-of-disjoint-sets-the-addition-rule加法法则)
+    - [9.4 The Pigeonhole Principle鸽洞原理](#94-the-pigeonhole-principle鸽洞原理)
 - [Chapter 10 GRAPHS AND TREES 图和树](#chapter-10-graphs-and-trees-图和树)
-  - [10.1 Graphs: Definitions and Basic Properties 图](#101-graphs-definitions-and-basic-properties-图)
-  - [10.2 Trails, Paths, and Circuits](#102-trails-paths-and-circuits)
-  - [10.5 Trees 树](#105-trees-树)
-  - [10.6 Rooted Trees](#106-rooted-trees)
-  - [10.7 Spanning Trees and Shortest Paths](#107-spanning-trees-and-shortest-paths)
+    - [_10.1 Graphs: Definitions and Basic Properties 图](#_101-graphs-definitions-and-basic-properties-图)
+    - [_10.2 Trails, Paths, and Circuits](#_102-trails-paths-and-circuits)
+    - [_10.5 Trees 树](#_105-trees-树)
+    - [_10.6 Rooted Trees](#_106-rooted-trees)
+    - [_10.7 Spanning Trees and Shortest Paths](#_107-spanning-trees-and-shortest-paths)
 - [Chapter 11 ANALYSIS OF ALGORITHM EFFICIENCY](#chapter-11-analysis-of-algorithm-efficiency)
-  - [_11.1 Real-Valued Functions of a Real Variable and Their Graphs以实数作为变量的函数和图](#_111-real-valued-functions-of-a-real-variable-and-their-graphs以实数作为变量的函数和图)
-  - [_11.2 $\mathcal{O}$-, $\Omega$-, and $\Theta$- Notations](#_112-mathcalo--omega--and-theta--notations)
-  - [_11.3 Application: Analysis of Algorithm Efficiency](#_113-application-analysis-of-algorithm-efficiency)
-  - [_11.5 Application: Alalysis of Algorithm Efficiency 2](#_115-application-alalysis-of-algorithm-efficiency-2)
+    - [_11.1 Real-Valued Functions of a Real Variable and Their Graphs以实数作为变量的函数和图](#_111-real-valued-functions-of-a-real-variable-and-their-graphs以实数作为变量的函数和图)
+    - [_11.2 $\mathcal{O}$-, $\Omega$-, and $\Theta$- Notations](#_112-mathcalo--omega--and-theta--notations)
+    - [_11.3 Application: Analysis of Algorithm Efficiency](#_113-application-analysis-of-algorithm-efficiency)
+    - [_11.5 Application: Alalysis of Algorithm Efficiency 2](#_115-application-alalysis-of-algorithm-efficiency-2)
 - [Chapter 12: Regular Expressions and Finite-State Automata](#chapter-12-regular-expressions-and-finite-state-automata)
 
 <!-- /TOC -->
 
 <a id="markdown-preface" name="preface"></a>
-### Preface
+## Preface
 
 书的preface很重要啊, 之前找到这一本书[Discrete Mathematics: An Open Introduction](https://book.douban.com/subject/30421347/), 看到preface说适合准备去中学教书的学生, 不太适合准备去读研究生和从事计算机科学的人群, 于是找到了这本书.
 
@@ -82,7 +82,7 @@
 对于程序员的我把重点放在第一列和第三列
 
 <a id="markdown-chapter1-speaking-mathematically" name="chapter1-speaking-mathematically"></a>
-### Chapter1 Speaking Mathematically
+## Chapter1 Speaking Mathematically
 
 <a id="markdown-11-variables" name="11-variables"></a>
 #### 1.1 Variables
@@ -107,33 +107,33 @@ The **axiom of extension** says that a set is completely determined by what its 
 
 集合set又里面的元素来定义, 与元素的顺序和元素出现的顺序无关.
 
-set刻意由大括号$$\{...\}$$来表示. 有一些约定俗成的符号来表示特定的集合, 比如R表示所有real number, Z表示所有整数, Q表示所有有理数rational numbers.
+set刻意由大括号$\{...\}$来表示. 有一些约定俗成的符号来表示特定的集合, 比如R表示所有real number, Z表示所有整数, Q表示所有有理数rational numbers.
 
 如果我们用直线来表示R的话, 中间是0, 两边是正负real number, 这条直线是连续的continuous.
 
 Z不是连续的, 因为各个整数之间是有距离的, 我们称之为discrete. Discrete Mathematics就是来源于continuous和discrete的数学对象的区别.
 
-另外一种set的表示方法是**Set-Builder Notation**, $${x\in S|P(x)}$$, We may define a new set to be **the set of all elements** **x** **in** **S** **such that** **P(x)** **is true**. 
+另外一种set的表示方法是**Set-Builder Notation**, ${x\in S|P(x)}$, We may define a new set to be **the set of all elements** **x** **in** **S** **such that** **P(x)** **is true**. 
 
 - Subsets
 
-  $$A\subseteq B$$ Means that For all elements x, if $$x\in A$$ then $$x\in B$$
+  $A\subseteq B$ Means that For all elements x, if $x\in A$ then $x\in B$
 
-  $$A\nsubseteq B$$ means that there is at least one element x such that $$x\in A$$ and  $$x\notin B$$
+  $A\nsubseteq B$ means that there is at least one element x such that $x\in A$ and  $x\notin B$
 
 - ordered pair
 
-  $$(a, b)$$是ordered pair, 元素是有序的
+  $(a, b)$是ordered pair, 元素是有序的
 
-   $$(a, b)=(c, d)$$ means that $$a = c$$ and $$b = d$$
+  $(a, b)=(c, d)$ means that $a = c$ and $b = d$
 
 - Cartesian product笛卡尔积
 
-  set of all ordered pairs $$(a, b)$$, where a is in A and b is in B.
+  set of all ordered pairs $(a, b)$, where a is in A and b is in B.
 
-  $$A\times B = {(a, b)|a\in A\ and\ b\in B}$$
+  $A\times B = {(a, b)|a\in A\ and\ b\in B}$
 
-   有趣的一点是: $$R\times R$$表示笛卡尔平面( Cartesian plane)
+  有趣的一点是: $R\times R$表示笛卡尔平面(Cartesian plane)
 
 <a id="markdown-13-the-language-of-relations-and-functions" name="13-the-language-of-relations-and-functions"></a>
 #### 1.3 The language of Relations and Functions
@@ -142,17 +142,17 @@ Z不是连续的, 因为各个整数之间是有距离的, 我们称之为discre
 
   Let *A* and *B* be sets. A **relation** **R** **from** **A** **to** **B** is a subset of *A* × *B*. Given an ordered pair (*x*, *y*) in *A*×*B*, **x** **is related to** **y** **by** **R**, written *x R y*, if, and only if, (*x*, *y*) is in *R*. The set *A* is called the domain of *R* and the set *B* is called its co-domain.
 
-  $$(x, y)$$是A和B两个集合的笛卡尔积的元素, 且$$(x, y)$$满足定义的关系, 那么我们说$$x\ R\ \ y$$
+  $(x, y)$是A和B两个集合的笛卡尔积的元素, 且$(x, y)$满足定义的关系, 那么我们说$x\ R\ \ y$
 
 ​		举两个例子:
 
-​		Let$$ A = \{1,2\}$$ and $$B = \{1,2,3\}$$ and define a relation *R* from *A* to *B* as follows: Given any $$(x,  y) \in A \times  B$$
+​		Let$ A = \{1,2\}$ and $B = \{1,2,3\}$ and define a relation *R* from *A* to *B* as follows: Given any $(x,  y) \in A \times  B$
 
 ​						$$(x, y) \in R\ means\ that\ \frac{x - y}{2}\ is\ an\ integer$$.
 
-​        再举一个Circle Relation的例子, 我们可以用Relation表示一个圆, 很神奇
+​   再举一个Circle Relation的例子, 我们可以用Relation表示一个圆, 很神奇
 
-​		Define a relation C from R to R as follows: For any$$(x, y)\in R\times R$$,
+​		Define a relation C from R to R as follows: For any$(x, y)\in R\times R$,
 
 ​						$$(x, y)\in C\ means\ that\ x^2 + y^2 = 1$$
 
@@ -162,13 +162,13 @@ Z不是连续的, 因为各个整数之间是有距离的, 我们称之为discre
 
   that satisfies the following two properties:
 
-  1. For every element *x* in *A*, there is an element *y* in *B* such that$$(x, y)\in F$$.
-  2. For all elements x in A and y and z in B, if $$(x, y)\in  F$$ and $$(x, z)\in F$$, then  y = z.
+  1. For every element *x* in *A*, there is an element *y* in *B* such that$(x, y)\in F$.
+  2. For all elements x in A and y and z in B, if $(x, y)\in  F$ and $(x, z)\in F$, then  y = z.
 
   也就是说对于A中的所有元素, 都有B中的一个元素满足function.
 
 <a id="markdown-chapter2-the-logic-of-compound-statements" name="chapter2-the-logic-of-compound-statements"></a>
-### Chapter2 The logic of compound statements
+## Chapter2 The logic of compound statements
 
 <a id="markdown-21-logical-form-and-logical-equivalence" name="21-logical-form-and-logical-equivalence"></a>
 #### 2.1 Logical Form and Logical Equivalence
@@ -193,27 +193,27 @@ Z不是连续的, 因为各个整数之间是有距离的, 我们称之为discre
 
   A contradiction is a statement form that is always false regardless of the truth values of the individual statement substituted for its statment variables. A statement whose form is a contradictions is a contradictory statement.
 
-  例如: $$p \lor \lnot p$$ 就是一个tautology, $$p \land \lnot p$$就是一个contradiction
+  例如: $p \lor \lnot p$ 就是一个tautology, $p \land \lnot p$就是一个contradiction
 
-  if t is a tautology and c is a contradiction, show that $$p \and t \equiv p$$ and $$p \and c \equiv c$$.
+  if t is a tautology and c is a contradiction, show that $p \wedge t \equiv p$ and $p \wedge c \equiv c$.
 
 <a id="markdown-22-conditional-statements" name="22-conditional-statements"></a>
 #### 2.2 Conditional Statements
 
 - Conditional
 
-  if *p* and *q* are statement variables, the conditional of *q* by *p* is **"If *p* then *q* "** or "*p* implies *q*" and is denoted $$p\to q$$ . It is false when *p* is true and *q* is false; otherwise it is true. We call *p* the hypothesis(or antecedent) of the conditional and *q* the conclusion(or consequent).
+  if *p* and *q* are statement variables, the conditional of *q* by *p* is **"If *p* then *q* "** or "*p* implies *q*" and is denoted $p\to q$ . It is false when *p* is true and *q* is false; otherwise it is true. We call *p* the hypothesis(or antecedent) of the conditional and *q* the conclusion(or consequent).
 
-  True Table for $$p\to q$$
+  True Table for $p\to q$
 
-  | *p*  | *q*  | $$p\to q$$ |
+  | *p*  | *q*  | $p\to q$   |
   | :--: | :--: | :--------: |
   |  T   |  T   |     T      |
   |  T   |  F   |     F      |
   |  F   |  T   |     T      |
   |  F   |  F   |     T      |
 
-​		这样我们能得出: $$p\to q \equiv \lnot p \or q$$
+​		这样我们能得出: $p \to q \equiv \neg p \lor q$
 
 ​		通俗的翻译是:
 
@@ -223,11 +223,11 @@ Z不是连续的, 因为各个整数之间是有距离的, 我们称之为discre
 
 - biconditional
 
-  Given statement variable *p* and *q*, the biconditional of *p* and *q* is **"*p* if, and only if, *q*"** and is denoted $$p\iff q$$. It is true if both *p* and *q* have the same truth values and is false if *p* and *q* have opposite truth values. The words if and only if are sometimes abbreviated iff.
+  Given statement variable *p* and *q*, the biconditional of *p* and *q* is **"*p* if, and only if, *q*"** and is denoted $p\iff q$. It is true if both *p* and *q* have the same truth values and is false if *p* and *q* have opposite truth values. The words if and only if are sometimes abbreviated iff.
 
-  True Table for $$p\iff q$$
+  True Table for $p\iff q$
 
-  | *p*  | *q*  | $$p\iff q$$ |
+  | *p*  | *q*  | $p\iff q$ |
   | :--: | :--: | :---------: |
   |  T   |  T   |      T      |
   |  T   |  F   |      F      |
@@ -253,7 +253,7 @@ Z不是连续的, 因为各个整数之间是有距离的, 我们称之为discre
 <a id="markdown-23-valid-and-invalid-arguments" name="23-valid-and-invalid-arguments"></a>
 #### 2.3 Valid and Invalid Arguments
 
-An augument is a sequence of statements, nad an argument form is a sequence of statement forms. All statements in an argument and all statement forms in an argument form, except for the final one , are called **premise**(or assumptions or hypotheses). The final statement or statement form is called the **conclusion**. The symbol$$\therefore$$ , which is read "therefore", is normally placed just before the conclusion.
+An augument is a sequence of statements, nad an argument form is a sequence of statement forms. All statements in an argument and all statement forms in an argument form, except for the final one , are called **premise**(or assumptions or hypotheses). The final statement or statement form is called the **conclusion**. The symbol$\therefore$ , which is read "therefore", is normally placed just before the conclusion.
 
 To say the argument form is **valid** means that no matter what particular statements are substituted for the statement variables in it's premises, if the resulting premises are all true, then the conclusion is also true. To say that argument is valid means that it's form is valid.
 $$
@@ -308,14 +308,14 @@ $$
 这一章也在《[编码](https://book.douban.com/subject/4822685/)》里看过, 主要讲二进制
 
 <a id="markdown-chapter3-the-logic-of-quantified-statements" name="chapter3-the-logic-of-quantified-statements"></a>
-### Chapter3 The Logic of Quantified Statements
+## Chapter3 The Logic of Quantified Statements
 
 <a id="markdown-31-predicates-and-quantified-statements-i" name="31-predicates-and-quantified-statements-i"></a>
 #### 3.1 Predicates and Quantified Statements I
 
 In grammar, the word *predicate* refers to the part of a sentence that gives information about the subject. In the sentence “James is a student at Bedford College,” the word *James* is the subject and the phrase *is a student at Bedford College* is the predicate. The predicate is the part of the sentence from which the subject has been removed.
 
-- The Universal Quantifier: $$\forall$$
+- The Universal Quantifier: $\forall$
 
   One sure way to change predicates into statements is to assign specific values to all their variables. For example, if *x* represents the number 35, the sentence “*x* is (evenly) divis- ible by 5” is a true statement since 35 = 5·7. Another way to obtain statements from predicates is to add **quantifiers.** Quantifiers are words that refer to quantities such as “some” or “all” and tell for how many elements a given predicate is true
 
@@ -323,7 +323,7 @@ In grammar, the word *predicate* refers to the part of a sentence that gives inf
 
   ∀ human beings *x* , *x* is mortal.
 
-- **The Existential Quantifier:** $$\exists$$
+- **The Existential Quantifier:** $\exists$
 
   The symbol ∃ denotes “there exists” and is called the **existential quantifier.** For example,
 
@@ -395,7 +395,7 @@ many important technical statements contain both ∃ and ∀, a convention has d
   *Final version of negation:* ∀*x* in *D*, ∃*y* in *E* such that ∼*P*(*x*, *y*).
 
 <a id="markdown-chapter4-elementary-number-theory-and-methods-of-proof" name="chapter4-elementary-number-theory-and-methods-of-proof"></a>
-### Chapter4 ELEMENTARY NUMBER THEORY AND METHODS OF PROOF
+## Chapter4 ELEMENTARY NUMBER THEORY AND METHODS OF PROOF
 
 基础数学理论和证明方法, 序言相当棒, 数学和逻辑的魅力展露无遗
 
@@ -439,7 +439,7 @@ many important technical statements contain both ∃ and ∀, a convention has d
 
   这里q是商数quotient, r是余数remainder, 我们要实现求得q和r的算法.
 
-  余数r应该满足$$0\leq r < d$$ , 我们可以用a减去d, 一直减, 一直到剩下的值小于d, 最后, 减的次数就是q, 剩余的值就是r
+  余数r应该满足$0\leq r < d$ , 我们可以用a减去d, 一直减, 一直到剩下的值小于d, 最后, 减的次数就是q, 剩余的值就是r
 
   ```
   伪代码:
@@ -479,23 +479,21 @@ many important technical statements contain both ∃ and ∀, a convention has d
 
   2. If *a* and *b* are any integers not both zero, and if *q* and *r* are any integers such that *a* = *bq* + *r*, then
 
-     gcd(a, b) = gcd(b, r)
-     $$
-     a = b\times q + r\\
-     假设c是a和b的最大公约数, 那么a=c\times m, b=c\times n\\
-     c\times m = c\times n \times q + r\\
-     r = c\times m - c\times n \times q\\
-     r = (m - n\times q)\times c\\
-     这样c也是r的约数, c是a和b的最大公约数, c又是b和r的约数, 那么c小于等于b和r的最大公约数.也就是:\\
-     gcd(a, b) <= gcd(b, r)\\
-     下面我们再来证明b和r的最大公约数小于等于a和b的最大公约数\\
-     假设c是b和r的最大公约数, 那么b=c\times m, c=c\times n\\
-     a = c\times m \times q + c\times n\\
-     a = (m\times q + n)\times c\\
-     这样c也是a的余数, c是b和r的最大公约数, c又是a和b的约数, 那么c小于等于a和b的最大公约数.也就是:\\
-     gcd(b, r) <= gcd(a, b)\\
-     从而得到gcb(a, b)=gcb(b, r)
-     $$
+     $gcd(a, b) = gcd(b, r)$  
+     $a = b\times q + r$  
+     假设c是a和b的最大公约数, 那么$a=c\times m, b=c\times n$  
+     $c\times m = c\times n \times q + r$  
+     $r = c\times m - c\times n \times q$  
+     $r = (m - n\times q)\times c$  
+     这样c也是r的约数, c是a和b的最大公约数, c又是b和r的约数, 那么c小于等于b和r的最大公约数.也就是:  
+     $gcd(a, b) <= gcd(b, r)$  
+     下面我们再来证明b和r的最大公约数小于等于a和b的最大公约数  
+     假设c是b和r的最大公约数, 那么$b=c\times m, c=c\times n$  
+     $a = c\times m \times q + c\times n$  
+     $a = (m\times q + n)\times c$  
+     这样c也是a的余数, c是b和r的最大公约数, c又是a和b的约数, 那么c小于等于a和b的最大公约数.也就是:  
+     $gcd(b, r) <= gcd(a, b)$  
+     从而得到$gcb(a, b)=gcb(b, r)$
 
   上面的证明对求两个正整数的最大公约数有什么关系呢? 
 
@@ -503,23 +501,21 @@ many important technical statements contain both ∃ and ∀, a convention has d
 
   如果我们利用上面的证明, 就能大幅提高计算速度.
 
-  ```
-  伪代码
-  Input: A, B[integers with A > B >= 0]
-  Algorithm Body:
-      a = A, b = B
-      如果b != 0, 计算a mod b, 得到余数r, 替换a=b, b=r. 重复这个过程
-    while(b != 0):
-          r = a mod b
-          a = b
-          b = r
-      end while
-      gcd = a
-  Output: gcd
-  ```
+  伪代码:  
+  Input: A, B[integers with A > B >= 0]  
+  Output: gcd  
+  Algorithm Body:  
+    a = A, b = B  
+    如果b != 0, 计算a mod b, 得到余数r, 替换a=b, b=r. 重复这个过程  
+    while(b != 0):  
+      r = a mod b  
+      a = b  
+      b = r  
+    end while  
+    gcd = a  
 
 <a id="markdown-chapter5-sequences-mathmatical-induction-and-recursion" name="chapter5-sequences-mathmatical-induction-and-recursion"></a>
-### Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION
+## Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION
 
 <a id="markdown-51-sequences" name="51-sequences"></a>
 #### 5.1 Sequences
@@ -530,13 +526,13 @@ many important technical statements contain both ∃ and ∀, a convention has d
 
 - Summation Notation
 
-  有这样的一个sequence, $$A_k = 2^k$$, 我们要求前六个term的求和:
+  有这样的一个sequence, $A_k = 2^k$, 我们要求前六个term的求和:
 
   $$A_1 + A_2 + A_3 + A_4 + A_5 + A_6 = 2^1 + 2^2 + 2^3 + 2^4 + 2^5 + 2^6 = 126$$
 
   有没有更简单的表示呢?
 
-  if m and n are integers and $$m\leq n$$, the symbol $$\sum\limits_{k=m}^{n} a_k$$, read the summation from k equals m to n of a-sub-k, is the sum of all the terms $$a_m, a_{m+1}, a_{m+2}, ..., a_n$$. we say that $$a_m + a_{m+1} + a_{m+2} + ... + a_n$$ is the expand form of the sum, and we write:
+  if m and n are integers and $m\leq n$, the symbol $\sum\limits_{k=m}^{n} a_k$, read the summation from k equals m to n of a-sub-k, is the sum of all the terms $a_m, a_{m+1}, a_{m+2}, ..., a_n$. we say that $a_m + a_{m+1} + a_{m+2} + ... + a_n$ is the expand form of the sum, and we write:
 
   $$\sum\limits_{k=m}^na_k = a_m + a_{m+1} + a+{m+2} + ... + a_n$$
 
@@ -544,21 +540,21 @@ many important technical statements contain both ∃ and ∀, a convention has d
 
 - Product Notaion
 
-  if m and n are integers and $$m\leq n$$, the symbol $$\prod\limits_{k=m}^n a_k$$(注释: 此处latex limits不起作用), read the product from k equals m to n of a-sub-k, is the product if all terms $$a_m, a_{m+1, a_{m+2}, ... , a_n}$$, we write:
+  if m and n are integers and $m\leq n$, the symbol $\prod\limits_{k=m}^n a_k$(注释: 此处latex limits不起作用), read the product from k equals m to n of a-sub-k, is the product if all terms $a_m, a_{m+1, a_{m+2}, ... , a_n}$, we write:
 
   $$\prod\limits_{k=m}^n a_k = a_m.a_{m+1}.a_{m+2}...a_n $$
 
 - Properties of Summations and Products
 
-  if $$a_m, a_{m+1}, a_{m+2}, ...$$ and $$b_m, b_{m+1}, b_{m+2}, ...$$ are sequemces of real numbers and c is any real number, then the following equations hold for any integer $$n\geq m$$:
+  if $a_m, a_{m+1}, a_{m+2}, ...$ and $b_m, b_{m+1}, b_{m+2}, ...$ are sequemces of real numbers and c is any real number, then the following equations hold for any integer $n\geq m$:
 
-  1. $$\sum\limits_{k=m}^n a_k + \sum\limits_{k=m}^n b^k = \sum\limits_{k=m}^n (a_k+b_k)$$
-  2. $$c.\sum\limits_{k=m}^n a_k = \sum\limits_{k=m}^n c.a_k$$
-  3. $$\left( \prod\limits_{k=m}^n a_k \right) .\left(\prod\limits_{k=m}^n b_k\right) = \prod\limits_{k=m}^n (a_k.b_k)$$
+  1. $\sum\limits_{k=m}^n a_k + \sum\limits_{k=m}^n b^k = \sum\limits_{k=m}^n (a_k+b_k)$
+  2. $c.\sum\limits_{k=m}^n a_k = \sum\limits_{k=m}^n c.a_k$
+  3. $\left( \prod\limits_{k=m}^n a_k \right) .\left(\prod\limits_{k=m}^n b_k\right) = \prod\limits_{k=m}^n (a_k.b_k)$
 
 - Factorial and "n choose r" Notation
 
-  for each positive integer n , the quantity a factorial denoted $$n!$$, is defined to be the product of all the integers fro 1 to n:
+  for each positive integer n , the quantity a factorial denoted $n!$, is defined to be the product of all the integers fro 1 to n:
 
   $$n! = a.(n-1)...3.2.1$$
 
@@ -566,13 +562,13 @@ many important technical statements contain both ∃ and ∀, a convention has d
 
   $$0! = 1$$
 
-  Let n and r be integers with $$0\leq r \leq n$$. the symbol
+  Let n and r be integers with $0\leq r \leq n$. the symbol
 
   $${n \choose r}$$
 
   is read "n choose r" and represents the number of subsets of size r that can be chosen from a set with n elements.
 
-  fro all integers n and r with $$0\leq r \leq n$$
+  fro all integers n and r with $0\leq r \leq n$
 
   $${n \choose r} = \frac{n!}{r!(n-r)!} $$
 
@@ -601,8 +597,6 @@ many important technical statements contain both ∃ and ∀, a convention has d
   = (1·2+0)·2^4 +0·2^3 +1·2^2 +1·2+0 \\
   = 1·2^5 +0·2^4 +0·2^3 +1·2^2 +1·2+0.
   $$
-
-​	
 
 ​	$$a_{10} = (r[k]r[k-1]...r[2]r[1])_2$$
 
@@ -659,7 +653,7 @@ In this section we given an overview of the general format of correctness proofs
 - Recursive Functions
 
 <a id="markdown-chapter-6-set-theory" name="chapter-6-set-theory"></a>
-### Chapter 6 SET THEORY
+## Chapter 6 SET THEORY
 
 <a id="markdown-61-set-theory-definition-and-the-element-method-of-proof" name="61-set-theory-definition-and-the-element-method-of-proof"></a>
 #### 6.1 Set Theory: Definition and the Element Method of Proof
@@ -675,6 +669,7 @@ which is read "The set of all x in S such that P of x"
   $$A \subseteq B \iff \forall x,\ if\ x \in A\ then\ x \in B$$
 
   $$A \not\subseteq B \iff \exists x,\ x \in A\ and\ x \notin B $$
+
   $$
   \begin{align*}
   &A\ is\  proper\ subset\ of\ B \iff \\
@@ -693,10 +688,10 @@ which is read "The set of all x in S such that P of x"
 
   Let A and B be sbubsets of a universal set U.
 
-  1. The **uninon** of A and B, denoted $$A \cup B $$, is the set of all elements that are in at least one of A or B.
-  2. The **intersection** of A and B, denoted $$A \cap B$$, is the set of all elements that are common to both A and B.
-  3. The **difference** of B minus A (or **relative complement** of A in B), denoted $$B - A$$, is the set of all elements that are in B and not A.
-  4. The **complement** of A, denoted $$ A^{c}  $$ , is the set of all elements in U that are not in A.
+  1. The **uninon** of A and B, denoted $A \cup B $, is the set of all elements that are in at least one of A or B.
+  2. The **intersection** of A and B, denoted $A \cap B$, is the set of all elements that are common to both A and B.
+  3. The **difference** of B minus A (or **relative complement** of A in B), denoted $B - A$, is the set of all elements that are in B and not A.
+  4. The **complement** of A, denoted $ A^{c}$ , is the set of all elements in U that are not in A.
 
   Symbolically:
   $$
@@ -710,7 +705,7 @@ which is read "The set of all x in S such that P of x"
   
 - The empty Set
 
-  We call it the **empty set** (or **null set**) and denote it by the symbol $$\emptyset$$ . Thus $$\{1, 3\} \cap \{2, 4\} = \emptyset$$ and $$\{x \in R | x^2 = -1\} = \emptyset$$
+  We call it the **empty set** (or **null set**) and denote it by the symbol $\emptyset$ . Thus $\{1, 3\} \cap \{2, 4\} = \emptyset$ and $\{x \in R | x^2 = -1\} = \emptyset$
 
 - Partition of Sets
 
@@ -721,7 +716,7 @@ which is read "The set of all x in S such that P of x"
   
 - Power Set
 
-  Given a set A, the **power set** of A, denoted $$\mathcal{P}(A)$$, is the set of all sub sets of A
+  Given a set A, the **power set** of A, denoted $\mathcal{P}(A)$, is the set of all sub sets of A
   $$
   \mathcal{P}(\{x, y\}) = \{\emptyset, \{x\}, \{y\}, \{x, y\}\}
   $$
@@ -730,7 +725,7 @@ which is read "The set of all x in S such that P of x"
 
   笛卡尔积
 
-  Given sets $$A_1, A_2, ..., A_n$$, the **Cartesian product** of $$A_1, A_2, ..., A_n$$ denoted $$A_1 \times A_2 \times ... \times A_n$$, is the set of all ordered n-tuples $$(a_1, a_2, ..., a_n)$$ where $$a_1 \in A_1, a_2 \in A_2, ..., a_n \in A_n$$. 
+  Given sets $A_1, A_2, ..., A_n$, the **Cartesian product** of $A_1, A_2, ..., A_n$ denoted $A_1 \times A_2 \times ... \times A_n$, is the set of all ordered n-tuples $(a_1, a_2, ..., a_n)$ where $a_1 \in A_1, a_2 \in A_2, ..., a_n \in A_n$. 
 
   Symbolically: 
   $$
@@ -742,7 +737,7 @@ which is read "The set of all x in S such that P of x"
   $$
   A_1 \times A_2 = \{(a_1, a_2) | a_1 \in A_1\ and\ a_2 \in A_2\}
   $$
-  is the Cartesian product if $$A_1$$ and $$A_2$$.
+  is the Cartesian product if $A_1$ and $A_2$.
 
 <a id="markdown-64-boolean-algebras-russells-paradox-and-the-halting-problem" name="64-boolean-algebras-russells-paradox-and-the-halting-problem"></a>
 #### 6.4 Boolean Algebras, Russell's Paradox, and the Halting Problem
@@ -762,18 +757,18 @@ which is read "The set of all x in S such that P of x"
   太抽象, 看不懂. 大概是说计算机算法不会得出halting或者永远循环的输出. 和上面的悖论相关.
 
 <a id="markdown-chapter-7-functions函数" name="chapter-7-functions函数"></a>
-### Chapter 7 FUNCTIONS函数
+## Chapter 7 FUNCTIONS函数
 
 <a id="markdown-71-function-defined-on-general-sets" name="71-function-defined-on-general-sets"></a>
 #### 7.1 Function Defined on General Sets
 
 - 定义
 
-   一个函数$$f$$表示一个集合$$X$$到集合$$Y$$的关系, 表示为: $$f:X \to Y$$ , 必须满足$$X$$中的每一个元素都与$$Y$$中的某一个元素有关系. 
+   一个函数$f$表示一个集合$X$到集合$Y$的关系, 表示为: $f:X \to Y$ , 必须满足$X$中的每一个元素都与$Y$中的某一个元素有关系. 
 
 - 函数相等
 
-  如果两个函数$$F:X \to Y$$和$$G: X \to Y$$, 如果$$F = G$$, 则所有$$x \in X$$都满足$$F(x) = G(x)$$
+  如果两个函数$F:X \to Y$和$G: X \to Y$, 如果$F = G$, 则所有$x \in X$都满足$F(x) = G(x)$
 
 - 布尔函数Boolean Function
 
@@ -784,11 +779,11 @@ which is read "The set of all x in S such that P of x"
 
 - One-to-One Functions一对一函数
 
-  $$F$$是一个表示集合$$X$$到集合$$Y$$的函数, 如果说$$F$$是一个Ont-to-One函数, 那么它必须满足条件:
+  $F$是一个表示集合$X$到集合$Y$的函数, 如果说$F$是一个Ont-to-One函数, 那么它必须满足条件:
 
-  如果$$F(x_{1}) = F(x_{2})$$, 那么$$x_{1} = x_{2}$$
+  如果$F(x_{1}) = F(x_{2})$, 那么$x_{1} = x_{2}$
 
-  或者说如果$$x_{1} \neq x_{2}$$, 那么$$F(x_{1}) \neq F(x_{2})$$
+  或者说如果$x_{1} \neq x_{2}$, 那么$F(x_{1}) \neq F(x_{2})$
 
   用符号可以表示为:
 
@@ -798,7 +793,7 @@ which is read "The set of all x in S such that P of x"
 
 - Onto Functions
 
-  $$F$$是一个表示集合$$X$$到集合$$Y$$的函数, 如果说$$F$$是一个onto函数, 那么集合$$Y$$中的所有元素, 都能在$$X$$中找到一个元素$$x$$满足$$F(x) = y$$
+  $F$是一个表示集合$X$到集合$Y$的函数, 如果说$F$是一个onto函数, 那么集合$Y$中的所有元素, 都能在$X$中找到一个元素$x$满足$F(x) = y$
 
   用符号可以表示为:
 
@@ -806,7 +801,7 @@ which is read "The set of all x in S such that P of x"
 
 - Inverse Functions
 
-  $$F(x) = y$$反过来怎么表示呢? $$F^{-1}(y) = x$$
+  $F(x) = y$反过来怎么表示呢? $F^{-1}(y) = x$
 
 <a id="markdown-74-cardinality-with-applications-to-computability" name="74-cardinality-with-applications-to-computability"></a>
 #### 7.4 Cardinality with Applications to Computability
@@ -818,7 +813,7 @@ Let *A* and *B* be any sets. **A** **has the same cardinality as** **B** if, and
 后面的内容很理论, 看不懂, 略过
 
 <a id="markdown-chapter-8-relations" name="chapter-8-relations"></a>
-### Chapter 8 RELATIONS
+## Chapter 8 RELATIONS
 
 <a id="markdown-81-relation-on-sets" name="81-relation-on-sets"></a>
 #### 8.1 Relation on Sets
@@ -830,19 +825,19 @@ Let *A* and *B* be any sets. **A** **has the same cardinality as** **B** if, and
 
 书中用了这样的一个Relation做例子:
 
-$$A=\{2, 3, 4, 6, 7, 9\}$$, for all $$x, y \in A$$,
+$A=\{2, 3, 4, 6, 7, 9\}$, for all $x, y \in A$,
 
-$$x\ R\ y \iff 3|(x-y)$$
+$x\ R\ y \iff 3|(x-y)$
 
-备注: $$3|(x-y)$$表示$$x-y$$能被3整除
+备注: $3|(x-y)$表示$x-y$能被3整除
 
 这里能根据Relation画出图来, 看书吧
 
 我们定义出Relation的3种特性::
 
-1. Reflexive: $$R$$ is reflexive if, and only if, for all $$x \in A, x\ R\ x$$
-2. symmetric: $$R$$ is symmetric if, and only if, for all $$x, y \in A, if\ x\ R\ y\ then\ y\ R\ x$$
-3. Transitive: $$R$$ is transitive if, and only if, for all $$x, y, z \in A, if\ x\ R\ y\ and\ y\ R\ z\ then\ x\ R\ z$$
+1. Reflexive: $R$ is reflexive if, and only if, for all $x \in A, x\ R\ x$
+2. symmetric: $R$ is symmetric if, and only if, for all $x, y \in A, if\ x\ R\ y\ then\ y\ R\ x$
+3. Transitive: $R$ is transitive if, and only if, for all $x, y, z \in A, if\ x\ R\ y\ and\ y\ R\ z\ then\ x\ R\ z$
 
 <a id="markdown-83-equivalence-relations" name="83-equivalence-relations"></a>
 #### 8.3 Equivalence Relations
@@ -858,7 +853,7 @@ is reflexive, symmetric, and transitive.
 #### 8.5 Partial Order Relations偏序关系
 
 <a id="markdown-chapter-9-counting-and-probability-计数和概率" name="chapter-9-counting-and-probability-计数和概率"></a>
-### Chapter 9 COUNTING AND PROBABILITY 计数和概率
+## Chapter 9 COUNTING AND PROBABILITY 计数和概率
 
 <a id="markdown-91-introduction-介绍" name="91-introduction-介绍"></a>
 #### 9.1 Introduction 介绍
@@ -888,10 +883,10 @@ Equally Likely Probability Formula: 均等概率公式
 Pigeonhole Principle:  A function from one finite set to a smaller finite set cannot be one-to-one: There must be a least two elements in the domain that have the same image in the co-domain.
 
 <a id="markdown-chapter-10-graphs-and-trees-图和树" name="chapter-10-graphs-and-trees-图和树"></a>
-### Chapter 10 GRAPHS AND TREES 图和树
+## Chapter 10 GRAPHS AND TREES 图和树
 
 <a id="markdown-101-graphs-definitions-and-basic-properties-图" name="101-graphs-definitions-and-basic-properties-图"></a>
-#### 10.1 Graphs: Definitions and Basic Properties 图
+#### _10.1 Graphs: Definitions and Basic Properties 图
 
 A **graph** G consists of  two finite sets: a nonempty set V(G) of **vertices**(顶点) and a set E(G) of **edges**(边), where each edge is associated with a set consisting of either one or two vertices called it‘s **endpoints**. The correspondence from edges to endpoints is called the **edge-endpoint function**.
 
@@ -900,30 +895,42 @@ An edge with just one endpoint is called a **loop**, and two or more distinct ed
 An edge is said to be **incident** on each of it's endpoints, and two edges incident on the same endpoint are called adjacent. A vertex on which no edges are incident is called **isolated**.
 
 <a id="markdown-102-trails-paths-and-circuits" name="102-trails-paths-and-circuits"></a>
-#### 10.2 Trails, Paths, and Circuits
+#### _10.2 Trails, Paths, and Circuits
 
-G是一个Graph, v、w是两个顶点, 从v到w:  
-如果没有重复的边, 则叫**trail**  
-没有重复的顶点, 则叫**path**  
+这里举了一个经典的例子: Königsberg bridge, 如图所示:  
+<img src="../../_images/konigsberg_bridges.png" width=800px>  
+这个城镇有一条河, 七座桥, 如果从ABCD中的其中一个区域出发, 回到这个区域, 但是要经过所有的七座桥且不能重复  
+
+我们可以把问题简化成一个graphic:  
+<img src="../../_images/konigsberg_bridges_graphic.png" width=40%>  
+答案: 无解  
+证明:   
+假设我们从A出发, 那么我们通过BCD的时候都需要到达并且离开, 不管多少次, 到达和离开的总次数都是偶数(也就是BCD顶点的边都应该是偶数), 但是B的edge是5, C和D的edge是3  
+从其他的点出发, 也是同样的, 所以这题无解
+
+一些定义:  
+G是一个Graph, v、w是两个顶点, 从v走到w:  
+如果没有重复走一条边, 则叫**trail**  
+没有走重复的顶点, 则叫**path**  
 如果v和w是同一个点, 则叫**closed walk**  
 一个closed walk, 如果至少包括一条边, 且不重复, 则是**circuit**  
 一个circuit, 除了起点和终点重复, 没有其他的重复的顶点, 则称为**simple curcuit**  
 
 <a id="markdown-105-trees-树" name="105-trees-树"></a>
-#### 10.5 Trees 树
+#### _10.5 Trees 树
 
 树其实是一种特殊的图
 
 A graph is said to be circuit-free if, and only if, it has no circuits. A graph is called a tree if, and only if, it is circuit-free and connected. A trivial tree is a graph that consists of a single vertex. A graph is called a forest if, and only if, it is circuit-free and not connected.
 
 <a id="markdown-106-rooted-trees" name="106-rooted-trees"></a>
-#### 10.6 Rooted Trees
+#### _10.6 Rooted Trees
 
 <a id="markdown-107-spanning-trees-and-shortest-paths" name="107-spanning-trees-and-shortest-paths"></a>
-#### 10.7 Spanning Trees and Shortest Paths
+#### _10.7 Spanning Trees and Shortest Paths
 
 <a id="markdown-chapter-11-analysis-of-algorithm-efficiency" name="chapter-11-analysis-of-algorithm-efficiency"></a>
-### Chapter 11 ANALYSIS OF ALGORITHM EFFICIENCY
+## Chapter 11 ANALYSIS OF ALGORITHM EFFICIENCY
 
 <a id="markdown-111-real-valued-functions-of-a-real-variable-and-their-graphs" name="111-real-valued-functions-of-a-real-variable-and-their-graphs"></a>
 #### _11.1 Real-Valued Functions of a Real Variable and Their Graphs以实数作为变量的函数和图
@@ -1006,6 +1013,6 @@ divide and conquer分而治之
   不太直观, 有点烧脑. 看Python的写法吧.
 
 <a id="markdown-chapter-12-regular-expressions-and-finite-state-automata" name="chapter-12-regular-expressions-and-finite-state-automata"></a>
-### Chapter 12: Regular Expressions and Finite-State Automata
+## Chapter 12: Regular Expressions and Finite-State Automata
 
 正则表达式、有限状态机......应用到的时候再看吧

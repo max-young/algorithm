@@ -608,5 +608,5 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
       return s.index(i)  
   return index  
 
-4. Königsberg bridge
-   
+4. Königsberg bridge  
+  参照[discrete mathmatics:graphics](./docs/discrete_mathmatics/discrete_mathmatics?id=_102-trails-paths-and-circuits)

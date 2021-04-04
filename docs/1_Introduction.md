@@ -612,4 +612,6 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
   return index  
 
 4. Königsberg bridge  
-  参照[discrete mathmatics:graphics](./docs/discrete_mathmatics/discrete_mathmatics?id=_102-trails-paths-and-circuits)
+  参照[discrete mathmatics:graphics-Königsberg bridge](./docs/discrete_mathmatics/discrete_mathmatics?id=königsberg-bridge)
+
+5. 

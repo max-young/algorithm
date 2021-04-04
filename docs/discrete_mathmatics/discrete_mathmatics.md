@@ -907,7 +907,7 @@ An edge is said to be **incident** on each of it's endpoints, and two edges inci
 G是一个图, v是其中一个顶点, v的degree表示为deg(v), 指以v为起点的边的数量, 如果边是一个环loop, 那么计数2, G的degree是所有顶点的degree之和  
 
 举例说明:  
-<img src="../../_images/graph_degree.png" width=50%>  
+<img src="./_images/graph_degree.png" width=50%>  
 v1的dgree是0, v2的degree是2, v3的degree是4, 这个图的degree是6
 
 <a id="markdown-_102-trails-paths-and-circuits" name="_102-trails-paths-and-circuits"></a>
@@ -916,11 +916,11 @@ v1的dgree是0, v2的degree是2, v3的degree是4, 这个图的degree是6
 <a id="markdown-königsberg-bridge" name="königsberg-bridge"></a>
 #### Königsberg bridge  
 这里举了一个经典的例子: Königsberg bridge, 如图所示:  
-<img src="../../_images/konigsberg_bridges.png" width=800px>  
+<img src="./_images/konigsberg_bridges.png" width=800px>  
 这个城镇有一条河, 七座桥, 如果从ABCD中的其中一个区域出发, 回到这个区域, 但是要经过所有的七座桥且不能重复  
 
 我们可以把问题简化成一个graphic:  
-<img src="../../_images/konigsberg_bridges_graphic.png" width=40%>  
+<img src="./_images/konigsberg_bridges_graphic.png" width=40%>  
 答案: 无解  
 证明:   
 假设我们从A出发, 那么我们通过BCD的时候都需要到达并且离开, 不管多少次, 到达和离开的总次数都是偶数(也就是BCD顶点的边都应该是偶数), 但是B的edge是5, C和D的edge是3  
@@ -937,7 +937,7 @@ G是一个Graph, v、w是两个顶点, 从v走到w:
 一个circuit, 除了起点和终点重复, 没有其他的重复的顶点, 则称为**simple curcuit**  
 
 这里举一个例子来说明上面的定义:  
-<img src="../../_images/graph_walk_definition.png" width=50%>  
+<img src="./_images/graph_walk_definition.png" width=50%>  
 有这样几条线路:  
 a. v1e1v2e3v3e4v3e5v4: 这是trail, 因为没有重复的边  
 b. e1e3e5e5e6: 这是普通的walk, 既有重复边又有重复顶点  
@@ -960,7 +960,7 @@ $$G\ is\ connected \iff \forall\ verticles\ v,w \in V(G), \exists\ a\ walk\ from
 3. G不存在另外一个子图, 包括H, 且还有H没有的顶点和边  
 
 举例说明:  
-<img src="../../_images/connected_component.png" width=50%>  
+<img src="./_images/connected_component.png" width=50%>  
 这个图包含3个connected component: v1v2v3, v4, v5v6v7v8  
 
 <a id="markdown-euler-circuits" name="euler-circuits"></a>
@@ -976,7 +976,7 @@ G是一个图, G的Euler Circuits是一个包含G的所有顶点和边的circuit
 如果一个图有顶点的degree是奇数odd, 那么这个图没有Euler Circuit 
 
 那么如果一个图的所有顶点的degree都是even, 那么就存在于euler circuit吗? 答案是不能, 比如下图:  
-<img src="../../_images/even_degree_graph_not_have_euler_circuit.png" width=50%>  
+<img src="./_images/even_degree_graph_not_have_euler_circuit.png" width=50%>  
 我们很容易看出, 因为这个图不是connected, 所以不存在euler circuit, 存在这样的定理:  
 如果一个图G是connected, 并且每个顶点的degree都是positive even integer, 那么这个图存在euler circuit. 证明详见教材. 这个证明方法也可以用来寻找一个图的Euler Circuit.  
 引申的定理: 如果一个图有euler circuit, 那么这个图必须是connected, 并且顶点都是positive even integer
@@ -1003,12 +1003,12 @@ $e_i$是distinct, $v_j$除了$v_0=v_n$其他都是distinct, 这条circuit组成�
 如果不满足这个条件, 那么这个图也不存在hamiltonian circuit
 
 举例说明:  
-<img src="../../_images/hamiltonian_circuit.png" width=50%>  
+<img src="./_images/hamiltonian_circuit.png" width=50%>  
 这个图是否存在hamiltonian circuit呢? 我们按照上面的定理来推导:  
 我们找到一个subgraph, 包含abcde这5个顶点, 且是connected, 满足了上面的1、2两个条件, 我们尝试满足第3、4个条件, acde的edge都是2, b现在有4个edge, 我们去掉一个试试, 会发现无论去掉b的哪一条edge, 都会让另一个端点的degree变成1, 所以这个graph不存在hamiltonnian circuit  
 
 另外一个有意思的问题: A travelling salesman problem  
-<img src="../../_images/a_travelling_salesman_problem.png" width=50%>  
+<img src="./_images/a_travelling_salesman_problem.png" width=50%>  
 
 ABCD4座城市和距离, 从A出发, 经过所有城市1次, 回到A, 这是一个hamiltonian circuit的问题, 对于顶点较少的情况, 我们可以一一列举:  
 

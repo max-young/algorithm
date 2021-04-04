@@ -224,19 +224,22 @@
 6. Find gcd(31415, 14142) by applying Euclid’s algorithm. 执行代码可知答案是1; 用Euclid的方法运行2次即可, 用sonsecutive integer check的方法要运行14142次, 差距悬殊
 
 7. 证明gcd(m, n) = gcd(n, m mod n)  
-    对于m、n, 存在m = x*n + y  
+    对于m、n, 存在$m = x \times n + y$  
     y是m mod n  
     假设m、n的最大公约是是r,将上面的等式两边除以r  
-    m/r = x*n/r + y/r  
+    $m/r = x \times n/r + y/r$  
     因为r是m、n的最大公约数, 所以m/r和x*n/r都是自然数  
-    那么y/r = m/r - x*n/r, y/r也是自然数, 所以y也能被r整除  
+    那么$y/r = m/r - x \times n/r$, y/r也是自然数, 所以y也能被r整除  
     所以r是n和y的公约数, 我们假设n和y的最大公约数是r1, 那么r <= r1  
-    我们对m = x*n + y两边除以r1, 得到:  
-    m/r1 = x*n/r1 + y/r1  
-    因为r1是n和y的最大公约数, 所以x*n/r1和y/r1都是自然数, 那么m/r1也是自然数  
+    我们对$m = x \times n + y$两边除以r1, 得到:  
+    $m/r1 = x \times n/r1 + y/r1$  
+    因为r1是n和y的最大公约数, 所以$x \times n/r1$和y/r1都是自然数, 那么m/r1也是自然数  
     所以r1是m和n的公约数, 所以r1 <= r  
     r <= r1 and r1 <= r, 那么m、n的最大公约数r就等于n、y(m mode n)的最大公约数r1  
     即gcd(m, n) = gcd(n, m mod n)
+
+    这里也可见[Discrete Mathmatics: Elementary Number Theory and Methods of Proof](./docs/discrete_mathmatics/discrete_mathmatics?id=_48-applications-algorithms)
+
 
 8. 当m < n时, 我们在做第一次运算的时候实际上就是把m、n交换了, 比m > n的情况多计算了一次
 

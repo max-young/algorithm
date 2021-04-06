@@ -614,4 +614,10 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
 4. Königsberg bridge  
   参照[discrete mathmatics:graphics-Königsberg bridge](./docs/discrete_mathmatics/discrete_mathmatics?id=königsberg-bridge)
 
-5. 
+5. Hamiltonian Circuits  
+  参照[discrete mathmatics:graphics-Königsberg bridge](./docs/discrete_mathmatics/discrete_mathmatics?id=hamiltonian-circuits)
+
+6. find a least edge trail and a least verticles path, then compare?
+  
+
+  

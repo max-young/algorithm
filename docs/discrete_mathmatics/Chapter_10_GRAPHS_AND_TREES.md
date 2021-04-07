@@ -3,6 +3,7 @@
 - [Chapter 10 GRAPHS AND TREES 图和树](#chapter-10-graphs-and-trees-图和树)
   - [_10.1 Graphs: Definitions and Basic Properties](#_101-graphs-definitions-and-basic-properties)
     - [definition](#definition)
+    - [一些特殊的Graph:](#一些特殊的graph)
     - [Degree](#degree)
   - [_10.2 Trails, Paths, and Circuits](#_102-trails-paths-and-circuits)
     - [Königsberg bridge](#königsberg-bridge)
@@ -62,11 +63,26 @@ edge-endpoint function里不包含$v_4$, 因为它是isolated vertex, 在vertex 
 
 图可以解决很多问题, 数中列举了网络、知识图谱、还有一个很有意思的问题: 素食者和食人族
 
-一些特殊的Graph:
-- Simple Graph
+#### 一些特殊的Graph:
+
+- simple graph  
   simple graph是指没有loop和parallel的graph.  
   因为这个特性, 用两个endpoint就能就能表示一条edge. 例如一条edge的endpont是v和w, 那么这条edge可以表示为{v, w}
-
+- complete graph
+  一个包含n个vertices的complete graph可以表示为$K_n$, 它是一个simple graph, 并且每一对vertices都有且只有一条edge相连.  
+  例如$K_1, K_2, K_3, K_4, K_5$可以这么表示:  
+  <img src="./_images/complete_graph.png" width=50%>
+- complete bipartite graph  
+  我把定义抄下来, 英文表达更准确:  
+  Let m and n be positive integers.A complete bipartite graph on (m,n) vertices, denoted $K_{m,n}$, is a simple graph with distinct  vertices $v_1, v_2, ..., v_m$ and $w_1, w_2, ..., w_n$ that satisfies the following properties: For all i, k = 1, 2, ..., m and for all j, l = 1, 2, ..., n,  
+  1. There is an edge from each vertex $v_i$ to each vertex $w_j$.
+  2. There is no edge from any vertex $v_i$ to any other vertex $v_k$.
+  3. There is no edge from any vertex $w_j$ to any other vertex $w_l$.  
+  
+  通俗的说: 一个grah的vertices分成两部分, 这两部分里的点各自都不相连, 但是这两部分的点互相相连, 举例说明$K_{3, 2}$和$K_{3, 3}$:  
+  <img src="./_images/complete_bipartite_graph.png" width=50%>  
+- subgraph
+  一个graph H是另一个graph G的subgraph, 那么H的所有vertex也都是G的vertex, H的所有edge也是G的edge, 并且endpoints都是一样的
 
 <a id="markdown-degree" name="degree"></a>
 #### Degree
@@ -77,6 +93,15 @@ G是一个图, v是其中一个顶点, v的degree表示为deg(v), 指以v为起�
 举例说明:  
 <img src="./_images/graph_degree.png" width=50%>  
 v1的dgree是0, v2的degree是2, v3的degree是4, 这个图的degree是6
+
+The handshake Theorem:  
+一个graph G, G的所有vertices的degree之和(也就是G的degree)是G的edge数量的两倍.  
+为什么叫handshake theorem呢, 因为可以把graph想像成一个舞会, 相互握手, 一次握手, 握手的两个人都会增加一个degree, 所以成为handshake theorem  
+
+根据这个定理我们得到推论: graph的total degree是偶数(even)  
+我们还能得到推论: 如果一个graph里有n的vertices是奇数(odd)degree, 那么n是偶数(even)
+
+
 
 <a id="markdown-_102-trails-paths-and-circuits" name="_102-trails-paths-and-circuits"></a>
 ### _10.2 Trails, Paths, and Circuits

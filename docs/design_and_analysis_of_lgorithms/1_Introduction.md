@@ -612,12 +612,39 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
   return index  
 
 4. Königsberg bridge  
-  参照[discrete mathmatics:graphics-Königsberg bridge](./docs/discrete_mathmatics/discrete_mathmatics?id=königsberg-bridge)
+  参照[discrete mathmatics:graphics-Königsberg bridge](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES?id=königsberg-bridge)
 
 5. Hamiltonian Circuits  
-  参照[discrete mathmatics:graphics-Königsberg bridge](./docs/discrete_mathmatics/discrete_mathmatics?id=hamiltonian-circuits)
+  参照[discrete mathmatics:Hamiltonian Circuits](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES?id=hamiltonian-circuits)
 
 6. find a least edge trail and a least verticles path, then compare?
-  
 
-  
+7. tavelling-salesman problem参照[discrete mathmatics:Hamiltonian Circuits](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES?id=hamiltonian-circuits)  
+  graph-coloring problem好像是一个很复杂的问题, 日后再看
+
+8. 同上graph-coloring problem
+
+9. 给定一组点, 判断这组点是否在一个圆周上. 设计一个算法.
+  ALGORITHM check_circle  
+  //Input: a list A of (x, y) points  
+  //Output: Boolean that whether points in A are in a circle line  
+  if len(A) <= 3:  
+    return true  
+  $x_0, y_0$ = A[0]  
+  $x_1, y_1$ = A[1]  
+  $x_2, y_2$ = A[2]  
+  // 求得三个点的圆心  
+  c = (a, b)  
+  $(x_0 - a)^2 + (y_0 - b)^2 = (x_1 - a)^2 + (y_1 - b)^2$  
+  $(x_1 - a)^2 + (y_1 - b)^2 = (x_2 - a)^2 + (y_2 - b)^2$  
+  // 求得a, b并计算得到半径  
+  $bj = \sqrt{(x_0 - a)^2 + (y_0 - b)^2}$  
+  for i in A[3:]:  
+    if $(i.x - a)^2 + (i.y - b)^2 \neq bj$:  
+      return false  
+  return true
+
+10. 两条线段是否相交, 两条线的端点x, y已知  
+  ALGORITHM check_two_line_have_common_point  
+  //Input: two line with endpoints coordinate, A((a, b), (c, d)), B((e, f), (g, h))  
+  //Output: boolean that whether A, b have common point  

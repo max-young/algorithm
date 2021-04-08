@@ -26,6 +26,9 @@
   - [Geometric problems几何问题](#geometric-problems几何问题)
   - [Numerical problems数值问题](#numerical-problems数值问题)
   - [Exercises](#exercises)
+- [_1.4 Fundamental Data Structures](#_14-fundamental-data-structures)
+  - [Linear Data Structures线性数据结构](#linear-data-structures线性数据结构)
+  - [Graphs图形](#graphs图形)
 
 <!-- /TOC -->
 
@@ -620,7 +623,8 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
 6. find a least edge trail and a least verticles path, then compare?
 
 7. tavelling-salesman problem参照[discrete mathmatics:Hamiltonian Circuits](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES?id=hamiltonian-circuits)  
-  graph-coloring problem好像是一个很复杂的问题, 日后再看
+  graph-coloring problem好像是一个很复杂的问题
+  // TODO 日后再看
 
 8. 同上graph-coloring problem
 
@@ -643,8 +647,46 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
     if $(i.x - a)^2 + (i.y - b)^2 \neq bj$:  
       return false  
   return true
+  // TODO 日后再看
 
 10. 两条线段是否相交, 两条线的端点x, y已知  
-  ALGORITHM check_two_line_have_common_point  
-  //Input: two line with endpoints coordinate, A((a, b), (c, d)), B((e, f), (g, h))  
-  //Output: boolean that whether A, b have common point  
+  // TODO 日后再看
+
+<a id="markdown-_14-fundamental-data-structures" name="_14-fundamental-data-structures"></a>
+## _1.4 Fundamental Data Structures
+
+很多算法都是在操作数据, 数据的组织形式在设计和分析算法的工程中扮演重要的角色.
+
+A **data structure** can be defined as a particular schema of organizing related data items.
+
+<a id="markdown-linear-data-structures线性数据结构" name="linear-data-structures线性数据结构"></a>
+### Linear Data Structures线性数据结构
+
+最重要的两种基本数据类型是array和linked list.
+
+array是一系列同一种类型的数据集合, 在内存里连续存储, 能够通过index获取其中的数据, 且时间一样.  
+index一般是数字0至n-1, 也有其他形式的index  
+array可以用来实现其他数据结构, 比如string字符串, string是一系列字母, 然后以一个特殊字符结尾.
+
+linked list链表是一系列nodes, node包括数据, 和1个或者多个pointer, 指向其他node  
+在单链表singly linked list里, 除了最后一个node, 其他node都含有一个pointer指向下一个node  
+要获取node, 需要从第一个node依次往下找, 效率不高. 但是插入和删除效率高, 因为linked list不像array需要顺序存储.
+linked list可以从一个特殊的node开始, 这个node称为header, 可以包含一些特殊信息, 比如linked list的长度, 指向最后一个node的pointer等信息
+另外一个扩展的数据结构是doubly linked list, 除了首尾两个node, 其他node都包含指向其前后两个node的pointer  
+
+array和linked list用来表示list, list的基本操作是search查找、insert插入、delete删除
+另外两种list的特殊数据结构是stack和queue:
+
+stack是只能在end末端插入和删除元素的list, 这个末端称之为top, 因为我们图像化stack的时候习惯从垂直来看, 而不是水平方向.  
+stack有last in first out(LIFO)的风格, 就像堆盘子一样  
+stack可以应用在recursive algorithms上
+
+queue是一个在一端删除, 另外一端增加的list, 删除的那一端叫做front, 删除的操作叫*dequeue*, 增加的那一端叫rear, 增加的操作叫*enqueue*  
+queue有first in first out(FIFO)的风格, 如果银行了单个服务台服务一列客户  
+queue可以应用在graph problems上
+
+很多重要的应用里需要从一系列动态变化的数据中选出优先级高的数据, 满足这种需求的数据结构叫priority queue.  
+一个priority queue是一个有序的数据集合. 其主要的操作是查找最大的元素, 删除最大的元素, 添加一个新元素. 后两个操作都可能会得出新的priority queue.  
+要实现这样的数据类型, 可以用array或者sorted array, 但是效率都不高. 在6.4章节会介绍heap这个数据类型, 这是更好的解决方案.
+
+### Graphs图形

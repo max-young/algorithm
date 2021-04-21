@@ -1,8 +1,6 @@
-### 这里是我的算法学习相关笔记
+### Algorithm
 
-学习了下面两本书.
-
-笔记用[docsify](https://docsify.js.org/)进行了部署, 地址是: <https://max-young.github.io/algorithm/>
+用[docsify](https://docsify.js.org/)部署, 地址是: <https://max-young.github.io/algorithm/>
 
 文中代码由C++实现
 

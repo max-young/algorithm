@@ -3,7 +3,7 @@
 - [Chapter 10 GRAPHS AND TREES 图和树](#chapter-10-graphs-and-trees-图和树)
   - [_10.1 Graphs: Definitions and Basic Properties](#_101-graphs-definitions-and-basic-properties)
     - [definition](#definition)
-    - [一些特殊的Graph:](#一些特殊的graph)
+    - [一些特殊的Graph](#一些特殊的graph)
     - [Degree](#degree)
   - [_10.2 Trails, Paths, and Circuits](#_102-trails-paths-and-circuits)
     - [Königsberg bridge](#königsberg-bridge)
@@ -73,7 +73,7 @@ edge-endpoint function里不包含$v_4$, 因为它是isolated vertex, 在vertex 
 
 图可以解决很多问题, 数中列举了网络、知识图谱、还有一个很有意思的问题: 素食者和食人族
 
-#### 一些特殊的Graph:
+#### 一些特殊的Graph
 
 - simple graph  
   simple graph是指没有loop和parallel的graph.  
@@ -251,14 +251,14 @@ tree是没有circuit的graph, 并且是connected, 如果不是connected, 那么
   如果这个tree有两个以上vertex, degree等于1的vertex成为terminal vertex(或者称为leaf), 大于的vertex称为internal vertex(或者叫branch vertex)  
 - 一个有n个vertices的tree有n-1个edge  
 - 如果一个graph G是connected, C是G的一个circuit, 如果移除C里的一个edge, 那么G依然是connected
-- 如果一个Graph G是cinnected, 有n个vertices, n-1个edge, 那么G是一个tree
+- 如果一个Graph G是connected, 有n个vertices, n-1个edge, 那么G是一个tree
 
 <a id="markdown-_106-rooted-trees" name="_106-rooted-trees"></a>
 ### _10.6 Rooted Trees
 
 #### 定义
 
-rooted tree是有一个特殊的vertex, 称之为root. 其他vertex都存在一条唯一的以root为起点的path.  
+rooted tree是有一个特殊的vertex, 称之为root. 其他vertex都存在一条唯一的以root为起点的path(如果存在多条, 则会构成circuit).  
 vertex的level是从root到此vertex的edge的数量.  
 rooted tree的height是指最长的一条path的数量.  
 一个vertex v的children是指远离root、和v相邻的vertex. 如果w是v的children, 那么v称之为w的parent.  

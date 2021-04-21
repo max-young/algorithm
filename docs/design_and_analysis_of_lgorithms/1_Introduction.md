@@ -34,6 +34,8 @@
     - [Weighted Graphs](#weighted-graphs)
     - [Paths and Cycles](#paths-and-cycles)
   - [Trees](#trees)
+    - [Rooted Trees](#rooted-trees)
+    - [Ordered Trees](#ordered-trees)
 
 <!-- /TOC -->
 
@@ -735,3 +737,26 @@ cycle指的是discrete mathmatics里的circuit
 如果一个graph没有cycle, 那么我们说这个graph acyclic
 
 ### Trees
+
+tree相关知识可以参照discrete mathmatics的内容, 参照[discrete mathmatics: tree](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES?id=_105-trees-树)
+
+tree是一个没有cycle(circuit), 且是connected的graph, 如果不connected, 那么就是forest
+
+tree的edge的数量是vertices的数量减1
+
+#### Rooted Trees
+
+我们可以从一个tree里选取一个点, 称之为**root**, 其他点都有唯一一条simple path到达root(这是由tree的特性决定的, 如果存在多条, 则会构成cycle)  
+显示的时候可以把root放在最上面, 我们称这样的tree为**rooted tree**
+
+对于一个tree T上的一个vertex v, 从root到v的simple path上的vertices成为v的**ancestors**(包括v), 如果排除v, 则是**proper ancestors**  
+如果edge {u, v}是这条simple path上的最后一条edge, 那么u是v的parent, v是u的child.  
+如果vertices的parent相同, 则它们是**siblings**  
+没有child的vertex称为**leaf**  
+一个vertex至少有一个child, 称之为**parental**
+vertices的ancestor是v, 那么这些vertices称之为v的**descendants**, 排除v则称之为**proper descendants**  
+一个vertex v和它的所有descendants以及相连的edges称之为T的**subtree**, 其为root为v的rooted tree  
+v的**depth**是从root到v的simple path的长度  
+tree的**height**是指所有顶点里最长的simple path的长度
+
+#### Ordered Trees

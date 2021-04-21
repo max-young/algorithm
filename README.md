@@ -11,5 +11,5 @@
 [Introduction to the Design and Analysis of Algorithms](https://book.douban.com/subject/6853975/)
 
 <!-- <div align="center"><img src="./_images/book.jpeg" width="25%"></div> -->
-![](https://img3.doubanio.com/view/subject/l/public/s11240220.jpg)  
+![](./_images/discrete_mathematics.jpg)  
 [Discrete Mathematics](https://book.douban.com/subject/30421347/)

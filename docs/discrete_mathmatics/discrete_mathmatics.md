@@ -1,5 +1,3 @@
-![](https://img3.doubanio.com/view/subject/l/public/s11240220.jpg)
-
 <!-- TOC -->
 
 - [Preface](#preface)

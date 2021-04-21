@@ -10,4 +10,4 @@
 
 <!-- <div align="center"><img src="./_images/book.jpeg" width="25%"></div> -->
 ![](./_images/discrete_mathematics.jpg)  
-[Discrete Mathematics](https://book.douban.com/subject/30421347/)
+[Discrete Mathematics](https://book.douban.com/subject/5495234/)

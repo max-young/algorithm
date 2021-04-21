@@ -29,6 +29,11 @@
 - [_1.4 Fundamental Data Structures](#_14-fundamental-data-structures)
   - [Linear Data Structures线性数据结构](#linear-data-structures线性数据结构)
   - [Graphs图形](#graphs图形)
+    - [Definition定义](#definition定义)
+    - [Representation表示](#representation表示)
+    - [Weighted Graphs](#weighted-graphs)
+    - [Paths and Cycles](#paths-and-cycles)
+  - [Trees](#trees)
 
 <!-- /TOC -->
 
@@ -690,3 +695,43 @@ queue可以应用在graph problems上
 要实现这样的数据类型, 可以用array或者sorted array, 但是效率都不高. 在6.4章节会介绍heap这个数据类型, 这是更好的解决方案.
 
 ### Graphs图形
+
+#### Definition定义  
+
+graph相关知识可以参照discrete mathmatics的内容, 参照[discrete mathmatics:Hamiltonian Circuits](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES)
+这里记录一下discrete mathmatics没有的信息
+
+一个graph的edge相对缺失比较少, 我们称这个graph dense(稠).  
+(为什么是“缺失比较少”这样的表达, 因为是相对于complete而言的, 一个graph的所有vertices都有edge相连, 我们称其complete)  
+一个graph的edge相对于vertices比较少, 我们称这个graph sparse(疏).  
+
+#### Representation表示
+
+在discrete mathmatics里说到, graph可以用adjacency matrix表示, 这里不再赘述, 本书还提到另外一种表示方式:  
+adjacency list: a collection of linked lists  
+例如这样的一个graph:  
+<img src="./_images/graph1.png" width=30%>  
+用adjacency matrix和adjacency list分别表示如下:  
+<img src="./_images/graph_representation.png" width=50%>  
+
+如果graph sparse, 那么用adjacency list表示, 更节省空间. 反之, adjacency matrix更好.  
+另外两种方式的选择, 也需要据问题和算法的类型而定
+
+#### Weighted Graphs
+
+Weighted Graph是指给edge赋给数值的graph. 这个数值称为weights或者costs.  
+这个类型的graph是来源于现实世界的问题: 比如最短路径等等.
+
+weighted graph也可以用上面的两种方法表示, 如下图:  
+<img src="../../_images/weighted_graph.png" width=50%>  
+$\infty$表示两个vertices没有edge相连
+
+#### Paths and Cycles
+
+这里的path指的是discrete mathmatics里的walk  
+simple path指的是discrete mathmatics里的path
+
+cycle指的是discrete mathmatics里的circuit  
+如果一个graph没有cycle, 那么我们说这个graph acyclic
+
+### Trees

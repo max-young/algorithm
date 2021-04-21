@@ -12,8 +12,18 @@
     - [Euler Circuits](#euler-circuits)
     - [Hamiltonian Circuits](#hamiltonian-circuits)
   - [_10.5 Trees 树](#_105-trees-树)
+    - [Tree的定义](#tree的定义)
+    - [Characterizing Trees树的特点](#characterizing-trees树的特点)
   - [_10.6 Rooted Trees](#_106-rooted-trees)
+    - [定义](#定义)
+    - [Binary Trees](#binary-trees)
   - [_10.7 Spanning Trees and Shortest Paths](#_107-spanning-trees-and-shortest-paths)
+    - [Spanning Trees](#spanning-trees)
+    - [Minimum Spanning Trees](#minimum-spanning-trees)
+      - [weighted graph](#weighted-graph)
+      - [Kruskal Algorithm](#kruskal-algorithm)
+      - [Prim Algorithm](#prim-algorithm)
+      - [Dijkstra Shortest Path Algorithm](#dijkstra-shortest-path-algorithm)
 
 <!-- /TOC -->
 
@@ -221,12 +231,130 @@ ABCD4座城市和距离, 从A出发, 经过所有城市1次, 回到A, 这是一�
 <a id="markdown-_105-trees-树" name="_105-trees-树"></a>
 ### _10.5 Trees 树
 
-树其实是一种特殊的图
+#### Tree的定义
 
-A graph is said to be circuit-free if, and only if, it has no circuits. A graph is called a tree if, and only if, it is circuit-free and connected. A trivial tree is a graph that consists of a single vertex. A graph is called a forest if, and only if, it is circuit-free and not connected.
+树其实是一种特殊的图
+> A graph is said to be circuit-free if, and only if, it has no circuits. A graph is called a tree if, and only if, it is circuit-free and connected. A trivial tree is a graph that consists of a single vertex. A graph is called a forest if, and only if, it is circuit-free and not connected.
+
+tree是没有circuit的graph, 并且是connected, 如果不是connected, 那么就是forest
+
+一些tree的例子, 很有意思:
+- A Decision Tree
+- A Parse Tree: 比如语意语法分析
+
+#### Characterizing Trees树的特点
+
+下面的定理的证明都很有意思, 可参照课本
+
+- tree至少有一个vertex的degree是1  
+  如果一个tree只有一个或两个vertrx, 那么这两个vertex成为terminal vertex.  
+  如果这个tree有两个以上vertex, degree等于1的vertex成为terminal vertex(或者称为leaf), 大于的vertex称为internal vertex(或者叫branch vertex)  
+- 一个有n个vertices的tree有n-1个edge  
+- 如果一个graph G是connected, C是G的一个circuit, 如果移除C里的一个edge, 那么G依然是connected
+- 如果一个Graph G是cinnected, 有n个vertices, n-1个edge, 那么G是一个tree
 
 <a id="markdown-_106-rooted-trees" name="_106-rooted-trees"></a>
 ### _10.6 Rooted Trees
 
+#### 定义
+
+rooted tree是有一个特殊的vertex, 称之为root. 其他vertex都存在一条唯一的以root为起点的path.  
+vertex的level是从root到此vertex的edge的数量.  
+rooted tree的height是指最长的一条path的数量.  
+一个vertex v的children是指远离root、和v相邻的vertex. 如果w是v的children, 那么v称之为w的parent.  
+如果两个vertex有同一个parent, 那么称两者为siblings.  
+如果v处在root和w的path的线路上, 那么v是w的ancestor, w是v的descendant.  
+
+#### Binary Trees
+
+如果一个rooted tree的每一个vertex最多只有两个children, 这两个children我们称为left child和right child, 那么这个rooted tree是binary tree.  
+一个full binary tree是指每个parent都有两个children.  
+一个binary tree是的left child, 以之为root、和它的所有descendants组成left subtree. right child则组成right subtree. 
+
+如果一个full binary tree T有k个internal vertices, 那么T共有2k + 1个vertices, 以及k + 1个terminal vertices.  
+证明: T的vertices可以分为有parent的vertex和没有parent的vertex, 没有parent的vertex只有一个, 那就是root, 每个internal vertex都有2个children, 且不会和其他vertex共有, 所以有parent的vertex共有2k个, 总的vertex就有2k + 1个  
+同时, T的vertices可以分为internal和terminal, internal有k个, 那么terminal vertices就有2k + 1 - k = k + 1个
+
+full binary tree的height是h, 有t个terminal vertices, 那么: $t \le 2^k$, $log_2t\le h$
+
 <a id="markdown-_107-spanning-trees-and-shortest-paths" name="_107-spanning-trees-and-shortest-paths"></a>
 ### _10.7 Spanning Trees and Shortest Paths
+
+#### Spanning Trees
+
+定义: Spanning tree是一个graph G的subgraph, 包含G的所有vertices, 并且是tree  
+
+书中举了一个生动的例子, 航空公司在能开通的航线范围内, 要用最少的航线连通所有的城市.  
+要满足这个条件, 必须是一个tree, 因为如果航线有circuit, 那么我们总是可以去掉一条航线, 而不影响城市的连通.
+
+#### Minimum Spanning Trees
+
+在上面航线的例子里, 航线是有长度的, 我们为了经济性, 如何选择最短路径的spanning tree呢?
+
+##### weighted graph  
+**weighted graph**是指一个graph, 他的每一条edge都有正实数的属性, 我们称之为**weight**.  
+所有edges的weight的和, 称为这个graph的**total weight**.  
+**minimum spanning tree**是指一个graph的所有spanning tree**中total weight最小的那个spanning tree.  
+G是一个weighted graph, e是G的一条edge, 那么w(e)是指e的weight, w(G)指G的total weight
+
+##### Kruskal Algorithm  
+
+ALGORITHM kruskal
+// 找到一个graph的minumum spanning tree  
+// Input: graph G, connected, n vertices  
+// Output: tree  
+初始化T为minimum spanning tree, 还没有vertex  
+E是G的所有edge的set  
+while (i < n-1) do(为什么是n-1呢? 因为tree的edge的数量是vertex的数量减去1)  
+　　选择E中最下weight的edge e  
+　　从E中删除e  
+　　如果把e加上T上之后, 没有构成circuit, 则把e加上T上  
+　　i += 1  
+end while
+
+书中有例子, 参照例子更好理解
+
+##### Prim Algorithm
+
+另外一种求得minimum spanning tree的算法  
+
+ALGORITHM prim  
+// 找到一个graph的minumum spanning tree  
+// Input: graph G, connected, n vertices  
+// Output: tree  
+init spanning tree T with 1 random select vertex v
+V is set of n vertices without v  
+while i < n - 1 do  
+  　从与T相邻的所有edge中选取一条edge e, 这条edge满足:  
+　　1. T加上e还是tree, 即没有circuit  
+　　2. 与其他edge相比, T加上e之后的total weight最小  
+　　T加上e和e的另一端vertex w, V去掉w  
+next i
+
+书中有例子, 参照例子更好理解
+
+##### Dijkstra Shortest Path Algorithm
+
+如何求得weighted graph中两个vertex的最短路径呢? 上面两个算法提供了灵感  
+Dijkstra's Shortest Path Algorithm是Prim's Algorithm的变体
+
+Algorithm Dijkastra  
+// Input: graph G, starting vertex a, ending vertex z  
+    L(u)代表起点a到vertex u的最短路径(integer)  
+    $\infty$表示大于w(G)的一个数  
+    w(u, v)代表u,v两个vertex组成的edge的weight    
+// Output: L(z), z到a的最短路径  
+1. init a graph T with a vertex a, V(T)是T的vertex的集合, E(T)是T的vertex的集合  
+2. L(a) = 0, G的其他顶点u的L(u) = $\infty$
+3. v = a, F = {a}, v表示最近添加到T的vertex
+4. while $z \notin V(T)$  
+    4a. $F := (F - {v}) \cup {vertices that adjacent v and not in V(T)}$  
+        这里不太好理解, F称之为fringe  
+    4b. 对于所有和v相邻的vertex并不属于V(T)的vertex u  
+        if L(v) + w(v, u) < L(u) then:  
+            L(u) := L(v) + w(v, u)  
+            D(u) := v (D(u)标记了edge的起点)  
+  4c. 在上一步中找到最小的L(x), 将x加到V(T), {D(x), x}加到E(T). v := x.  
+end while
+
+书中有例子, 参照例子更好理解. 这个算法实际上求得了G中所有vertices到a的最短距离

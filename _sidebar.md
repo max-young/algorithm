@@ -2,6 +2,7 @@
 
 * [Preface](./docs/design_and_analysis_of_lgorithms/Preface.md)
 * [1-Introduction](./docs/design_and_analysis_of_lgorithms/1_Introduction.md)
+* [2-Fundamentals_of_the_Analysis_of_Algorithm_Efficiency](./docs/design_and_analysis_of_lgorithms/2_Fundamentals_of_the_Analysis_of_Algorithm_Efficiency.md)
 
 --------------- Discrete Mathematics ---------------
 

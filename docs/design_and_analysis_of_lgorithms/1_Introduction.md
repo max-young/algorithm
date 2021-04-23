@@ -28,14 +28,11 @@
   - [Exercises](#exercises)
 - [_1.4 Fundamental Data Structures](#_14-fundamental-data-structures)
   - [Linear Data Structures线性数据结构](#linear-data-structures线性数据结构)
-  - [Graphs图形](#graphs图形)
-    - [Definition定义](#definition定义)
-    - [Representation表示](#representation表示)
-    - [Weighted Graphs](#weighted-graphs)
-    - [Paths and Cycles](#paths-and-cycles)
+  - [Graphs](#graphs)
   - [Trees](#trees)
-    - [Rooted Trees](#rooted-trees)
-    - [Ordered Trees](#ordered-trees)
+  - [Sets and Dictionaries](#sets-and-dictionaries)
+  - [Excercises](#excercises-1)
+  - [Summary](#summary)
 
 <!-- /TOC -->
 
@@ -474,7 +471,7 @@ while n != 0
     n = x  
     s = str(y) + s  
 return s
-代码见: <a href="../code/1_Introduction/1.2_Fundamental_of_Algorithmic_Problem_Solving/e5_decimal_to_binary.cpp">decimal to binary</a>
+代码见: <a href="../../code/1_Introduction/1.2_Fundamental_of_Algorithmic_Problem_Solving/e5_decimal_to_binary.cpp">decimal to binary</a>
 
 6. ATM algorithm  
     我没搞明白这个问题, 姑且认为是取钱的步骤吧  
@@ -602,7 +599,7 @@ Graph图形是vertices(顶点)的集合, 它们用edges边连接.
   for i = 0 to n-1 do  
       C[Count[i]] = A[i]  
   return s  
-  代码见[comparisonCountingSort](../code/1_Introduction/1.3_Important_Problem_Types/e1_comparison_counting_sort.cpp)  
+  代码见[comparisonCountingSort](../../code/1_Introduction/1.3_Important_Problem_Types/e1_comparison_counting_sort.cpp)  
   is this algorithm stable?  
       no. 如A[i] < A[j]改成A[i] <= A[j], 则是stable  
   is it in-place?  
@@ -671,11 +668,11 @@ A **data structure** can be defined as a particular schema of organizing related
 
 最重要的两种基本数据类型是array和linked list.
 
-array是一系列同一种类型的数据集合, 在内存里连续存储, 能够通过index获取其中的数据, 且时间一样.  
+**array**是一系列同一种类型的数据集合, 在内存里连续存储, 能够通过index获取其中的数据, 且时间一样.  
 index一般是数字0至n-1, 也有其他形式的index  
 array可以用来实现其他数据结构, 比如string字符串, string是一系列字母, 然后以一个特殊字符结尾.
 
-linked list链表是一系列nodes, node包括数据, 和1个或者多个pointer, 指向其他node  
+**linked list**链表是一系列nodes, node包括数据, 和1个或者多个pointer, 指向其他node  
 在单链表singly linked list里, 除了最后一个node, 其他node都含有一个pointer指向下一个node  
 要获取node, 需要从第一个node依次往下找, 效率不高. 但是插入和删除效率高, 因为linked list不像array需要顺序存储.
 linked list可以从一个特殊的node开始, 这个node称为header, 可以包含一些特殊信息, 比如linked list的长度, 指向最后一个node的pointer等信息
@@ -684,11 +681,11 @@ linked list可以从一个特殊的node开始, 这个node称为header, 可以包
 array和linked list用来表示list, list的基本操作是search查找、insert插入、delete删除
 另外两种list的特殊数据结构是stack和queue:
 
-stack是只能在end末端插入和删除元素的list, 这个末端称之为top, 因为我们图像化stack的时候习惯从垂直来看, 而不是水平方向.  
+**stack**是只能在end末端插入和删除元素的list, 这个末端称之为top, 因为我们图像化stack的时候习惯从垂直来看, 而不是水平方向.  
 stack有last in first out(LIFO)的风格, 就像堆盘子一样  
 stack可以应用在recursive algorithms上
 
-queue是一个在一端删除, 另外一端增加的list, 删除的那一端叫做front, 删除的操作叫*dequeue*, 增加的那一端叫rear, 增加的操作叫*enqueue*  
+**queue**是一个在一端删除, 另外一端增加的list, 删除的那一端叫做front, 删除的操作叫dequeue, 增加的那一端叫rear, 增加的操作叫enqueue  
 queue有first in first out(FIFO)的风格, 如果银行了单个服务台服务一列客户  
 queue可以应用在graph problems上
 
@@ -696,9 +693,9 @@ queue可以应用在graph problems上
 一个priority queue是一个有序的数据集合. 其主要的操作是查找最大的元素, 删除最大的元素, 添加一个新元素. 后两个操作都可能会得出新的priority queue.  
 要实现这样的数据类型, 可以用array或者sorted array, 但是效率都不高. 在6.4章节会介绍heap这个数据类型, 这是更好的解决方案.
 
-### Graphs图形
+### Graphs
 
-#### Definition定义  
+**Definition**
 
 graph相关知识可以参照discrete mathmatics的内容, 参照[discrete mathmatics:Hamiltonian Circuits](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES)
 这里记录一下discrete mathmatics没有的信息
@@ -707,7 +704,7 @@ graph相关知识可以参照discrete mathmatics的内容, 参照[discrete mathm
 (为什么是“缺失比较少”这样的表达, 因为是相对于complete而言的, 一个graph的所有vertices都有edge相连, 我们称其complete)  
 一个graph的edge相对于vertices比较少, 我们称这个graph sparse(疏).  
 
-#### Representation表示
+**Representation**
 
 在discrete mathmatics里说到, graph可以用adjacency matrix表示, 这里不再赘述, 本书还提到另外一种表示方式:  
 adjacency list: a collection of linked lists  
@@ -719,16 +716,16 @@ adjacency list: a collection of linked lists
 如果graph sparse, 那么用adjacency list表示, 更节省空间. 反之, adjacency matrix更好.  
 另外两种方式的选择, 也需要据问题和算法的类型而定
 
-#### Weighted Graphs
+**Weighted Graphs**
 
 Weighted Graph是指给edge赋给数值的graph. 这个数值称为weights或者costs.  
 这个类型的graph是来源于现实世界的问题: 比如最短路径等等.
 
 weighted graph也可以用上面的两种方法表示, 如下图:  
-<img src="../../_images/weighted_graph.png" width=50%>  
+<img src="./_images/weighted_graph.png" width=50%>  
 $\infty$表示两个vertices没有edge相连
 
-#### Paths and Cycles
+**Paths and Cycles**
 
 这里的path指的是discrete mathmatics里的walk  
 simple path指的是discrete mathmatics里的path
@@ -744,7 +741,7 @@ tree是一个没有cycle(circuit), 且是connected的graph, 如果不connected, 
 
 tree的edge的数量是vertices的数量减1
 
-#### Rooted Trees
+**Rooted Trees**
 
 我们可以从一个tree里选取一个点, 称之为**root**, 其他点都有唯一一条simple path到达root(这是由tree的特性决定的, 如果存在多条, 则会构成cycle)  
 显示的时候可以把root放在最上面, 我们称这样的tree为**rooted tree**
@@ -759,4 +756,91 @@ vertices的ancestor是v, 那么这些vertices称之为v的**descendants**, 排�
 v的**depth**是从root到v的simple path的长度  
 tree的**height**是指所有顶点里最长的simple path的长度
 
-#### Ordered Trees
+**Ordered Trees**  
+
+ordered tree是指一个tree, 它的所有vertices的children都是有序的
+
+**binary tree**是指所有vertices最多只有2个children的tree.  
+两个children可以称为**left child, right child**  
+以这两个children作为root的tree称为**left subtree, right subtree**  
+如果所有vertices都大于left subtree上的vertices, 小于right subtree上的vertices, 那么这个tree称为**binary search tree**  
+binary tree满足:  
+$$log_2n \le h \le n-1$$
+n是vertices数量, h是高度  
+
+binary tree在计算机里可以用linked list来表示, 每个node包含自身的值, 以及left child和right child的pointer  
+
+ordered tree可以用first child-next sibling representation方法表示, 同样是用linked list, 每个node包含自身的值, 以及第一个child的pointer, 和下一个sibling的pointer 
+
+### Sets and Dictionaries
+
+**set**是一组无序的但是unique的元素elements.  
+我们可以详细指定其中的元素, 也可以用满足公共的属性来表示.  
+set的基本操作有: 检查某元素是否属于这个set, 计算两个set的union, 以及intersection
+
+set的表示方法:  
+书中提到了一种很有意思的表示方法: 一个set s是一个large set的subset, 这个large set我们称为universal set.  
+我们可以用bit string来表示这个set s, 例如universal set是{1, 2, 3, 4, 5, 6, 7, 8, 9}, s是{2, 3, 5, 7}  
+那么我们可以用011010100来表示s, 值得注意的是: 我们假定universal是有序的.  
+这样表示的好处是执行set操作非常快, 不好的地方是占用内存比较大.
+
+如果我们在上面提到的set的操作的基础上, 还要进行搜索, 添加, 删除. 我们就需要用到这种数据结构了: **Dictionary**  
+
+
+我们在说上面这些数据结构的时候, 都会特别提到这些这些数据结构需要支持什么操作.  
+这些操作实际上构成了这些抽象数据的重要决定特征. 从queue、stack就能看出来.  
+在计算机科学里有个术语叫ADT(abstract data type).  
+在面向对象的语言里, 如C++, 可以自定义数据类型, 我们称之为class 
+
+### Excercises
+
+1. array在内存里是顺序存储的
+
+2. 对于sorted array, 可以用binary search. 对于linked list, 没有办法, 从第一个开始查
+
+3. (a, c), (c, d)
+
+4. 除了对角线, matrix其他元素都是1; 对角线又一个元素是1; 其中一行和对应的列是0, 自身连自身可以是1.
+
+5. 没有idea. 之后的章节有讲解.
+
+6. discrete mathmatics里有证明  
+
+7. 实现查找、增加、删除的操作; 铜钱一个一样, 但是需要做这些操作之后还要保持sorted; 用linked list表示, 操作时还要保持binary search tree的属性, 操作包括增加节点, 搜索节点, 删除节点.
+
+8. no idea
+
+9. sorted array; dictionary; 涉及postfix notation, 以后看吧.
+
+10. anagram algorithm  
+ALGORITHM check_anagram  
+// Input: string a, string b  
+// Output: boolean whether a and b is anagram  
+init a array count with 256 zero  
+int i = 0  
+while a[i] and b[i]:  
+  count[a[i]] ++  
+  count[b[i]] --  
+  i++  
+if a[i] or b[i]:  
+  return false  
+for i in count:  
+  if i != 0:  
+    return false  
+return true
+代码见<a href="../../code/1_Introduction/1.4_Fundamental_Data_Structures/e10_anagram.cpp">anagram algorithm</a>
+
+### Summary
+
+- 一个算法是由一系列清晰无误的步骤组成, 在有限的时间内解决特定问题. 算法的输入即是问题的一个实例.
+- 算法可以由自然语言或者伪代码来表示. 也可以用计算机语言来实现.
+- 算法有多种分类, 主要的两种分类是:
+  - 根据问题类型分类.
+  - 根据设计方法分类.
+- 主要的问题类型包括: 查找、排序、字符串处理、图形问题、组合问题、几何问题、数值问题.
+- 算法设计技术(策略或者范式)是用算法解决问题的通用方法, 应用在各个领域.
+- 算法设计虽然是一项创造性的工作, 但是依然可以从中找到一些关联动作和方法.
+- 一个好的算法是不断努力和契而不舍的结果.
+- 一个问题通常可以用多种算法来解决, 比如计算最大公约数.
+- 算法以数据作为操作对象, 所以数据结构在算法设计中非常重要, 比较重要的数据结构有:linear data structure: array, linked list, stack, queue; graph; tree; set and dictionary.
+- 一系列支持特定操作的数据构成了某种数据类型, 我们称之为ADT(abstract data type), 在面向对象的计算机语言里通过class的方式来实现ADT.

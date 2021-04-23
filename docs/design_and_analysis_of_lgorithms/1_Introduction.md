@@ -197,7 +197,7 @@
     // Output: a positive integer  
     i = 1  
     while i * i <= n  
-        i += 1  
+      i += 1  
     return i - 1
 
 5. Design an algorithm to find all the common elements in two sorted lists of numbers. For example, for the lists 2, 5, 5, 5 and 2, 2, 3, 5, 5, 7, the output should be 2, 5, 5. What is the maximum number of comparisons your algorithm makes if the lengths of the two given lists are m and n, respectively?  
@@ -206,9 +206,8 @@
     Step2: 定义初始化index, m_index = 0, n_index = 0  
     Step3: 如果m_index = len(m) - 1或者n_index = len(n) - 1, 则返回r  
     Step4: 如果m[m_index] > n[n_index], 则n_index自增1;  
-                如果m[m_index] = n[n_index], 则将m[m_index]加入到list r, m_index和n_index都自增1;  
-                如果m[m_index] < n[n_index], 则m_index自增1;  
-                执行Step3  
+      如果m[m_index] = n[n_index], 则将m[m_index]加入到list r, m_index和n_index都自增1;  
+      如果m[m_index] < n[n_index], 则m_index自增1;执行Step3  
     Step5: 返回list r
 
     Preseudocode  
@@ -218,14 +217,14 @@
     r = []  
     m_index = n_index = 0  
     while m_index < len(m) || n_index < len(n)  
-        if m[m_index] < n[n_index]:  
-            m_index ++  
-        elif m[m_index] == n[n_index]:  
-            r.append(m[m_index])  
-            m_index ++  
-            n_index ++  
-        elif m[m_index] > n[n_index]:  
-            n_index ++  
+      if m[m_index] < n[n_index]:  
+        m_index ++  
+      elif m[m_index] == n[n_index]:  
+        r.append(m[m_index])  
+        m_index ++  
+        n_index ++  
+      elif m[m_index] > n[n_index]:  
+        n_index ++  
     return r
 
 6. Find gcd(31415, 14142) by applying Euclid’s algorithm. 执行代码可知答案是1; 用Euclid的方法运行2次即可, 用sonsecutive integer check的方法要运行14142次, 差距悬殊
@@ -257,16 +256,16 @@
     // Input: grater than zero integer m, n  
     // Out: greatest common divisor of m, n  
     while true:  
-        if m == 0:  
-            return n  
-        if n == 0:  
-            return m  
-        if m > n:  
-            m = m - n  
-        elif m == n:  
-            return m  
-        else:  
-            n = n - m  
+      if m == 0:  
+        return n  
+      if n == 0:  
+        return m  
+      if m > n:  
+        m = m - n  
+      elif m == n:  
+        return m  
+      else:  
+        n = n - m  
     实际代码请看代码仓库  
     b. 看两个数是的倍数是多大, 偶数倍, 则第二个选择. 方法是从最小的数字开始计算, 从1、2开始, 来做总结
 
@@ -285,19 +284,19 @@
     // Output: three integer r, s, t that r is the greatest common divisor of m, n and r = m * s + n *t  
     ro = m, r1 = n, s0 = 1, s1 = 0, t0 = 0, t1 = 1  
     while true  
-        if r1 == 0  
-            assert r0 = s0 * m + t0 * n  
-            return r0, s0, t0  
-        y = r0 mod r1  
-        x = r0 - x * r1  
-        r0 = r1  
-        r1 = y  
-        s2 = s0 - x * s1  
-        s0 = s1  
-        s1 = s2  
-        t2 = t0 - x * t1  
-        t0 = t1  
-        t1 = t2
+      if r1 == 0  
+        assert r0 = s0 * m + t0 * n  
+        return r0, s0, t0  
+      y = r0 mod r1  
+      x = r0 - x * r1  
+      r0 = r1  
+      r1 = y  
+      s2 = s0 - x * s1  
+      s0 = s1  
+      s1 = s2  
+      t2 = t0 - x * t1  
+      t0 = t1  
+      t1 = t2
 
 12. locker doors  
     locker doors algorithm  
@@ -314,11 +313,11 @@
     array = [0, ..., 0]  
     i = 0  
     while i < n  
-        j = 0  
-        while j <= i  
-            array[j] = array[j] == 0?: 1, 0  
-            j ++  
-        i ++  
+      j = 0  
+      while j <= i  
+        array[j] = array[j] == 0?: 1, 0  
+        j ++  
+        i ++  
     return array
 
 <a id="markdown-_12-fundamentals-of-algorithmic-problem-solving" name="_12-fundamentals-of-algorithmic-problem-solving"></a>

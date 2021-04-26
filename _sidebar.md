@@ -8,3 +8,4 @@
 
 * [Discrete mathmatics](./docs/discrete_mathmatics/discrete_mathmatics.md)
 * [Chapter 10 GRAPHS AND TREES](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES.md)
+* [Chapter 11 ANALYSIS OF ALGORITHM EFFICIENC](./docs/discrete_mathmatics/Chapter_11_ANALYSIS_OF_ALGORITHM_EFFICIENCY.md)

@@ -1,34 +1,32 @@
 <!-- TOC -->
 
-- [Chapter 10 GRAPHS AND TREES 图和树](#chapter-10-graphs-and-trees-图和树)
-  - [_10.1 Graphs: Definitions and Basic Properties](#_101-graphs-definitions-and-basic-properties)
-    - [definition](#definition)
-    - [一些特殊的Graph](#一些特殊的graph)
-    - [Degree](#degree)
-  - [_10.2 Trails, Paths, and Circuits](#_102-trails-paths-and-circuits)
-    - [Königsberg bridge](#königsberg-bridge)
-    - [definition](#definition-1)
-    - [Connectedness](#connectedness)
-    - [Euler Circuits](#euler-circuits)
-    - [Hamiltonian Circuits](#hamiltonian-circuits)
-  - [_10.5 Trees 树](#_105-trees-树)
-    - [Tree的定义](#tree的定义)
-    - [Characterizing Trees树的特点](#characterizing-trees树的特点)
-  - [_10.6 Rooted Trees](#_106-rooted-trees)
-    - [定义](#定义)
-    - [Binary Trees](#binary-trees)
-  - [_10.7 Spanning Trees and Shortest Paths](#_107-spanning-trees-and-shortest-paths)
-    - [Spanning Trees](#spanning-trees)
-    - [Minimum Spanning Trees](#minimum-spanning-trees)
-      - [weighted graph](#weighted-graph)
-      - [Kruskal Algorithm](#kruskal-algorithm)
-      - [Prim Algorithm](#prim-algorithm)
-      - [Dijkstra Shortest Path Algorithm](#dijkstra-shortest-path-algorithm)
+- [_10.1 Graphs: Definitions and Basic Properties](#_101-graphs-definitions-and-basic-properties)
+  - [definition](#definition)
+  - [一些特殊的Graph](#一些特殊的graph)
+  - [Degree](#degree)
+- [_10.2 Trails, Paths, and Circuits](#_102-trails-paths-and-circuits)
+  - [Königsberg bridge](#königsberg-bridge)
+  - [definition](#definition-1)
+  - [Connectedness](#connectedness)
+  - [Euler Circuits](#euler-circuits)
+  - [Hamiltonian Circuits](#hamiltonian-circuits)
+- [_10.5 Trees 树](#_105-trees-树)
+  - [Tree的定义](#tree的定义)
+  - [Characterizing Trees树的特点](#characterizing-trees树的特点)
+- [_10.6 Rooted Trees](#_106-rooted-trees)
+  - [定义](#定义)
+  - [Binary Trees](#binary-trees)
+- [_10.7 Spanning Trees and Shortest Paths](#_107-spanning-trees-and-shortest-paths)
+  - [Spanning Trees](#spanning-trees)
+  - [Minimum Spanning Trees](#minimum-spanning-trees)
+    - [weighted graph](#weighted-graph)
+    - [Kruskal Algorithm](#kruskal-algorithm)
+    - [Prim Algorithm](#prim-algorithm)
+    - [Dijkstra Shortest Path Algorithm](#dijkstra-shortest-path-algorithm)
 
 <!-- /TOC -->
 
-<a id="markdown-chapter-10-graphs-and-trees-图和树" name="chapter-10-graphs-and-trees-图和树"></a>
-## Chapter 10 GRAPHS AND TREES 图和树
+Chapter 10 GRAPHS AND TREES 图和树
 
 <a id="markdown-_101-graphs-definitions-and-basic-properties" name="_101-graphs-definitions-and-basic-properties"></a>
 ### _10.1 Graphs: Definitions and Basic Properties
@@ -73,6 +71,7 @@ edge-endpoint function里不包含$v_4$, 因为它是isolated vertex, 在vertex 
 
 图可以解决很多问题, 数中列举了网络、知识图谱、还有一个很有意思的问题: 素食者和食人族
 
+<a id="markdown-一些特殊的graph" name="一些特殊的graph"></a>
 #### 一些特殊的Graph
 
 - simple graph  
@@ -231,6 +230,7 @@ ABCD4座城市和距离, 从A出发, 经过所有城市1次, 回到A, 这是一�
 <a id="markdown-_105-trees-树" name="_105-trees-树"></a>
 ### _10.5 Trees 树
 
+<a id="markdown-tree的定义" name="tree的定义"></a>
 #### Tree的定义
 
 树其实是一种特殊的图
@@ -242,6 +242,7 @@ tree是没有circuit的graph, 并且是connected, 如果不是connected, 那么
 - A Decision Tree
 - A Parse Tree: 比如语意语法分析
 
+<a id="markdown-characterizing-trees树的特点" name="characterizing-trees树的特点"></a>
 #### Characterizing Trees树的特点
 
 下面的定理的证明都很有意思, 可参照课本
@@ -256,6 +257,7 @@ tree是没有circuit的graph, 并且是connected, 如果不是connected, 那么
 <a id="markdown-_106-rooted-trees" name="_106-rooted-trees"></a>
 ### _10.6 Rooted Trees
 
+<a id="markdown-定义" name="定义"></a>
 #### 定义
 
 rooted tree是有一个特殊的vertex, 称之为root. 其他vertex都存在一条唯一的以root为起点的path(如果存在多条, 则会构成circuit).  
@@ -265,6 +267,7 @@ rooted tree的height是指最长的一条path的数量.
 如果两个vertex有同一个parent, 那么称两者为siblings.  
 如果v处在root和w的path的线路上, 那么v是w的ancestor, w是v的descendant.  
 
+<a id="markdown-binary-trees" name="binary-trees"></a>
 #### Binary Trees
 
 如果一个rooted tree的每一个vertex最多只有两个children, 这两个children我们称为left child和right child, 那么这个rooted tree是binary tree.  
@@ -280,6 +283,7 @@ full binary tree的height是h, 有t个terminal vertices, 那么: $t \le 2^k$, $l
 <a id="markdown-_107-spanning-trees-and-shortest-paths" name="_107-spanning-trees-and-shortest-paths"></a>
 ### _10.7 Spanning Trees and Shortest Paths
 
+<a id="markdown-spanning-trees" name="spanning-trees"></a>
 #### Spanning Trees
 
 定义: Spanning tree是一个graph G的subgraph, 包含G的所有vertices, 并且是tree  
@@ -287,16 +291,19 @@ full binary tree的height是h, 有t个terminal vertices, 那么: $t \le 2^k$, $l
 书中举了一个生动的例子, 航空公司在能开通的航线范围内, 要用最少的航线连通所有的城市.  
 要满足这个条件, 必须是一个tree, 因为如果航线有circuit, 那么我们总是可以去掉一条航线, 而不影响城市的连通.
 
+<a id="markdown-minimum-spanning-trees" name="minimum-spanning-trees"></a>
 #### Minimum Spanning Trees
 
 在上面航线的例子里, 航线是有长度的, 我们为了经济性, 如何选择最短路径的spanning tree呢?
 
+<a id="markdown-weighted-graph" name="weighted-graph"></a>
 ##### weighted graph  
 **weighted graph**是指一个graph, 他的每一条edge都有正实数的属性, 我们称之为**weight**.  
 所有edges的weight的和, 称为这个graph的**total weight**.  
 **minimum spanning tree**是指一个graph的所有spanning tree**中total weight最小的那个spanning tree.  
 G是一个weighted graph, e是G的一条edge, 那么w(e)是指e的weight, w(G)指G的total weight
 
+<a id="markdown-kruskal-algorithm" name="kruskal-algorithm"></a>
 ##### Kruskal Algorithm  
 
 ALGORITHM kruskal
@@ -314,6 +321,7 @@ end while
 
 书中有例子, 参照例子更好理解
 
+<a id="markdown-prim-algorithm" name="prim-algorithm"></a>
 ##### Prim Algorithm
 
 另外一种求得minimum spanning tree的算法  
@@ -333,6 +341,7 @@ next i
 
 书中有例子, 参照例子更好理解
 
+<a id="markdown-dijkstra-shortest-path-algorithm" name="dijkstra-shortest-path-algorithm"></a>
 ##### Dijkstra Shortest Path Algorithm
 
 如何求得weighted graph中两个vertex的最短路径呢? 上面两个算法提供了灵感  

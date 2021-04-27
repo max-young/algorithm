@@ -78,6 +78,18 @@ Let $f$ be a real-valued function of a real variable. The graph of $f$ is the se
 这三个符号的发明, 有必要做一下了解:  
 The oldest of the notations,O-notation (read “big-Onotation”), was introduced bythe German mathematician Paul Bachmann in 1894 in a book on analytic number the-ory. Both the- (read “big-Omega”) and- (read “big-Theta”) notations were developedby Donald Knuth, one of the pioneers of the science of computer programming.
 
+这三种符号是什么意思呢:  
+对于一个函数f, 以及另外一个函数g  
+- positive real number M, nonnegative real number k, 使得$|f(x)| \le M|g(x)|$ for all real number $x \gt k$, 那么我们说f is of order at most g, 记作$f(x)$ is $\Omicron (g(x))$, 在笛卡尔坐标系里f(x)的曲线在绝大多数范围内都是在Mg(x)的曲线下面
+- positive real number M, nonnegative real number k, 使得$|f(x)| \ge M|g(x)|$ for all real number $x \gt k$, 那么我们说f is of order at least g, 记作$f(x)$ is $\Omega (g(x))$, 在笛卡尔坐标系里f(x)的曲线在绝大多数范围内都是在Mg(x)的曲线上面
+- positive real number A B, nonnegative real number k, 使得$A|g(x) \le |f(x)| \le B|g(x)|$ for all real number $x \gt k$, 那么我们说f is of order g, 记作$f(x)$ is $\Theta (g(x))$, 在笛卡尔坐标系里f(x)的曲线在绝大多数范围内都是在Ag(x)和Bg(x)的曲线之间  
+
+下面举几个例子说明:  
+$$10|x^6| \le |17x^6-45x^3+2x+8| \le 30|x^6|\ for\ all\ real\ number\ x \gt 2$$
+套用上面的定义, 我们说$17x^6-45x^3+2x+8$ is $\Theta(x^6)$
+
+
+
 <a id="markdown-_113-application-analysis-of-algorithm-efficiency" name="_113-application-analysis-of-algorithm-efficiency"></a>
 ### _11.3 Application: Analysis of Algorithm Efficiency 
 

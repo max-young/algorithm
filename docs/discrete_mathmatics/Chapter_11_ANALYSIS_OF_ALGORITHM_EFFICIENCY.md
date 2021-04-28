@@ -2,6 +2,11 @@
 
 - [_11.1 Real-Valued Functions of a Real Variable and Their Graphs](#_111-real-valued-functions-of-a-real-variable-and-their-graphs)
 - [_11.2 Omicron Omega Theta Notations](#_112-omicron-omega-theta-notations)
+  - [Definition](#definition)
+  - [Orders of Power Functions](#orders-of-power-functions)
+  - [Orders of Polynomial Functions多项式](#orders-of-polynomial-functions多项式)
+  - [Orders for Functions of Integer Variables](#orders-for-functions-of-integer-variables)
+  - [Extension to Functions Composed of Rational Power Functions](#extension-to-functions-composed-of-rational-power-functions)
 - [_11.3 Application: Analysis of Algorithm Efficiency](#_113-application-analysis-of-algorithm-efficiency)
 - [_11.5 Application: Alalysis of Algorithm Efficiency 2](#_115-application-alalysis-of-algorithm-efficiency-2)
 
@@ -73,6 +78,8 @@ Let $f$ be a real-valued function of a real variable. The graph of $f$ is the se
 <a id="markdown-_112-omicron-omega-theta-notations" name="_112-omicron-omega-theta-notations"></a>
 ### _11.2 Omicron Omega Theta Notations
 
+#### Definition
+
 同一项工作用不同的算法需要的时间和空间是不一样的, 这三个符号就可以来表示这种差别
 
 这三个符号的发明, 有必要做一下了解:  
@@ -88,7 +95,77 @@ The oldest of the notations,O-notation (read “big-Onotation”), was introduce
 $$10|x^6| \le |17x^6-45x^3+2x+8| \le 30|x^6|\ for\ all\ real\ number\ x \gt 2$$
 套用上面的定义, 我们说$17x^6-45x^3+2x+8$ is $\Theta(x^6)$
 
+看到这里, 会觉得有点可疑. 我们看上面的等式的前半部分和后半部分, 我们根据定义又可以得出,$17x^6-45x^3+2x+8$ is $\Omega (x^6)$, $17x^6-45x^3+2x+8$ is $\Omicron (x^6)$, 这是这三个notation的特征:  
+1. 如果$f(x)\ is\ \Omicron (g(x))$ and $f(x)\ is\ \Omega (g(x))$, 那么必须$f(x)\ is\ \Theta (g(x))$ and  
+2. 如果$f(x)\ is\ \Omega (g(x))$, 那么必须$f(x)\ is\ \Omicron (g(x))$
+3. 如果$f(x)\ is\ \Omicron (g(x))$, $g(x)\ is\ \Omicron (h(x))$, 那么$f(x)\ is\ \Omicron (h(x))$
 
+下面举例子来说明
+####  Orders of Power Functions  
+$$
+\begin{aligned}
+1 &< x \\
+x &< x^2 \\
+x^2 &< x^3
+\end{aligned}
+$$
+$$1 < x < x^2 < x^3$$
+对于$x>1$, $r < s$, 有$x^r < x^s$, 所以$x^r\ is\ \Omicron(r^s)$  
+所以$x^2\ is\ \Omicron(x^3)$, $x^2\ is\ \Omicron(x^4)$...  
+我们在笛卡尔坐标里面画出这些graph, 也会发现, $x^s$在$x^r$的上面
+
+#### Orders of Polynomial Functions多项式
+
+- Example 1  
+对于这样的一个函数$3x^3 + 2x + 7$  
+for real number x > 1, $3x^3 + 2x + 7 \le 12x^3$  
+为什么? 因为$2x < 2x^3$, $7 < 7x^3$  
+所以我们说$3x^3 + 2x + 7$ is $\Omicron(x^3)$  
+我们还可以得出$3x^3 + 2x + 7 > 3x^3$  
+所以我们说$3x^3 + 2x + 7$ is $\Omega(x^3)$  
+从而$3x^3 + 2x + 7$ is $\Theta(x^3)$  
+- Example 2  
+假如把上面的函数的加号换成减号呢: $3x^3 - 2x - 7$  
+根据triangle inequality(三角不等式):  
+$$|a+b| \le |a| + |b|$$
+所以:
+$$|a-b| = |a+(-b)| \le |a| + |-b| = |a| + |b|$$
+从而:  
+$$3x^3 - 2x - 7 \le 3x^3 + 2x + 7$$
+$3x^3 + 2x + 7$ is $\Omicron(x^3)$, 那么$3x^3 - 2x - 7$ is $\Omicron(x^3)$
+- Example 3  
+$x^2$不是$\Omicron(x)$, 证明如下:  
+假设$x^2$是$\Omicron(x)$, 那么存在:  
+$|x^2| \le Mx$ for x > m  
+假定x大于M也大于m, 它满足:  
+$xx > Mx$  
+和上面相悖, 所以$x^2$不是$\Omicron(x)$, 进而$x^2$不是$\Theta(x)$
+
+存在下面的定理:  
+$$a_nx^n + a_{n-1}x^{n-1 + ... + a_1x + a_0}\ is\ not\ \Omicron(x^m)\ if\ m < n$$
+$$a_nx^n + a_{n-1}x^{n-1 + ... + a_1x + a_0}\ is\ not\ \Theta(x^m)\ if\ m < n$$
+  
+#### Orders for Functions of Integer Variables
+
+还是举例子说明
+- Example 1
+$$1 + 2 + 3 + ... + n\ is\ \Theta(n^2)$$
+很好证明: 
+$$1 + 2 + 3 + ... + n = \frac{n(n+1)}{2} = \frac{1}{2}n^2 + \frac{1}{2}n$$
+$$\frac{1}{2}n^2 + \frac{1}{2}n\ is\ \Theta(n^2)$$
+$$1 + 2 + 3 + ... + n\ is\ \Theta(n^2)$$
+
+####  Extension to Functions Composed of Rational Power Functions
+
+对于两个指数函数相除的情况, 例如:
+$$\frac{(x^{3/2}+3)(x-2)^2}{x^{1/2}(2x^{1/2}+1)} = \frac{x^{7/2} - 4x^{5/2} + 4x^{3/2} + 3x^2 - 12x + 12}{2x + x^{1/2}}$$
+$$\frac{x^{7/2} - 4x^{5/2} + 4x^{3/2} + 3x^2 - 12x + 12}{2x + x^{1/2}}\ is\ \Omicron(x^c)\ for\ c > 7/2 - 1 = 5/2$$
+$$\frac{x^{7/2} - 4x^{5/2} + 4x^{3/2} + 3x^2 - 12x + 12}{2x + x^{1/2}}\ is\ not\ \Omicron(x^c)\ for\ c < 7/2 - 1 = 5/2$$
+有下面的定理:  
+Let m and n be positive integers, and let $r_0, r_1, r_2, ..., r_n$ and $s_0, s_1, s_2, ..., s_m$ be nonnegative rational numbers with $r_0 < r_1 < r_2 < ··· < r_n$ and $s_0 < s_1 < s_2 < ··· < s_m$. Let $a_0, a_1, a_2, ..., a_n$ and $b_0, b_1, b2, ..., b_m$ be real numbers with $a_n \neq 0$ and $b_m \neq 0$, then:
+$$\frac{a_nx^{r_n} + a_{n-1}x^{r_{n-1}} + ... + a_1x^{r_1} + a_0x^{r_0}}{b_mx^{s_m} + b_{m-1}x^{s_{m-1}} + ... + b_1x^{s_1} + b_0x{s_0}}\ is\ \Theta(x^{r_n - s_m})$$
+$$\frac{a_nx^{r_n} + a_{n-1}x^{r_{n-1}} + ... + a_1x^{r_1} + a_0x^{r_0}}{b_mx^{s_m} + b_{m-1}x^{s_{m-1}} + ... + b_1x^{s_1} + b_0x{s_0}}\ is\ \Omicron(x^c)\ for\ any\ real\ number\ c > r_n - s_m$$
+$$\frac{a_nx^{r_n} + a_{n-1}x^{r_{n-1}} + ... + a_1x^{r_1} + a_0x^{r_0}}{b_mx^{s_m} + b_{m-1}x^{s_{m-1}} + ... + b_1x^{s_1} + b_0x{s_0}}\ is\ not\ \Omicron(x^{r_n - s_m})\ for\ any\ real\ number\ c < r_n = s_m$$
 
 <a id="markdown-_113-application-analysis-of-algorithm-efficiency" name="_113-application-analysis-of-algorithm-efficiency"></a>
 ### _11.3 Application: Analysis of Algorithm Efficiency 

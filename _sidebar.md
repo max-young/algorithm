@@ -7,5 +7,6 @@
 --------------- Discrete Mathematics ---------------
 
 * [Discrete mathmatics](./docs/discrete_mathmatics/discrete_mathmatics.md)
+* [Chapter 9 COUNTING AND PROBABILITY](./docs/discrete_mathmatics/Chaper_9_COUNTING_AND_PROBABILITY.md)
 * [Chapter 10 GRAPHS AND TREES](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES.md)
 * [Chapter 11 ANALYSIS OF ALGORITHM EFFICIENC](./docs/discrete_mathmatics/Chapter_11_ANALYSIS_OF_ALGORITHM_EFFICIENCY.md)

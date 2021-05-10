@@ -8,6 +8,9 @@
   - [Orders for Functions of Integer Variables](#orders-for-functions-of-integer-variables)
   - [Extension to Functions Composed of Rational Power Functions](#extension-to-functions-composed-of-rational-power-functions)
 - [_11.3 Application: Analysis of Algorithm Efficiency](#_113-application-analysis-of-algorithm-efficiency)
+  - [The Sequential Search Algorithm 顺序查找算法](#the-sequential-search-algorithm-顺序查找算法)
+  - [The Insertion Sort Algorithm 插入排序算法](#the-insertion-sort-algorithm-插入排序算法)
+  - [Time Efficiency of an Algorithm 算法的时间效率](#time-efficiency-of-an-algorithm-算法的时间效率)
 - [_11.5 Application: Alalysis of Algorithm Efficiency 2](#_115-application-alalysis-of-algorithm-efficiency-2)
 
 <!-- /TOC -->
@@ -78,6 +81,7 @@ Let $f$ be a real-valued function of a real variable. The graph of $f$ is the se
 <a id="markdown-_112-omicron-omega-theta-notations" name="_112-omicron-omega-theta-notations"></a>
 ### _11.2 Omicron Omega Theta Notations
 
+<a id="markdown-definition" name="definition"></a>
 #### Definition
 
 同一项工作用不同的算法需要的时间和空间是不一样的, 这三个符号就可以来表示这种差别
@@ -101,6 +105,7 @@ $$10|x^6| \le |17x^6-45x^3+2x+8| \le 30|x^6|\ for\ all\ real\ number\ x \gt 2$$
 3. 如果$f(x)\ is\ \Omicron (g(x))$, $g(x)\ is\ \Omicron (h(x))$, 那么$f(x)\ is\ \Omicron (h(x))$
 
 下面举例子来说明
+<a id="markdown-orders-of-power-functions" name="orders-of-power-functions"></a>
 ####  Orders of Power Functions  
 $$
 \begin{aligned}
@@ -114,48 +119,60 @@ $$1 < x < x^2 < x^3$$
 所以$x^2\ is\ \Omicron(x^3)$, $x^2\ is\ \Omicron(x^4)$...  
 我们在笛卡尔坐标里面画出这些graph, 也会发现, $x^s$在$x^r$的上面
 
+<a id="markdown-orders-of-polynomial-functions多项式" name="orders-of-polynomial-functions多项式"></a>
 #### Orders of Polynomial Functions多项式
 
 - Example 1  
-对于这样的一个函数$3x^3 + 2x + 7$  
-for real number x > 1, $3x^3 + 2x + 7 \le 12x^3$  
-为什么? 因为$2x < 2x^3$, $7 < 7x^3$  
-所以我们说$3x^3 + 2x + 7$ is $\Omicron(x^3)$  
-我们还可以得出$3x^3 + 2x + 7 > 3x^3$  
-所以我们说$3x^3 + 2x + 7$ is $\Omega(x^3)$  
-从而$3x^3 + 2x + 7$ is $\Theta(x^3)$  
-- Example 2  
-假如把上面的函数的加号换成减号呢: $3x^3 - 2x - 7$  
-根据triangle inequality(三角不等式):  
-$$|a+b| \le |a| + |b|$$
-所以:
-$$|a-b| = |a+(-b)| \le |a| + |-b| = |a| + |b|$$
-从而:  
-$$3x^3 - 2x - 7 \le 3x^3 + 2x + 7$$
-$3x^3 + 2x + 7$ is $\Omicron(x^3)$, 那么$3x^3 - 2x - 7$ is $\Omicron(x^3)$
-- Example 3  
-$x^2$不是$\Omicron(x)$, 证明如下:  
-假设$x^2$是$\Omicron(x)$, 那么存在:  
-$|x^2| \le Mx$ for x > m  
-假定x大于M也大于m, 它满足:  
-$xx > Mx$  
-和上面相悖, 所以$x^2$不是$\Omicron(x)$, 进而$x^2$不是$\Theta(x)$
 
-存在下面的定理:  
-$$a_nx^n + a_{n-1}x^{n-1 + ... + a_1x + a_0}\ is\ not\ \Omicron(x^m)\ if\ m < n$$
-$$a_nx^n + a_{n-1}x^{n-1 + ... + a_1x + a_0}\ is\ not\ \Theta(x^m)\ if\ m < n$$
+  对于这样的一个函数$3x^3 + 2x + 7$  
+  for real number x > 1, $3x^3 + 2x + 7 \le 12x^3$  
+  为什么? 因为$2x < 2x^3$, $7 < 7x^3$  
+  所以我们说$3x^3 + 2x + 7$ is $\Omicron(x^3)$  
+  我们还可以得出$3x^3 + 2x + 7 > 3x^3$  
+  所以我们说$3x^3 + 2x + 7$ is $\Omega(x^3)$  
+  从而$3x^3 + 2x + 7$ is $\Theta(x^3)$  
+
+- Example 2  
+
+  假如把上面的函数的加号换成减号呢: $3x^3 - 2x - 7$  
+  根据triangle inequality(三角不等式):  
+  $$|a+b| \le |a| + |b|$$
+  所以:
+  $$|a-b| = |a+(-b)| \le |a| + |-b| = |a| + |b|$$
+  从而:  
+  $$3x^3 - 2x - 7 \le 3x^3 + 2x + 7$$
+  $3x^3 + 2x + 7$ is $\Omicron(x^3)$, 那么$3x^3 - 2x - 7$ is $\Omicron(x^3)$
+
+- Example 3  
+
+  $x^2$不是$\Omicron(x)$, 证明如下:  
+  假设$x^2$是$\Omicron(x)$, 那么存在:  
+  $|x^2| \le Mx$ for x > m  
+  假定x大于M也大于m, 它满足:  
+  $xx > Mx$  
+  和上面相悖, 所以$x^2$不是$\Omicron(x)$, 进而$x^2$不是$\Theta(x)$
+
+  存在下面的定理:  
+  $$a_nx^n + a_{n-1}x^{n-1} + ... + a_1x + a_0\ is\ not\ \Omicron(x^m)\ if\ m < n$$
+  $$a_nx^n + a_{n-1}x^{n-1} + ... + a_1x + a_0\ is\ not\ \Theta(x^m)\ if\ m < n$$
   
+
+<a id="markdown-orders-for-functions-of-integer-variables" name="orders-for-functions-of-integer-variables"></a>
 #### Orders for Functions of Integer Variables
 
 还是举例子说明
+
 - Example 1
+
 $$1 + 2 + 3 + ... + n\ is\ \Theta(n^2)$$
 很好证明: 
 $$1 + 2 + 3 + ... + n = \frac{n(n+1)}{2} = \frac{1}{2}n^2 + \frac{1}{2}n$$
 $$\frac{1}{2}n^2 + \frac{1}{2}n\ is\ \Theta(n^2)$$
 $$1 + 2 + 3 + ... + n\ is\ \Theta(n^2)$$
 
-####  Extension to Functions Composed of Rational Power Functions
+<a id="extension-to-functions-composed-of-rational-power-functions" name="extension-to-functions-composed-of-rational-power-functions"></a>
+<a id="markdown-extension-to-functions-composed-of-rational-power-functions" name="extension-to-functions-composed-of-rational-power-functions"></a>
+#### Extension to Functions Composed of Rational Power Functions
 
 对于两个指数函数相除的情况, 例如:
 $$\frac{(x^{3/2}+3)(x-2)^2}{x^{1/2}(2x^{1/2}+1)} = \frac{x^{7/2} - 4x^{5/2} + 4x^{3/2} + 3x^2 - 12x + 12}{2x + x^{1/2}}$$
@@ -170,36 +187,62 @@ $$\frac{a_nx^{r_n} + a_{n-1}x^{r_{n-1}} + ... + a_1x^{r_1} + a_0x^{r_0}}{b_mx^{s
 <a id="markdown-_113-application-analysis-of-algorithm-efficiency" name="_113-application-analysis-of-algorithm-efficiency"></a>
 ### _11.3 Application: Analysis of Algorithm Efficiency 
 
-- The Sequential Search Algorithm 顺序查找算法
+#### The Sequential Search Algorithm 顺序查找算法
 
-  很简单, 从第一个元素开始一次查找
+一个array a, $[a_1, a_2, ..., a_n]$从中找到一个指定的数据x, sequential search就是从第一个元素开始依次和x进行比较, 知道匹配为止  
+最好的情况best case, 第一个元素就是x, 只需比较一次就可以了, 那么sequential search algorithm是$\Theta(1)$, 也是$\Theta(n^0)$  
+最坏的情况worst case, a里面没有x, 那么我们要把a中的所有元素都要比较一遍, 也就是比较n次, 那么sequential search algorithm是$\Theta(n)$
 
-- The Insertion Sort Algorithm 插入排序算法
+PS: 我想, 为什么是$\Theta$呢? 我觉得, 因为上面说的都是某些特定情况, 特定情况的前后分别是小于和大于的情况, 假如是第5个元素匹配, 那么就是$\Theta(5)$, 没有问题. 虽然对于最好和最坏的情况而言, 没有order of most和order of least, 但是对于特定情况, 我们都记为$\Theta$
 
-  将一组数字按升序排列, 最开始, 用第2个元素和第1个元素比较, 如果小于第1个元素, 则交换.
+#### The Insertion Sort Algorithm 插入排序算法
 
-  基本的思想, 是依次将元素放到左边序列里的正确的位置.
+将一组元素按升序排列  
+最开始, 用第2个元素和第1个元素比较, 如果小于第1个元素, 则交换, 否则执行下一步  
+然后用第3个元素和第2个元素比较, 如果小于, 则交换, 然后再和第1个比较, 否则, 执行下一步  
+...  
+基本的思想, 是依次将元素放到左边序列里的正确的位置.
 
-- Time Efficiency of an Algorithm 算法的时间效率
+PS: 在算法课里可以联系伪代码
 
-  Roughly speaking, the analysis of an algorithm for time efficiency begins by try- ing to count the number of elementary operations that must be performed when the algorithm is executed with an input of size *n* (in the best case, worst case, or average case).
+算法效率的两个重要维度: 时间和空间. 在不同的情况下侧重点不一样.
+#### Time Efficiency of an Algorithm 算法的时间效率
 
-  粗略的说, 分析一个算法的时间效率, 我们可以对大小为n的输入的情况下, 必须执行的操作数来作为开始.
+如何计算一个算法的效率呢?  
+算法的执行时间取决于很多因素, 其中一个因素是输入数据的大小, 另外一个因素是输入数据的特性, 什么意思呢? 第一个好理解, 我们从100个元素里查找, 和从100万个元素里查找, 时间通常是不一样的. 第二点, 如同上面的sequential search algorithm里说到的, 同样的100个元素的输入数据, 有的可能匹配一次就找到了, 有的可能匹配100次都找不到.  
 
-  我们以一个简单的例子来做说明:
-  $$
-  \begin{aligned}
-  &p:=0, x:=2 \\
-  &for\ i:=2\ to\ n \\
-  &\ \ \ \ p := (p+i).x \\
-  &next\ i
-  \end{aligned}
-  $$
-  这里是一个循环, 每一个循环里面会做一次加法和一次乘法, 循环的次数是n-2+1, 所以执行的操作数是:
-  
-  $$2*(n-2+1)=2n-2$$
-  
-  $2n-2$可能大于n, 也可能小于n, 所以这个算法的效率可以表示为$\Theta(n)$
+那么我们有没有精确衡量的办法呢?  
+粗略的说, 分析一个算法的时间效率, 我们可以在对大小为n的输入的情况下, 计算在最好的情况, 最坏的情况, 平均状态的情况, 执行的基本操作数.
+什么是基本操作呢? 不同的算法里不一样, 比如多想是算法里基本操作是加减乘除, 搜索算法里基本操作是比较. 我们把这些操作都称之为基本操作.  
+**最好的情况best case, 最坏的情况worst case**这两个次也很关键, 我们来看标准定义:
+1. 假如一个算法A的基本操作数只取决于输入数据的大小n, 和输入数据的性质无关, 那么操作数可以表示为$f(n)$, 如果$f(n)$是$\Theta(g(n))$, 那么我们说这个算法A is of order $\Theta(g(n))$
+2. 假如A的基本操作数还取决于输入数据的性质, 那么这样就存在best case 和 worst case  
+    - 在best case下, 如果操作数$b(n)$ is $\Theta(g(n))$, 那么我们说A is best case order of $\Theta(g(n))$
+    - 在worst case下, 如果操作数$w(n)$ is $\Theta(g(n))$, 那么我们说A is worst case order of $\Theta(g(n))$
+
+定义不太好理解? 还是看例子吧.
+- **Computing an Order of an Algorithm Segment**  
+  计算一个代码片段的order  
+  ```
+  p := 0, x := 2
+  for i := 2 to n
+    p := (p + i).x
+  next i
+  ```
+  这里是一个循环, 每一次循环里面会做一次加法和一次乘法, 基本操作数是2, 循环的次数取决与n, 此书是$n-2+1 = n - 1$, 所以执行的操作数是:
+  $$2*(n-1)=2n-2$$
+  所以我们说这个算法片段是$\Theta(n)$
+
+- **An Order for an Algorithm with Nested Loop**  
+  再看复杂一点的情况: nested loop
+  ```
+  s := 0
+  for i := 1 to n
+    for j := 1 to i
+      s := s + j.(i - j + 1)
+    next j
+  next i
+  ```
   
 - **The Insertion Sort Algorithm插入算法详解**
 

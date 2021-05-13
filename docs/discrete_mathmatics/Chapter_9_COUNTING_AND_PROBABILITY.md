@@ -10,6 +10,11 @@
 - [_9.6 r-combinations with Repetition Allowed](#_96-r-combinations-with-repetition-allowed)
   - [Definition](#definition)
   - [从5种饮料中选出15瓶饮料](#从5种饮料中选出15瓶饮料)
+  - [Counting Triples (i, j, k)](#counting-triples-i-j-k)
+  - [Counting Iteration of a Loop](#counting-iteration-of-a-loop)
+- [_9.8 Probability Axioms and Expected Value](#_98-probability-axioms-and-expected-value)
+  - [Probability Axioms](#probability-axioms)
+  - [Expected Value](#expected-value)
 
 <!-- /TOC -->
 
@@ -137,3 +142,93 @@ $$\binom{r + n - 1}{r}$$
 4. 如果必须买5瓶啤酒, 那么有几种买法?  
    其实就是从4种饮料中买10瓶饮料
    $$\binom{10 + 4 - 1}{10} = \binom{13}{10}$$
+
+#### Counting Triples (i, j, k)
+
+n是正整数, 从1到n选出3个数, 从小到大排列, 这3个数可以重复. 有多少种排列法?  
+和r-combination with repetition allowed是一个问题, 从小到大排列可能有点误导.  
+其实有从小到大排列, 反而更能满足r-combination with repetition allowed的定义  
+用表来展示, 更形象更易理解, 比如n=5, 选3个数字:  
+<img src="../../_images/counting_triples.png" width=50%>
+$$\binom{3 + (n - 1)}{3} = \binom{n + 2}{3} = \frac{(n + 2)!}{3!(n+2-3)!} = \frac{(n + 2)(n + 1)n}{3!} = \frac{n(n+1)(n+2)}{6}$$
+
+#### Counting Iteration of a Loop
+
+在算法里我们经常碰到这样的循环loop:
+```
+for k := 1 to n
+  for j := 1 to k
+    for i := 1 to j
+      do something
+    next i
+  next j
+next k
+```
+共有多少个循环呢? 我们可以用complete enumeration试试看:  
+<img src="../../_images/counting_iteration_of_a_loop.png">  
+有多少列就有多少个loop
+跟上面的例子很像对不对, 其实就是穷举了从1-n种选3个数字$i, j, k$, $i \le j \le k$, $i, j, k$可以重复  
+所以loop的数量是:
+$$\frac{n(n+1)(n+2)}{6}$$
+
+### _9.8 Probability Axioms and Expected Value
+
+苏联先贤提出的概率公理, 看这本数会看到很多先贤的成功熠熠生辉  
+
+样本空间是一个随机事件的所有结果的集合, 而事件是样本空间的子集, 英文描述是:  
+a sample space is a set of all outcomes of a random process or experimentand that an event is a subset of a sample space
+
+#### Probability Axioms
+
+S是一个样本空间, 一个**probability function** P, from S的子集 to set of real number, 对于事件A和B:  
+1. $0 \le P(A) \le 1$
+2. $P(\emptyset) = 0$ and $P(S) = 1$
+3. 如股票A和B是disjoint, 也就是没有交集($A \cap B = \emptyset$), 那么: $P(A \cup B) = P(A) + P(B)$
+
+如果A是一个样本空间S的event, 那么:
+$$P(A^c) = 1 - P(A)$$
+
+S是样本空间, A和B是其两个事件events, 那么:
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+这个证明很有意思, 逻辑的力量
+
+举个例子, 一副扑克牌, 抽到红色牌或者人像牌的几率是多少?  
+一副扑克是52张牌, 红色的牌有一半, 26张, 人像牌有4 * 3 = 12张(4个花色, 每个花色12张), 红色的人像有2 * 3 = 6张(红色有heart和diamond两种)  
+根据上面的定理, 抽到红色牌或者人像牌的几率, 应该是红色的牌A和人像的牌B的并集的几率, 等于红色牌的几率加上人像牌的几率减去红色人像的几率:  
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{26}{52} + \frac{12}{52} - \frac{6}{52} = \frac{32}{52} \cong 61.5\%$$
+
+#### Expected Value
+
+假设一个随机过程的结果可能是实数: $a_1, a_2, a_3, ..., a_n$, 它们出现的概率是$p_1, p_2, p_3, ..., p_n$, 那么这个过程的**expected value**是:
+$$\sum_{k=1}^{n}a_kp_k = a_1p_1 + a_2p_2 + a_3p_3 + ... + a_np_n$$
+
+- 举例子说明: 买彩票  
+某彩票, 有500,000个人买, 一人一注, 一注是5块钱, 彩票的奖项是一个大奖, 奖金1,000,000, 10个二等奖, 奖金1,000, 1000个三等奖, 奖金500, 10000个四等奖, 奖金10. 那么一注彩票的expected value是多少?  
+彩票有500,000个人买, 那么样本空间的大小就是500,000, 每一注的几率是一样的, 都是$p_k = \frac{1}{500000}$  
+有1注大奖的事件结果是1,000,000减去购买的钱, 是999995  
+有10注二等奖的事件结果是1,000 - 5 = 995  
+有1000注三等奖的事件结果是500 - 5 = 495  
+有10000注四等奖的事件结果是10 - 5 = 5  
+还有剩下488989的事件结果是-5  
+所以expexted_value是:
+$$
+\begin{aligned}
+\sum_{k=1}^{500000}a_kp_k &= \sum_{k=1}^{500000}\left( a_k \cdot \frac{1}{5000} \right) \\
+&= \frac{1}{500000}\cdot\sum_{k=1}^{500000}a_k \\
+&= \frac{1}{500000}\cdot(1\cdot 999995 + 10 \cdot 995 + 10000 \cdot 5 + 488989 \cdot (-5)) \\
+&= -1.78
+\end{aligned}
+$$
+换句话说, 在这个500000个样本空间内, 一个人买足够多的彩票, 他有时候会赢钱, 但是平均下来, 最后每注会输掉1.78元
+
+- 另外一个例子: 赌徒的崩溃  
+某一个赌徒投掷硬币, 如果硬币是正面, 他赢得1块钱, 如果是反面, 他输掉1块钱  
+他赢到一定的钱\$M, 或者输光, 则游戏结束  
+请问他的目标\$M设定为多少, 他输光的几率最小?  
+
+不同的金额下输光的几率是不一样的, 假设当前金额是n, 那么在n下输光的几率是$p_n$, 接下来投掷硬币, 有一半的几率赢一块钱, 金额变成n+1, 一半的几率输掉一块钱, 金额变成n+1, 金额是n+1时输光的几率是$p_{n+1}$, 金额是n-1时输光的几率是$p_{n-1}$, 所以:
+$$p_n = \frac{1}{2}\cdot p_{n-1} + \frac{1}{2}\cdot p_{n+1}$$
+(稍微理解一下)
+在这里, n必须满足$0 < n < m$  
+当n = 0时, 赌徒已经输光了, 所以$p_0 = 1$  
+当n = m时, 赌徒达到目标了, 游戏结束, 赌徒不可能输光了, 所以$p_m = 0$  

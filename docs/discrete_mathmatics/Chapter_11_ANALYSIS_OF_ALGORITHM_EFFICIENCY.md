@@ -187,6 +187,7 @@ $$\frac{a_nx^{r_n} + a_{n-1}x^{r_{n-1}} + ... + a_1x^{r_1} + a_0x^{r_0}}{b_mx^{s
 <a id="markdown-_113-application-analysis-of-algorithm-efficiency" name="_113-application-analysis-of-algorithm-efficiency"></a>
 ### _11.3 Application: Analysis of Algorithm Efficiency 
 
+<a id="markdown-the-sequential-search-algorithm-顺序查找算法" name="the-sequential-search-algorithm-顺序查找算法"></a>
 #### The Sequential Search Algorithm 顺序查找算法
 
 一个array a, $[a_1, a_2, ..., a_n]$从中找到一个指定的数据x, sequential search就是从第一个元素开始依次和x进行比较, 知道匹配为止  
@@ -195,6 +196,7 @@ $$\frac{a_nx^{r_n} + a_{n-1}x^{r_{n-1}} + ... + a_1x^{r_1} + a_0x^{r_0}}{b_mx^{s
 
 PS: 我想, 为什么是$\Theta$呢? 我觉得, 因为上面说的都是某些特定情况, 特定情况的前后分别是小于和大于的情况, 假如是第5个元素匹配, 那么就是$\Theta(5)$, 没有问题. 虽然对于最好和最坏的情况而言, 没有order of most和order of least, 但是对于特定情况, 我们都记为$\Theta$
 
+<a id="markdown-the-insertion-sort-algorithm-插入排序算法" name="the-insertion-sort-algorithm-插入排序算法"></a>
 #### The Insertion Sort Algorithm 插入排序算法
 
 将一组元素按升序排列  
@@ -203,9 +205,9 @@ PS: 我想, 为什么是$\Theta$呢? 我觉得, 因为上面说的都是某些�
 ...  
 基本的思想, 是依次将元素放到左边序列里的正确的位置.
 
-PS: 在算法课里可以联系伪代码
-
 算法效率的两个重要维度: 时间和空间. 在不同的情况下侧重点不一样.
+
+<a id="markdown-time-efficiency-of-an-algorithm-算法的时间效率" name="time-efficiency-of-an-algorithm-算法的时间效率"></a>
 #### Time Efficiency of an Algorithm 算法的时间效率
 
 如何计算一个算法的效率呢?  
@@ -221,6 +223,7 @@ PS: 在算法课里可以联系伪代码
     - 在worst case下, 如果操作数$w(n)$ is $\Theta(g(n))$, 那么我们说A is worst case order of $\Theta(g(n))$
 
 定义不太好理解? 还是看例子吧.
+
 - **Computing an Order of an Algorithm Segment**  
   计算一个代码片段的order  
   ```
@@ -243,14 +246,51 @@ PS: 在算法课里可以联系伪代码
     next j
   next i
   ```
+  每次循环里面会做2次加法, 1次减法, 1次乘法, 总共4个基本操作  
+  我们再计算循环次数, 无法一眼看出来, 我们可以可以从n = 1开始计算, 最后我们发现循环次数等于$1 + 2 + ... + n = \frac{n(n+1)}{2}$  
+  循环次数在这里是用compete enumeration穷举法的方法算出来的, 如果再加一层循环, 穷举法就很麻烦了, 甚至无法算出来了, nested loop的循环次数的计算方法参照: [counting-iteration-of-a-loop](./docs/discrete_mathmatics/Chaper_9_COUNTING_AND_PROBABILITY?id=counting-iteration-of-a-loop):   
+  循环次数是: $\binom{2 + n - 1}{2} = \binom{n+1}{2} = \frac{(n+1)!}{2!\cdot (n+1-2)!} = \frac{(n+1)!}{2!\cdot (n-1)!} = \frac{(n+1)n}{2}$  
+  所以基本操作数是$4\cdot \frac{n(n+1)}{2} = 2n(n+1)$  
+  所以我们说这个算法片段是$\Theta(n^2)$
+
+- **When the Number of Iterations Depends on the Floor Function**  
+  n是positive integer, 算法片段如下:  
+
+  for i := $\lfloor n/2 \rfloor $to n  
+    a := n - i  
+  next i
+
+  loop的次数是$n - \lfloor \frac{n}{2} \rfloor + 1$  
+  如果n是even偶数, loop的次数就是$n - \frac{n}{2} + 1 = \frac{n + 2}{2}$  
+  如果n是odd奇数, loop的次数就是$n - \frac{n-1}{2} + 1 = \frac{n + 3}{2}$  
+  不管n是even还是odd, 都是$\Theta(n)$
   
-- **The Insertion Sort Algorithm插入算法详解**
+- **The Insertion Sort Algorithm**  
+  Insertion Sort算法的伪代码如下:
+  ```
+  ALGORITHM insertion sort  
+  // Input: a array A with n items that can compare
+  // Output: a acsent sorted array A
+  从第2个元素current_item开始, 往左边依次比较, 如果左边的元素compare_item大于此元素, 则把左边的元素往右挪一位  
+  current_item应该在的位置减去1
+  for i = 2 to n:
+    current_item = A[i]
+    move_index = i
+    for j = i-1 to 1:
+      compare_item = A[j]
+      if compare_item > current_item:
+        A[j+1] = A[j]
+        move_index -= 1
+      else:
+        break
+    A[move_index] = current_item
+  ```
+  - Worst-Case Order
+  最差的情况就是从第2个元素开始, 左边的元素都比他大, 这样左边的元素都需要比较一遍, 当i = 2时, 比较1次, 当i = 3时, 比较2次...., 所以总的比较次数是:  
+  $$1 + 2 + 3 + ... + (n-1) = \frac{n(n+1)}{2} - 1 = \frac{1}{2}n^2 + \frac{1}{2}n - 1$$
+  这个多项式是$\Theta{n^2}$, 所以The insertion sort algorithm是worst case order $\Theta(n^2)$
+  - Average-Case Order
 
-  强烈建议看看此算法, 算法的原理是**挪动位置**
-
-- 插入算法的最差效率
-
-  那就是a[k]前面的数字都小于a[k], 那么
 
 <a id="markdown-_115-application-alalysis-of-algorithm-efficiency-2" name="_115-application-alalysis-of-algorithm-efficiency-2"></a>
 ### _11.5 Application: Alalysis of Algorithm Efficiency 2

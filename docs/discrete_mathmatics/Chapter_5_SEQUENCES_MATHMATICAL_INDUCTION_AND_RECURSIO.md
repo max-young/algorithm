@@ -1,93 +1,117 @@
 <!-- TOC -->
 
-- [5.1 Sequences](#51-sequences)
-- [5.5 Application: Correctness of Algorithms](#55-application-correctness-of-algorithms)
-- [5.9 General Recursive Definitions and Structural Induction](#59-general-recursive-definitions-and-structural-induction)
+- [_5.1 Sequences](#_51-sequences)
+  - [sequence的定义](#sequence的定义)
+  - [Summation Notation](#summation-notation)
+  - [Product Notaion](#product-notaion)
+  - [Properties of Summations and Products](#properties-of-summations-and-products)
+  - [Factorial and "n choose r" Notation](#factorial-and-n-choose-r-notation)
+  - [Sequence in computer programming](#sequence-in-computer-programming)
+  - [Application: Algorithm to Convert from Base 10 to Base 2 Using Repeated Division by 2](#application-algorithm-to-convert-from-base-10-to-base-2-using-repeated-division-by-2)
+- [_5.5 Application: Correctness of Algorithms](#_55-application-correctness-of-algorithms)
+- [_5.6 Defining Sequence Recursively](#_56-defining-sequence-recursively)
+  - [Definition](#definition)
+  - [Examples of Recursively Defined Sequences](#examples-of-recursively-defined-sequences)
+- [_5.7 Solving Recurrence Relations by Iteration](#_57-solving-recurrence-relations-by-iteration)
+  - [The Method of Iteration迭代方法](#the-method-of-iteration迭代方法)
+- [_5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coeffcients](#_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients)
+- [_5.9 General Recursive Definitions and Structural Induction](#_59-general-recursive-definitions-and-structural-induction)
 
 <!-- /TOC -->
 
 Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION
 
-<a id="markdown-51-sequences" name="51-sequences"></a>
-#### 5.1 Sequences
+数学的一项重要任务是发现和描述一些常规模式, 比如一些重复的过程.  
+重复过程可以用一个数学构造Sequence来表示, 验证sequence的数学猜想的主要工具是mathematical induction数学归纳法  
 
-- sequence
+<a id="markdown-_51-sequences" name="_51-sequences"></a>
+### _5.1 Sequences
 
-  sequence的定义有一些奇怪: A **sequence** is a function whose domain is either all the integers between two given integers or all the integers greater than or equal to a given integer.
+#### sequence的定义
 
-- Summation Notation
+sequence的定义有一些奇怪:  
+**sequence** is a function whose domain is either all the integers between two given integers or all the integers greater than or equal to a given integer.
 
-  有这样的一个sequence, $A_k = 2^k$, 我们要求前六个term的求和:
+可以这么理解:
+function的domain就是下标(subscript or index), sequence里的值(term)就是function的co-domain, term的值都和sequence的下标相关联  
+"between two given integer"表示这个sequence是有限的, 这是一个infunite sequence  
+"all the integers greater than a given integer"表示这个sequence是无限的  
+"all the integers equal to a given integer"表示这个sequence的长度是1
 
-  $$A_1 + A_2 + A_3 + A_4 + A_5 + A_6 = 2^1 + 2^2 + 2^3 + 2^4 + 2^5 + 2^6 = 126$$
+#### Summation Notation
 
-  有没有更简单的表示呢?
+有这样的一个sequence, $A_k = 2^k$, 我们要求前六个term的求和:
 
-  if m and n are integers and $m\leq n$, the symbol $\sum\limits_{k=m}^{n} a_k$, read the summation from k equals m to n of a-sub-k, is the sum of all the terms $a_m, a_{m+1}, a_{m+2}, ..., a_n$. we say that $a_m + a_{m+1} + a_{m+2} + ... + a_n$ is the expand form of the sum, and we write:
+$$A_1 + A_2 + A_3 + A_4 + A_5 + A_6 = 2^1 + 2^2 + 2^3 + 2^4 + 2^5 + 2^6 = 126$$
 
-  $$\sum\limits_{k=m}^na_k = a_m + a_{m+1} + a+{m+2} + ... + a_n$$
+有没有更简单的表示呢?
 
-  we call k the index of the summation, m the lower limit of the summation, and n the upper limit of the summation.
+if m and n are integers and $m\leq n$, the symbol $\sum\limits_{k=m}^{n} a_k$, read the summation from k equals m to n of a-sub-k, is the sum of all the terms $a_m, a_{m+1}, a_{m+2}, ..., a_n$. we say that $a_m + a_{m+1} + a_{m+2} + ... + a_n$ is the expand form of the sum, and we write:
 
-- Product Notaion
+$$\sum\limits_{k=m}^na_k = a_m + a_{m+1} + a+{m+2} + ... + a_n$$
 
-  if m and n are integers and $m\leq n$, the symbol $\prod\limits_{k=m}^n a_k$(注释: 此处latex limits不起作用), read the product from k equals m to n of a-sub-k, is the product if all terms $a_m, a_{m+1, a_{m+2}, ... , a_n}$, we write:
+we call k the index of the summation, m the lower limit of the summation, and n the upper limit of the summation.
 
-  $$\prod\limits_{k=m}^n a_k = a_m.a_{m+1}.a_{m+2}...a_n $$
+#### Product Notaion
 
-- Properties of Summations and Products
+if m and n are integers and $m\leq n$, the symbol $\prod\limits_{k=m}^n a_k$(注释: 此处latex limits不起作用), read the product from k equals m to n of a-sub-k, is the product if all terms $a_m, a_{m+1, a_{m+2}, ... , a_n}$, we write:
 
-  if $a_m, a_{m+1}, a_{m+2}, ...$ and $b_m, b_{m+1}, b_{m+2}, ...$ are sequemces of real numbers and c is any real number, then the following equations hold for any integer $n\geq m$:
+$$\prod\limits_{k=m}^n a_k = a_m.a_{m+1}.a_{m+2}...a_n $$
 
-  1. $\sum\limits_{k=m}^n a_k + \sum\limits_{k=m}^n b^k = \sum\limits_{k=m}^n (a_k+b_k)$
-  2. $c.\sum\limits_{k=m}^n a_k = \sum\limits_{k=m}^n c.a_k$
-  3. $\left( \prod\limits_{k=m}^n a_k \right) .\left(\prod\limits_{k=m}^n b_k\right) = \prod\limits_{k=m}^n (a_k.b_k)$
+#### Properties of Summations and Products
 
-- Factorial and "n choose r" Notation
+if $a_m, a_{m+1}, a_{m+2}, ...$ and $b_m, b_{m+1}, b_{m+2}, ...$ are sequemces of real numbers and c is any real number, then the following equations hold for any integer $n\geq m$:
 
-  for each positive integer n , the quantity a factorial denoted $n!$, is defined to be the product of all the integers fro 1 to n:
+1. $\sum\limits_{k=m}^n a_k + \sum\limits_{k=m}^n b^k = \sum\limits_{k=m}^n (a_k+b_k)$
+2. $c.\sum\limits_{k=m}^n a_k = \sum\limits_{k=m}^n c.a_k$
+3. $\left( \prod\limits_{k=m}^n a_k \right) .\left(\prod\limits_{k=m}^n b_k\right) = \prod\limits_{k=m}^n (a_k.b_k)$
 
-  $$n! = a.(n-1)...3.2.1$$
+#### Factorial and "n choose r" Notation
 
-  Zero factorial, denoted 0!, is defined to be 1:
+for each positive integer n , the quantity a factorial denoted $n!$, is defined to be the product of all the integers fro 1 to n:
 
-  $$0! = 1$$
+$$n! = a.(n-1)...3.2.1$$
 
-  Let n and r be integers with $0\leq r \leq n$. the symbol
+Zero factorial, denoted 0!, is defined to be 1:
 
-  $${n \choose r}$$
+$$0! = 1$$
 
-  is read "n choose r" and represents the number of subsets of size r that can be chosen from a set with n elements.
+Let n and r be integers with $0\leq r \leq n$. the symbol
 
-  fro all integers n and r with $0\leq r \leq n$
+$${n \choose r}$$
 
-  $${n \choose r} = \frac{n!}{r!(n-r)!} $$
+is read "n choose r" and represents the number of subsets of size r that can be chosen from a set with n elements.
 
-- Sequence in computer programming
+fro all integers n and r with $0\leq r \leq n$
 
-  计算机里用到的最多的是一位数组one-dimensional array
+$${n \choose r} = \frac{n!}{r!(n-r)!} $$
 
-- Application: Algorithm to Convert from Base 10 to Base 2 Using Repeated Division by 2
-  $$
-  38 = 19.2 + 0 \\
-  19 = 9.2 + 1 \\
-  9 = 4.2 + 1 \\
-  4 = 2.2 + 0 \\
-  2 = 1.2 + 0 \\
-  1 = 0.2 + 1
-  $$
-  
-  $$
-  38 = 19·2+0 \\
-  = (9·2+1)·2+0 \\
-  = 9·2^2 +1·2+0 \\
-  = (4·2+1)·2^2 +1·2+0 \\
-  = 4·2^3 +1·2^2 +1·2+0 \\
-  = (2·2+0)·2^3 +1·2^2 +1·2+0 \\
-  = 2·2^4 +0·2^3 +1·2^2 +1·2+0 \\
-  = (1·2+0)·2^4 +0·2^3 +1·2^2 +1·2+0 \\
-  = 1·2^5 +0·2^4 +0·2^3 +1·2^2 +1·2+0.
-  $$
+#### Sequence in computer programming
+
+计算机里用到的最多的是一位数组one-dimensional array
+
+#### Application: Algorithm to Convert from Base 10 to Base 2 Using Repeated Division by 2
+
+$$
+38 = 19.2 + 0 \\
+19 = 9.2 + 1 \\
+9 = 4.2 + 1 \\
+4 = 2.2 + 0 \\
+2 = 1.2 + 0 \\
+1 = 0.2 + 1
+$$
+
+$$
+38 = 19·2+0 \\
+= (9·2+1)·2+0 \\
+= 9·2^2 +1·2+0 \\
+= (4·2+1)·2^2 +1·2+0 \\
+= 4·2^3 +1·2^2 +1·2+0 \\
+= (2·2+0)·2^3 +1·2^2 +1·2+0 \\
+= 2·2^4 +0·2^3 +1·2^2 +1·2+0 \\
+= (1·2+0)·2^4 +0·2^3 +1·2^2 +1·2+0 \\
+= 1·2^5 +0·2^4 +0·2^3 +1·2^2 +1·2+0.
+$$
 
 ​	$$a_{10} = (r[k]r[k-1]...r[2]r[1])_2$$
 
@@ -95,18 +119,18 @@ Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION
 Algorithm Decimal to Binary Conversion Using Repeated Division by 2
 Input: n[a nonnegtive integer]
 Algorithm Body:
-	q = n, i = 0
-  q一直除以2知道q变成0, 存储remainder余数到一个一维数组
-  while(i = 0 or q != 0)
-  	r[i] = q mod 2
-  	q = q div 2
-  	i = i + 1
-  end while 
+q = n, i = 0
+q一直除以2知道q变成0, 存储remainder余数到一个一维数组
+while(i = 0 or q != 0)
+  r[i] = q mod 2
+  q = q div 2
+  i = i + 1
+end while 
 Ouptput: r[0], r[1], ..., r[i-1]
 ```
 
-<a id="markdown-55-application-correctness-of-algorithms" name="55-application-correctness-of-algorithms"></a>
-#### 5.5 Application: Correctness of Algorithms
+<a id="markdown-_55-application-correctness-of-algorithms" name="_55-application-correctness-of-algorithms"></a>
+### _5.5 Application: Correctness of Algorithms
 
 In this section we given an overview of the general format of correctness proofs and the details of one crucial technique, the *loop invariant procedure*
 
@@ -126,8 +150,110 @@ In this section we given an overview of the general format of correctness proofs
 
   非常严谨的证明loop的方法, 无法描述, 看书吧
 
-<a id="markdown-59-general-recursive-definitions-and-structural-induction" name="59-general-recursive-definitions-and-structural-induction"></a>
-#### 5.9 General Recursive Definitions and Structural Induction
+### _5.6 Defining Sequence Recursively
+
+#### Definition
+
+定义一个sequence有多种方法:
+- 一种非正式的方法
+  列举出开始几个元素, 并期待这几个元素能表示出这个sequence的特征, 但是往往这个是不奏效的, 比如: "有这样一个sequence: 3, 5, 7...", 接下来的元素是什么呢? 可能是9, 都是奇数, 也有可能是11, 都是素数
+- 用公式表达  
+  例如我们可以用$a_n = \frac{(-1)^n}{n + 1}$ for all integers $n \ge 0$  
+  这种表达非常清晰, 这个sequence的term只和下标有关系
+
+还有一种方法就是本章要讲的: 递归  
+这种方法需要用到recurrence relation, 它是指用前面的term来定义后面的term, 并且需要定义一个或者多个初始term
+
+正式的定义是:  
+> 一个sequence $a_0, a_1, a_2, ...$, 其**recurrence relation**是一个公式, 这个公式定义了这个sequence的一个term $a_k$和其之前的term的关系: $a_{k-1}, a_{k-2}, ..., a_{k-i}$, $k - i \ge 0$  
+> 初始条件**initial conditions**是指, i如果是一个确定的整数, 那么要给$a_0, a_1, a_2, ..., a_{i-1}$指定初始值, 因为根据recurrence relation, $a_i$的值由$a_0, a_1, a_2, ..., a_{i-1}$来确定  
+> 如果i不确定, i的值由k来决定, 那么只需初始化根据实际情况需要的值就可以: $a_0, a_1, ..., a_m$, $m \ge 0$, m根据实际情况来定
+
+#### Examples of Recursively Defined Sequences
+
+递归recursion是计算机科学的重要思想之一.  
+解决递归问题最重要的是把问题拆解成一个小的子问题, 这个子问题足够容易解答, 这个大的递归问题是这个子问题的重复执行.
+解决递归的问题的难度也在于此: 找到这个子问题, 并把这个子问题作为源问题来解决整个递归问题.  
+如果子问题能得到解决, 我们称之为递归信念飞跃(recursive leap of faith), 呵呵呵
+
+- **The Tower of Hanoi**
+
+  经典问题, 有3根柱子A、B、C, A上面套有64个盘子, 大小不一, 从下到上依次从大到小摆放, 要把这64个盘子从A柱挪到C柱, 一次只能挪一个, 且大盘子不能放在小盘子上面. 请问需要挪多少次才能完成?  
+  法国科学家卢卡斯在19世纪时将这个问题刊登在杂志上, 并悬赏求解答. 印度神话里也有这样的一个故事, 说某个神话人物终日不息要完成这样工作, 完成的那一天就是世界的末日.
+
+  这个问题可以用递归来解决, 书里说的很详细, 一步一步推理, 而不是因为“显而易见”而跳跃, 对逻辑思考和对递归的理解大有裨益.  
+  要讲k个盘子从A挪到C, 需要先讲上面的k-1个盘子从A柱挪到B柱, 再将最大的盘子从A柱挪到C柱, 再将k-1个盘子从B柱挪到C柱, 这样就完成了.  
+  这是最少的挪动次数, 因为只有两种选择, 除了这种选择, 还有一种就是将k-1个盘子从A柱挪到C柱, 再将最大的盘子从A柱挪到B柱, 再将k-1个盘子从C柱挪到A柱, 再将最大的盘子从B柱挪到C柱, 最后将k-1盘子从A柱挪到C柱, 很显然步骤增多了.  
+  我们用图来表示上面的挪动方法:  
+  <img src="../../_images/tower_of_hanoi.png" width=50%>  
+  所以:  
+  $$[将k个盘子从A挪到C的挪动次数] = [从(a)到(b)的挪动次数] + [从(b)到(c)的挪动次数] + [从(c)到(d)的挪动次数]$$
+  我们将$m_k$表示为将k个盘子从一个柱子挪到另外一个柱子的操作次数  
+  上面的等式里, 从(a)到(b)的挪动次数和从(c)到(d)的挪动次数是一样的, 都是将k-1个盘子从一个柱子挪到另外一个柱子, 尽管最大的那个盘子位置不一样, 但是最大的盘子是不动的, 不影响挪动的次数  
+  从(b)到(c)就是将最大的盘子挪动一次  
+  所以, 上面的等式可以转换为:
+  $$m_k = m_{k-1} + 1 + m_{k-1} if k > 1$$
+  上面我们加了一个限定条件$k > 1$, 因为只有盘子是2个和2个以上时才适用于这种情况. 这就是recurrence relation.  
+  我们还需要一个init conditions, 这里只需要定义k = 1的情况就可以了, 显然$m_1 = 1$  
+  这样, $m_1, m_2, m_3, ...$的完整的recursively define就是:
+  $$
+  \begin{aligned}
+  m_k &= 2m_{k-1} + 1\\
+  m_1 &= 1
+  \end{aligned}
+  $$
+  这就是完整清晰的recursively define
+
+  后续: 在计算机上计算出挪动64个盘子的操作次数, 算出来是$1.844674 \times 10^19$, 非常惊人的数字
+
+<a id="markdown-_57-solving-recurrence-relations-by-iteration" name="_57-solving-recurrence-relations-by-iteration"></a>
+### _5.7 Solving Recurrence Relations by Iteration
+
+在上一章节里, recurrence relation表示了一个term和其前面的term之间的关系, 这意味着我要计算某一个term时, 就需要将其前面的term先算出来, 当这个term的下标很大时, 计算量就很大了.  
+有没有办法将recurrence relation转换为只和下标相关的等式呢?  
+
+#### The Method of Iteration迭代方法
+
+这个方法就是根据recurrence relation和initial conditions计算出几个term, 知道发现其规律
+
+- **Finding a Explicit Formula**
+
+  有这样一个sequence: $a_0, a_1, a_2, ...$, 是这样定义的:
+  $$
+  \begin{aligned}
+  a_k &= a_{k-1} + 2\ for\ k > 1\\
+  a_0 = 1
+  \end{aligned}
+  $$
+  我们计算几个term看看:
+  $$
+  \begin{aligned}
+  a_0 &= 1 = 1 + 0 \cdot 2\\
+  a_1 &= 1 + 2 = 1 + 1 \cdot 2 \\
+  a_2 &= 1 + 2 + 2 = 1 + 2 \cdot 2 \\
+  a_3 &= 1 + 2 + 2 + 2 = 1 + 3 \cdot 2 \\
+  a_4 &= 1 + 2 + 2 + 2 + 2 = 1 + 4 \cdot 2 \\
+  a_5 &= 1 + 2 + 2 + 2 + 2 + 2 = 1 + 5 \cdot 2 \\
+  ...
+  \end{aligned}
+  $$
+  我们可以猜想: $a_k = 1 + n \cdot 2 = 1 + 2n$  
+  当然这只是一个猜想, 本章会有数学归纳法来证明  
+  这种sequence称为**arithmetic sequence**, 正式的定义是:  
+  > 如果一个sequence: $a_0, a_1, a_2, ...$称之为arithmetics sequence, 那么它必须满足:
+  > $$a_k = a_{k-1} + d$$
+  > d是一个常量, k是integer, $k \ge 1$. 那么:
+  > $$a_n = a_0 + dn$$
+  > n是integer且: $n \ge 0$
+
+
+<a id="markdown-_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients" name="_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients"></a>
+### _5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coeffcients
+
+标题无法理解, 看内容吧
+
+<a id="markdown-_59-general-recursive-definitions-and-structural-induction" name="_59-general-recursive-definitions-and-structural-induction"></a>
+### _5.9 General Recursive Definitions and Structural Induction
 
 - Recursively Defined Sets
 

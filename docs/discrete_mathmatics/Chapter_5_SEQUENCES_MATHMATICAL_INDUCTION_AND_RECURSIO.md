@@ -218,11 +218,12 @@ In this section we given an overview of the general format of correctness proofs
 
 - **Finding a Explicit Formula**
 
-  有这样一个sequence: $a_0, a_1, a_2, ...$, 是这样定义的:
+  有这样一个sequence: $a_0, a_1, a_2, ...$, 是这样定义的:  
+  k是大于等于1的整数  
   $$
   \begin{aligned}
-  a_k &= a_{k-1} + 2\ for\ k > 1\\
-  a_0 = 1
+  a_k &= a_{k-1} + 2 \\
+  a_0 &= 1
   \end{aligned}
   $$
   我们计算几个term看看:

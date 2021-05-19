@@ -14,7 +14,9 @@
   - [Examples of Recursively Defined Sequences](#examples-of-recursively-defined-sequences)
 - [_5.7 Solving Recurrence Relations by Iteration](#_57-solving-recurrence-relations-by-iteration)
   - [The Method of Iteration迭代方法](#the-method-of-iteration迭代方法)
-- [_5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coeffcients](#_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients)
+- [_5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coefficients](#_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coefficients)
+  - [The Distinct-Roots Case](#the-distinct-roots-case)
+  - [The Single-Root Case](#the-single-root-case)
 - [_5.9 General Recursive Definitions and Structural Induction](#_59-general-recursive-definitions-and-structural-induction)
 
 <!-- /TOC -->
@@ -249,9 +251,128 @@ In this section we given an overview of the general format of correctness proofs
 
 
 <a id="markdown-_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients" name="_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients"></a>
-### _5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coeffcients
+### _5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coefficients
 
-标题无法理解, 看内容吧
+标题直译过来是: 具有常数系数的二阶线性齐次递归关系. recurrence relations参照5.7章节  
+为递归定义的sequence找到明确的公式很难, 这一张讲这样的方法.
+
+> a second-order linear homogeneous recurrence relation with constant coefficients是一个这种形式的recurrence relation:  
+>                    $a_k = Aa_{k-1} + Ba_{k-2}$ for all integers $k \ge$ some fixed integers  
+> A and B are fixed real numbers with $B \ne 0$
+> second-order是指有$a_{k-1}$和$a_{k-2}$两个term, linear是指两个term的指数都是1, 所以是线性的, homogeneous也是指两个term的degree(指数)是一样的, const coefficients是指A和B是常数
+
+#### The Distinct-Roots Case
+
+有这样的一个recurrence relation:
+$$a_k = Aa_{k-1} + Ba_{k-2}$$
+什么样的sequence满足这个recurrence relation呢?  
+很显然的一种情况是: 所有$a_i= 0$的sequence满足.  
+
+还有另外一种情况:
+$$1, t, t^2, t^3, ..., t^n, ...$$
+这个sequence是否满足呢? 如果满足的话, 那么下面的等式应该是成立的:
+$$t^k = At^{k-1} + Bt^{k-2}$$
+如果$k = 2$时:
+$$t^2 = At + B$$
+$$t^2 - At - B = 0$$
+这是一个二次方程式, 是成立的. 那么对于k等于其他数字的情况呢, 我们对上面的式子乘以$t^{k-2}$:
+$$t^{k-2}t^2 - At^{k-2}t - Bt^{k-2} = 0$$
+$$t^k = At^{k-1}t + Bt^{k-2}$$
+所以, 我们有这样的定理:
+> A和B是real number, 一个recurrence relation:
+> $a_k = Aa_{k-1} + Ba_{k-2}$ for all integers $k \ge 2$  
+> 它适用于这样的sequence:
+> $$1, t, t^2, t^3, ..., t^n, ...$$
+> t不是0, t满足这样的等式:
+> $$t^2 - At - B = 0$$
+
+举一个例子:  
+这样的一个recurrence relation:
+$$a_k = a_{k-1} + 2a_{k-2}$$
+根据上面的定理:
+$$t^2 = t + 2$$
+算出来$t = -1$或者$t = 2$  
+所以下面的两个sequence满足此recurrence relation:  
+$1, -1, 1, -1, ..., (-1)^n, ...$和$1, 2, 4, 8, ..., 2^n, ...$
+
+另外一个定理:  
+> 有两个sequence: $r_0, r_1, ...$和$s_0, s_1, ...$满足second-order linear homogeneous recurrence relation  
+> 那么另外一个sequence: $a_0, a_1, ...$, 它被这样定义:
+> $$a_n = Cr_n + Ds_n$$
+> 这个sequence也满足和r、s一样的second-order linear homogeneous recurrence relation
+
+证明一下:  
+如果a sequence满足second-order linear homogeneous recurrence relation, 那么:  
+$$
+\begin{aligned}
+a_k &= Aa_{k-1} + Ba_{k-2} \\
+Cr_k + Ds_k &= A(Cr_{k-1} + Ds_{k-1}) + B(Cr_{k-2} + Ds_{k-2}) \\
+Cr_k + Ds_k &= ACr_{k-1} + ADs_{k-1}) + BCr_{k-2} + BDs_{k-2}) \\
+Cr_k + Ds_k &= C(Ar_{k-1} + Br_{k-2}) + D(As_{k-1} + Bs_{k-2}) \\
+Cr_k + Ds_k &= Cr_k + Ds_k \\
+\end{aligned}
+$$
+证明完成
+
+有了这样的定理, 我们就可以解决recurrence relation加上initial condition的问题了  
+假设recurrence relations是:  
+$a_k = Aa_{k-1} + Ba_{k-2}$ for all integers $k \ge 2$  
+initial conditions是:  
+$a_0 = 1$ and $a_1 = 8$  
+找到满足这两个条件的sequence  
+满足recurrence relations的两个sequence是$1, -1, 1, -1, ..., (-1)^n, ...$和$1, 2, 4, 8, ..., 2^n, ...$  
+所以: $a_n = C \cdot 2^n + D \cdot (-1)^n$  
+根据initial conditions, 得到:
+$$
+\begin{aligned}
+a_0 &= 1 = C + D \\
+a_1 &= 8 = 2C - D
+\end{aligned}
+$$
+从而计算得到$C = 3, D = -2$, 从而:
+$$a_n = 3 \cdot 2^n - 2 \cdot (-1)^n$$
+
+**Fibonacchi Sequence**
+
+很熟悉对不对, 根据上面的定理, 我们来解决Fibonacchi sequence, 这个数列的定义是:  
+recurrence relation是:
+$$F_k = F_{k-1} + F_{k-2}$$
+initial conditions是:
+$$ F_0 = F_1 = 1$$
+我们计算一下:  
+$$
+\begin{aligned}
+&t^2 = t + 1 \\
+&t = \frac{1+\sqrt{5}}{2}\ or\ t = \frac{1-\sqrt{5}}{2} \\
+&F_0 = 1 = C + D\\
+&F_1 = 1 = C \cdot \frac{1+\sqrt{5}}{2} + D \cdot \frac{1-\sqrt{5}}{2} \\
+&C = \frac{1 + \sqrt{5}}{2\sqrt{5}} \\
+&D = \frac{-(1 - \sqrt{5})}{2\sqrt{5}} \\
+&F_n = C \cdot {\left(\frac{1+\sqrt{5}}{2}\right)}^n + D \cdot {\left(\frac{1-\sqrt{5}}{2}\right)}^n \\
+&F_n = \frac{1 + \sqrt{5}}{2\sqrt{5}} \cdot {\left(\frac{1+\sqrt{5}}{2}\right)}^n + \frac{-(1 - \sqrt{5})}{2\sqrt{5}} \cdot {\left(\frac{1-\sqrt{5}}{2}\right)}^n \\
+&F_n = \frac{1}{\sqrt{5}} \cdot {\left(\frac{1+\sqrt{5}}{2}\right)}^{n+1} - \frac{1}{\sqrt{5}} \cdot {\left(\frac{1-\sqrt{5}}{2}\right)}^{n+1}
+\end{aligned}
+$$
+
+#### The Single-Root Case
+
+上面提到了distinct-root case, $t^2 - At - B = 0$, 这个二次方程式有两个解, 得出有两个sequence满足second-order linear homogeneous recurrence relation  
+假如这个二次方程正好有一个解r呢? 是不是只有一个sequence: $1, r, r^2, ...$满足呢?
+$$
+\begin{aligned}
+t^2 - At - B = {(t - r)}^2 = t^2 - 2rt + r^2 = 0 \\
+A = 2r \\
+B = - r^2 \\
+\end{aligned}
+$$
+
+
+
+
+
+
+
+
 
 <a id="markdown-_59-general-recursive-definitions-and-structural-induction" name="_59-general-recursive-definitions-and-structural-induction"></a>
 ### _5.9 General Recursive Definitions and Structural Induction

@@ -32,6 +32,7 @@ Chapter5 SEQUENCES, MATHMATICAL INDUCTION, AND RECURSION
 <a id="markdown-_51-sequences" name="_51-sequences"></a>
 ### _5.1 Sequences
 
+<a id="markdown-sequence的定义" name="sequence的定义"></a>
 #### sequence的定义
 
 sequence的定义有一些奇怪:  
@@ -43,6 +44,7 @@ function的domain就是下标(subscript or index), sequence里的值(term)就是
 "all the integers greater than a given integer"表示这个sequence是无限的  
 "all the integers equal to a given integer"表示这个sequence的长度是1
 
+<a id="markdown-summation-notation" name="summation-notation"></a>
 #### Summation Notation
 
 有这样的一个sequence, $A_k = 2^k$, 我们要求前六个term的求和:
@@ -57,12 +59,14 @@ $$\sum\limits_{k=m}^na_k = a_m + a_{m+1} + a+{m+2} + ... + a_n$$
 
 we call k the index of the summation, m the lower limit of the summation, and n the upper limit of the summation.
 
+<a id="markdown-product-notaion" name="product-notaion"></a>
 #### Product Notaion
 
 if m and n are integers and $m\leq n$, the symbol $\prod\limits_{k=m}^n a_k$(注释: 此处latex limits不起作用), read the product from k equals m to n of a-sub-k, is the product if all terms $a_m, a_{m+1, a_{m+2}, ... , a_n}$, we write:
 
 $$\prod\limits_{k=m}^n a_k = a_m.a_{m+1}.a_{m+2}...a_n $$
 
+<a id="markdown-properties-of-summations-and-products" name="properties-of-summations-and-products"></a>
 #### Properties of Summations and Products
 
 if $a_m, a_{m+1}, a_{m+2}, ...$ and $b_m, b_{m+1}, b_{m+2}, ...$ are sequemces of real numbers and c is any real number, then the following equations hold for any integer $n\geq m$:
@@ -71,6 +75,7 @@ if $a_m, a_{m+1}, a_{m+2}, ...$ and $b_m, b_{m+1}, b_{m+2}, ...$ are sequemces o
 2. $c.\sum\limits_{k=m}^n a_k = \sum\limits_{k=m}^n c.a_k$
 3. $\left( \prod\limits_{k=m}^n a_k \right) .\left(\prod\limits_{k=m}^n b_k\right) = \prod\limits_{k=m}^n (a_k.b_k)$
 
+<a id="markdown-factorial-and-n-choose-r-notation" name="factorial-and-n-choose-r-notation"></a>
 #### Factorial and "n choose r" Notation
 
 for each positive integer n , the quantity a factorial denoted $n!$, is defined to be the product of all the integers fro 1 to n:
@@ -91,10 +96,12 @@ fro all integers n and r with $0\leq r \leq n$
 
 $${n \choose r} = \frac{n!}{r!(n-r)!} $$
 
+<a id="markdown-sequence-in-computer-programming" name="sequence-in-computer-programming"></a>
 #### Sequence in computer programming
 
 计算机里用到的最多的是一位数组one-dimensional array
 
+<a id="markdown-application-algorithm-to-convert-from-base-10-to-base-2-using-repeated-division-by-2" name="application-algorithm-to-convert-from-base-10-to-base-2-using-repeated-division-by-2"></a>
 #### Application: Algorithm to Convert from Base 10 to Base 2 Using Repeated Division by 2
 
 $$
@@ -134,10 +141,12 @@ end while
 Ouptput: r[0], r[1], ..., r[i-1]
 ```
 
+<a id="markdown-_52-mathematical-induction-1" name="_52-mathematical-induction-1"></a>
 ### _5.2 Mathematical Induction 1
 
 > Mathemetical induction is the standard proof technique in computer science. -- Anthony Ralston, 1984
 
+<a id="markdown-定义" name="定义"></a>
 #### 定义
 
 数学归纳法的重要性不言而喻. 看看下面的例子:  
@@ -187,8 +196,10 @@ In this section we given an overview of the general format of correctness proofs
 
   非常严谨的证明loop的方法, 无法描述, 看书吧
 
+<a id="markdown-_56-defining-sequence-recursively" name="_56-defining-sequence-recursively"></a>
 ### _5.6 Defining Sequence Recursively
 
+<a id="markdown-definition" name="definition"></a>
 #### Definition
 
 定义一个sequence有多种方法:
@@ -206,6 +217,7 @@ In this section we given an overview of the general format of correctness proofs
 > 初始条件**initial conditions**是指, i如果是一个确定的整数, 那么要给$a_0, a_1, a_2, ..., a_{i-1}$指定初始值, 因为根据recurrence relation, $a_i$的值由$a_0, a_1, a_2, ..., a_{i-1}$来确定  
 > 如果i不确定, i的值由k来决定, 那么只需初始化根据实际情况需要的值就可以: $a_0, a_1, ..., a_m$, $m \ge 0$, m根据实际情况来定
 
+<a id="markdown-examples-of-recursively-defined-sequences" name="examples-of-recursively-defined-sequences"></a>
 #### Examples of Recursively Defined Sequences
 
 递归recursion是计算机科学的重要思想之一.  
@@ -249,6 +261,7 @@ In this section we given an overview of the general format of correctness proofs
 在上一章节里, recurrence relation表示了一个term和其前面的term之间的关系, 这意味着我要计算某一个term时, 就需要将其前面的term先算出来, 当这个term的下标很大时, 计算量就很大了.  
 有没有办法将recurrence relation转换为只和下标相关的等式呢?  
 
+<a id="markdown-the-method-of-iteration迭代方法" name="the-method-of-iteration迭代方法"></a>
 #### The Method of Iteration迭代方法
 
 这个方法就是根据recurrence relation和initial conditions计算出几个term, 直到发现其规律
@@ -309,6 +322,7 @@ In this section we given an overview of the general format of correctness proofs
   > 那么:
   > $$a_n = a_0r^n\ for\ all\ integers\ n \ge 0$$
 
+<a id="markdown-using-formulas-to-simplify-solutions-obtained-by-iteration" name="using-formulas-to-simplify-solutions-obtained-by-iteration"></a>
 #### Using Formulas to Simplify Solutions Obtained by Iteration
 
 我们用上面的两个定理来解决两个常见的问题  
@@ -325,7 +339,7 @@ $$
 
 
 
-<a id="markdown-_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients" name="_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients"></a>
+<a id="markdown-_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coefficients" name="_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coefficients"></a>
 ### _5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coefficients
 
 标题直译过来是: 具有常数系数的二阶线性齐次递归关系. recurrence relations参照5.7章节  
@@ -336,6 +350,7 @@ $$
 > A and B are fixed real numbers with $B \ne 0$
 > second-order是指有$a_{k-1}$和$a_{k-2}$两个term, linear是指两个term的指数都是1, 所以是线性的, homogeneous也是指两个term的degree(指数)是一样的, const coefficients是指A和B是常数
 
+<a id="markdown-the-distinct-roots-case" name="the-distinct-roots-case"></a>
 #### The Distinct-Roots Case
 
 有这样的一个recurrence relation:
@@ -429,6 +444,7 @@ $$
 \end{aligned}
 $$
 
+<a id="markdown-the-single-root-case" name="the-single-root-case"></a>
 #### The Single-Root Case
 
 上面提到了distinct-root case, $t^2 - At - B = 0$, 这个二次方程式有两个解, 得出有两个sequence满足second-order linear homogeneous recurrence relation  

@@ -357,7 +357,10 @@ $$
 #### The Single-Root Case
 
 上面提到了distinct-root case, $t^2 - At - B = 0$, 这个二次方程式有两个解, 得出有两个sequence满足second-order linear homogeneous recurrence relation  
-假如这个二次方程正好有一个解r呢? 是不是只有一个sequence: $1, r, r^2, ...$满足呢?
+假如这个二次方程正好有一个解r呢? 是不是只有一个sequence: $1, r, r^2, ...$满足呢?  
+先贤们提出还有一个sequence满足: $0, r, 2r^2, 3r^3, ..., nr^n, ...$  
+用公式定义就是: $s_n = nr^n$ for $n \ge 0$
+我们来证明一下
 $$
 \begin{aligned}
 t^2 - At - B = {(t - r)}^2 = t^2 - 2rt + r^2 = 0 \\
@@ -365,14 +368,51 @@ A = 2r \\
 B = - r^2 \\
 \end{aligned}
 $$
+假设s满足上面的recurrence relation, 那么:
+$$
+\begin{aligned}
+s_n &= As_{n-1} + Bs_{n-2} \\
+nr^2 &= A(n-1)r^{n-1} + B(n-2)s_{n-2} \\
+&= 2r(n-1)r^{n-1} - r^2(n-2)s_{n-2} \\
+&= 2(n-1)r^n - (n-2)s_n \\
+&= nr^n\\
+\end{aligned}
+$$
+证明完成
 
+我们在根据distinct-root case里的定理, 下面公式定义的sequence也满足$a_k = Aa_{k-1} + Ba_{k-2}$的recurrence relation:
+$$a_n = Cr^n + Dnr^n$$
 
-
-
-
-
-
-
+我们再根据这个定理来解答包括initial conditions的情况: 
+recurrence relation是: $b_k = 4b_{k-1} - 4b_{k-2}$  
+initial conditions是: $b_0 = 1, b_1 = 3$  
+recurrence relation满足single-root case的情况:  
+$t^2 - 4t + 4 = 0$, 得出$r = 2$  
+再计算C和D
+$$
+\begin{aligned}
+b_0 = 1 &= Cr^0 + D\cdot 0\cdot r^0 \\
+&= C2^0 + D\cdot 0\cdot 2^0 \\
+&= C
+\end{aligned}
+$$
+得出$C = 1$  
+$$
+\begin{aligned}
+b_1 = 3 &= Cr^1 + D\cdot 1\cdot r^1 \\
+&= 1\cdot 2^1 + D\cdot 1\cdot 2^1 \\
+&= 2 + 2D \\
+\end{aligned}
+$$
+得出$D = \frac{1}{2}$  
+所以我们得出这个sequence可以这么定义:
+$$
+\begin{aligned}
+b_n &= Cr^n + Dnr^n \\
+&= 2^n + \frac{n}{2}2^n \\
+&= (1 + \frac{n}{2})2^n\ for\ all\ integers\ n \ge 0
+\end{aligned}
+$$
 
 <a id="markdown-_59-general-recursive-definitions-and-structural-induction" name="_59-general-recursive-definitions-and-structural-induction"></a>
 ### _5.9 General Recursive Definitions and Structural Induction

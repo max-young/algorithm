@@ -8,12 +8,15 @@
   - [Factorial and "n choose r" Notation](#factorial-and-n-choose-r-notation)
   - [Sequence in computer programming](#sequence-in-computer-programming)
   - [Application: Algorithm to Convert from Base 10 to Base 2 Using Repeated Division by 2](#application-algorithm-to-convert-from-base-10-to-base-2-using-repeated-division-by-2)
+- [_5.2 Mathematical Induction 1](#_52-mathematical-induction-1)
+  - [定义](#定义)
 - [_5.5 Application: Correctness of Algorithms](#_55-application-correctness-of-algorithms)
 - [_5.6 Defining Sequence Recursively](#_56-defining-sequence-recursively)
   - [Definition](#definition)
   - [Examples of Recursively Defined Sequences](#examples-of-recursively-defined-sequences)
 - [_5.7 Solving Recurrence Relations by Iteration](#_57-solving-recurrence-relations-by-iteration)
   - [The Method of Iteration迭代方法](#the-method-of-iteration迭代方法)
+  - [Using Formulas to Simplify Solutions Obtained by Iteration](#using-formulas-to-simplify-solutions-obtained-by-iteration)
 - [_5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coefficients](#_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coefficients)
   - [The Distinct-Roots Case](#the-distinct-roots-case)
   - [The Single-Root Case](#the-single-root-case)
@@ -131,6 +134,38 @@ end while
 Ouptput: r[0], r[1], ..., r[i-1]
 ```
 
+### _5.2 Mathematical Induction 1
+
+> Mathemetical induction is the standard proof technique in computer science. -- Anthony Ralston, 1984
+
+#### 定义
+
+数学归纳法的重要性不言而喻. 看看下面的例子:  
+在美国, 有人认为1便士没有必要存在了, 8便士以上的价格都可以用3便士和5便士来兑换. 我们可以列举几个:
+$$
+\begin{aligned}
+8 &= 3 + 5 \\
+9 &= 3 + 3 + 3 \\
+10 &= 5 + 5 \\
+11 &= 3 + 3 + 5\\
+...
+\end{aligned}
+$$
+那么是否可以一直这么算下去呢?  
+我们可以考虑这样的一个问题: 假如k便士可以被3便士和5便士换算, 那么k+1便士是否可以呢? 我们试着证明一下:  
+假如k便士换算里, 有一个5便士, 那么我们把5便士拿掉, 换成两个3便士, 那么就变成k+1便士了, k+1就能被3和5换算.  
+假如k便士里没有5便士, 只有3便士呢? k = 8时是成立的, 先不用考虑, 从k = 9开始, 如果k只能被3换算, 那么必须有3个3便士以上, 那么我们把3个便士拿掉, 换成2个5便士, 就变成k+1个便士了, k+1也就能被3和5换算.  
+这样, 上面的换算假设里, 初始值k = 8时是成立的, 另外如果 k >= 8 时是成立的, 那么k + 1也成立, 那么是否说明上面的假设就是成立的呢?  
+这个问题很好的描述了mathematical induction:  
+> Principle of Mathematical Induction  
+> $P(n)$表示和整数n相关的一个特性, a是一个特定的整数, 如果下面的两个条件为真:  
+> 
+> 1. P(a) is true  
+> 2. 对于所有的整数$k \ge a$, 如果P(k) is true, 那么P(k+1) is true  
+> 
+> 那么我们说: 对于所有的整数$n \ge a$, P(n) is true 
+
+
 <a id="markdown-_55-application-correctness-of-algorithms" name="_55-application-correctness-of-algorithms"></a>
 ### _5.5 Application: Correctness of Algorithms
 
@@ -216,9 +251,9 @@ In this section we given an overview of the general format of correctness proofs
 
 #### The Method of Iteration迭代方法
 
-这个方法就是根据recurrence relation和initial conditions计算出几个term, 知道发现其规律
+这个方法就是根据recurrence relation和initial conditions计算出几个term, 直到发现其规律
 
-- **Finding a Explicit Formula**
+- **Arithmetic Sequence**
 
   有这样一个sequence: $a_0, a_1, a_2, ...$, 是这样定义的:  
   k是大于等于1的整数  
@@ -244,10 +279,50 @@ In this section we given an overview of the general format of correctness proofs
   当然这只是一个猜想, 本章会有数学归纳法来证明  
   这种sequence称为**arithmetic sequence**, 正式的定义是:  
   > 如果一个sequence: $a_0, a_1, a_2, ...$称之为arithmetics sequence, 那么它必须满足:
-  > $$a_k = a_{k-1} + d$$
-  > d是一个常量, k是integer, $k \ge 1$. 那么:
-  > $$a_n = a_0 + dn$$
-  > n是integer且: $n \ge 0$
+  > $$a_k = a_{k-1} + d\ for\ all\ integers\ k \ge 1$$
+  > 那么:
+  > $$a_n = a_0 + dn\ for\ all\ integers\ n \ge 0$$
+
+- **Geoetric Sequence**
+
+  这样的一个sequence:
+  $$
+  \begin{aligned}
+  a_k = ra_{k-1}\ for\ all\ integers\ k \ge 1 \\
+  a_0 = a
+  \end{aligned}
+  $$
+  计算几个term看看:
+  $$
+  \begin{aligned}
+  a_0 &= a \\
+  a_1 &= ra_0 = ra \\
+  a_2 &= ra_1 = r^2a \\
+  a_3 &= ra_2 = r^3a \\
+  ...
+  \end{aligned}
+  $$
+  我们可以猜想: $a_n = ar^n$ for all integers $n \ge 0$
+  这种sequence称为**geometric sequence**, 正式的定义是:  
+  > 如果一个sequence: $a_0, a_1, a_2, ...$称之为arithmetics sequence, 那么它必须满足:
+  > $$a_k = ra_{k-1}\ for\ all\ integers\ k \ge 1$$
+  > 那么:
+  > $$a_n = a_0r^n\ for\ all\ integers\ n \ge 0$$
+
+#### Using Formulas to Simplify Solutions Obtained by Iteration
+
+我们用上面的两个定理来解决两个常见的问题  
+
+- **An Explicit Formula for the Tower of Hanoi Sequence**
+
+在5.6章节里, Tower of Hanoi Sequence可以这么定义:
+$$
+m_k = 2m_{k-1} + 1\ for\ all\ integers\ k \ge 2 \\
+m_1 = 1
+$$
+
+
+
 
 
 <a id="markdown-_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients" name="_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coeffcients"></a>

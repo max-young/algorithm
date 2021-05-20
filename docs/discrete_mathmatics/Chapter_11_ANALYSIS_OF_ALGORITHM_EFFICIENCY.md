@@ -285,11 +285,11 @@ PS: 我想, 为什么是$\Theta$呢? 我觉得, 因为上面说的都是某些�
         break
     A[move_index] = current_item
   ```
-  - Worst-Case Order
+  - Worst-Case Order  
   最差的情况就是从第2个元素开始, 左边的元素都比他大, 这样左边的元素都需要比较一遍, 当i = 2时, 比较1次, 当i = 3时, 比较2次...., 所以总的比较次数是:  
   $$1 + 2 + 3 + ... + (n-1) = \frac{n(n+1)}{2} - 1 = \frac{1}{2}n^2 + \frac{1}{2}n - 1$$
   这个多项式是$\Theta{n^2}$, 所以The insertion sort algorithm是worst case order $\Theta(n^2)$
-  - Average-Case Order
+  - Average-Case Order  
 
 
 <a id="markdown-_115-application-alalysis-of-algorithm-efficiency-2" name="_115-application-alalysis-of-algorithm-efficiency-2"></a>

@@ -9,7 +9,6 @@
   - [Sequence in computer programming](#sequence-in-computer-programming)
   - [Application: Algorithm to Convert from Base 10 to Base 2 Using Repeated Division by 2](#application-algorithm-to-convert-from-base-10-to-base-2-using-repeated-division-by-2)
 - [_5.2 Mathematical Induction 1](#_52-mathematical-induction-1)
-  - [定义](#定义)
 - [_5.5 Application: Correctness of Algorithms](#_55-application-correctness-of-algorithms)
 - [_5.6 Defining Sequence Recursively](#_56-defining-sequence-recursively)
   - [Definition](#definition)
@@ -146,9 +145,6 @@ Ouptput: r[0], r[1], ..., r[i-1]
 
 > Mathemetical induction is the standard proof technique in computer science. -- Anthony Ralston, 1984
 
-<a id="markdown-定义" name="定义"></a>
-#### 定义
-
 数学归纳法的重要性不言而喻. 看看下面的例子:  
 在美国, 有人认为1便士没有必要存在了, 8便士以上的价格都可以用3便士和5便士来兑换. 我们可以列举几个:
 $$
@@ -174,6 +170,59 @@ $$
 > 
 > 那么我们说: 对于所有的整数$n \ge a$, P(n) is true 
 
+mathematical induction与其说是一个定理theorem, 更应该说是一个公理principle  
+它可以形象的理解为一个多米诺骨牌, 当第一张牌倒下, 剩下的所有牌会依次倒下.  
+
+显然, 我们用mathematical induction来做证明的时候, 有两个步骤:  
+
+> 假如有这样的一个声明: 对于所有整数$n \ge a$, $P(n)$都是成立的. 证明步骤是:
+> 1. basic step: 证明$P(a)$是成立的
+> 2. inductive step:  对于所有$k \ge a$, 证明如果$P(k)$是成立的, 那么$P(k+1)$就是成立的
+
+两个应用的例子  
+- **Sum of First n Integers**  
+$$1 + 2 + ... + n = \frac{n(n+1)/2}\ for\ all\ integers\ n \ge 1$$
+顺便提一下**closed form**的概念, 一连串的数字想加, 最后用等号右边的式子表示, 这个式子不包括省略号, 也不包括sum这样的符号, 那么这个式子称之为closed form  
+- **Sum of a Geometric Sequence**  
+$$\sum_{i=0}^{n}r^i = \frac{r^{n+1}-1}{r-1}$$
+for all integers $n \ge 0$ and r is real number except 1
+
+上面两个公式都可以用mathematical induction来证明, 这里不再赘述  
+
+番外:  
+
+对于一个等式的证明方法, 我们可以将等式的其中一边运算, 最后等于另外一边. 或者两边分别运算, 最后都等于同一个值. 但是下面的证明方法是不对的:  
+$$
+\begin{aligned}
+\sum_{i=0}^{0}r^i &= \frac{r^{0+1} - 1}{r - 1} \\
+r^0 &= \frac{r^1 - 1}{r - 1} \\
+1 &= \frac{r - 1}{r - 1} \\
+1 &= 1
+\end{aligned}
+$$
+看起来好像没什么问题, 但是这样是不对的. 比如下面的例子:
+$$
+\begin{aligned}
+1 &= 0 \\
+0 &= 1 \\
+1 + 0 &= 0 + 1 \\
+1 &= 1
+\end{aligned}
+$$
+我们能说$1 = 0$是成立的吗?
+
+对于sum of a geometric sequence, 可以这么证明:
+$$
+\begin{aligned}
+s_n &= 1 + r + r^2 + ... + r^n \\
+rs_n &= r + r^2 + r^3 + ... + r^{n+1} \\
+rs_n - s_n &= (r + r^2 + ... + r^{n+1}) - (1 + r + r^2 + ... + r^n) \\
+&= r^{n+1} - 1 \\
+(r - 1)s_n &= r^{n+1} - 1 \\
+s_n &= \frac{r^{n+1} - 1}{r - 1}
+\end{aligned}
+$$
+这样的证明好像也挺完美和让人信服的. 但是在数学上, 这是不严密的, 因为在证明过程中有省略号, 这里面的操作是不可见的, 尽管我们觉得这没什么问题.
 
 <a id="markdown-_55-application-correctness-of-algorithms" name="_55-application-correctness-of-algorithms"></a>
 ### _5.5 Application: Correctness of Algorithms

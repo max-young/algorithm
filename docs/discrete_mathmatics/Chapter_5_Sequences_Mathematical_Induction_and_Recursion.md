@@ -383,10 +383,22 @@ $$
 m_k = 2m_{k-1} + 1\ for\ all\ integers\ k \ge 2 \\
 m_1 = 1
 $$
-
-
-
-
+我们可以计算几个term:
+$$
+\begin{aligned}
+m_1 &= 1 \\
+m_2 &= 2 \cdot 1 + 1 \\
+m_3 &= 2 \cdot (2 + 1) + 1 = 2 \cdot 2 + 2 \cdot 1 + 1 \\
+m_4 &= 2 \cdot (2 \cdot 2 + 2 \cdot 1 + 1) + 1 =  2^3 + 2^2 + 2^1 + 1 \\
+...
+\end{aligned}
+$$
+我们可以得出:
+$$m_k = 2^0 + 2^1 + ... + 2^{k-1}$$
+根据[5.2章节](./docs/discrete_mathmatics/Chapter_5_Sequences_Mathematical_Induction_and_Recursion?id=_52-mathematical-induction-1)的定理:
+$$m_k = \frac{2^k - 1}{2 - 1} = 2^k - 1$$
+for all integers $k \ge 1$  
+这个公式可以用mathematical induction来证明
 
 <a id="markdown-_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coefficients" name="_58-second-order-linear-homogeneous-recurrence-relations-with-constant-coefficients"></a>
 ### _5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coefficients

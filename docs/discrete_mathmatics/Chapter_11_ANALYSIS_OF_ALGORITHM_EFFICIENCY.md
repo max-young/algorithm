@@ -11,7 +11,13 @@
   - [The Sequential Search Algorithm 顺序查找算法](#the-sequential-search-algorithm-顺序查找算法)
   - [The Insertion Sort Algorithm 插入排序算法](#the-insertion-sort-algorithm-插入排序算法)
   - [Time Efficiency of an Algorithm 算法的时间效率](#time-efficiency-of-an-algorithm-算法的时间效率)
+- [_11.4 Exponential and Logarithmic Functions: Graphs and Orders](#_114-exponential-and-logarithmic-functions-graphs-and-orders)
+  - [Graphs of Exponential Functions](#graphs-of-exponential-functions)
+  - [Graphs of Logarithmic Functions](#graphs-of-logarithmic-functions)
 - [_11.5 Application: Alalysis of Algorithm Efficiency 2](#_115-application-alalysis-of-algorithm-efficiency-2)
+  - [Binary Search](#binary-search)
+  - [The Efficiency of the Binary Search Algorithm](#the-efficiency-of-the-binary-search-algorithm)
+  - [Merge Sort](#merge-sort)
 
 <!-- /TOC -->
 
@@ -287,26 +293,154 @@ PS: 我想, 为什么是$\Theta$呢? 我觉得, 因为上面说的都是某些�
   ```
   - Worst-Case Order  
   最差的情况就是从第2个元素开始, 左边的元素都比他大, 这样左边的元素都需要比较一遍, 当i = 2时, 比较1次, 当i = 3时, 比较2次...., 所以总的比较次数是:  
-  $$1 + 2 + 3 + ... + (n-1) = \frac{n(n+1)}{2} - 1 = \frac{1}{2}n^2 + \frac{1}{2}n - 1$$
+  $$1 + 2 + 3 + ... + (n-1) = \frac{n(n+1)}{2} - n = \frac{1}{2}n^2 - \frac{1}{2}n$$
   这个多项式是$\Theta{n^2}$, 所以The insertion sort algorithm是worst case order $\Theta(n^2)$
   - Average-Case Order  
+  长度为k的array的比较次数, 应该是前面长度为k-1的子array的比较次数, 加上最后一个元素和前面k-1个元素的比较次数, 可以表示为:  
+  $CS_k = CS_{k-1} + C_k$ for all integers $k \ge 2$
+  当array的长度是1时, 即$k = 1$时, 比较次数是0, $CS_1 = 0$  
+  这个其实就是一个sequence的recursively定义, 回忆一下[第五章](/./docs/discrete_mathmatics/Chapter_5_Sequences_Mathematical_Induction_and_Recursion?id=_56-defining-sequence-recursively)  
+  但是$C_k$是不确定的, 我们来看看怎么计算:  
+  最后一个元素$i_k$要比较几次呢? 取决于最以后一个元素的大小, 可以排在前面k-1个元素的哪个位置, 排在某个位置的概率是相等的, 都是$\frac{1}{k}$(可能比前面的元素都大)  
+  我们把$i_k$最终排在的位置定义为j, 那么比较次数是$k - j$(注:这里定义第一个元素的索引是1)  
+  那么根据[expected value](./docs/discrete_mathmatics/Chapter_9_Counting_and_Probability?id=_98-probability-axioms-and-expected-value)的定义, 最后一个元素$i_k$的比较次数等于其最终在前面k-1个的可能位置的概率乘以比较次数之和:
+  $$
+  \begin{aligned}
+  C_k &= \sum_{j = 1}^{k}\frac{1}{k}(k-j) \\
+  &=\frac{1}{k}((k - 1) + (k - 2) + ... + 1 + 0) \\
+  &=\frac{1}{k}\frac{k(k-1)}{2} \\
+  &= \frac{k-1}{2}
+  \end{aligned}
+  $$
+  所以上面的sequence的recursively define就是:  
+  $CS_k = CS_{k-1} + \frac{k-1}{2}$ for all integers $k \ge 2$
+  当array的长度是1时, 即$k = 1$时, 比较次数是0, $CS_1 = 0$  
+  我们用[iteration](./docs/discrete_mathmatics/Chapter_5_Sequences_Mathematical_Induction_and_Recursion?id=_57-solving-recurrence-relations-by-iteration)来求解这个问题:
+  $$
+  \begin{aligned}
+  CS_1 &= 0 \\
+  CS_2 &= 0 + \frac{1}{2} \\
+  CS_3 &= 0 + \frac{1}{2} + \frac{2}{2} \\
+  CS_4 &= 0 + \frac{1}{2} + \frac{2}{2} + \frac{3}{2} \\
+  CS_5 &= 0 + \frac{1}{2} + \frac{2}{2} + \frac{3}{2} + \frac{4}{2} \\
+  ... \\
+  CS_k &= \frac{1}{2}(1 + 2 + 3 + ... (k - 1)) \\
+  &= \frac{1}{2} \cdot \frac{k(k-1)}{2} \\
+  &= \frac{k^2 - k}{4} \\
+  \end{aligned}
+  $$
+  这个多项式是$\Theta{n^2}$, 所以The insertion sort algorithm是average case order $\Theta(n^2)$
+
+<a id="markdown-_114-exponential-and-logarithmic-functions-graphs-and-orders" name="_114-exponential-and-logarithmic-functions-graphs-and-orders"></a>
+### _11.4 Exponential and Logarithmic Functions: Graphs and Orders
+
+#### Graphs of Exponential Functions
+
+#### Graphs of Logarithmic Functions
 
 
 <a id="markdown-_115-application-alalysis-of-algorithm-efficiency-2" name="_115-application-alalysis-of-algorithm-efficiency-2"></a>
 ### _11.5 Application: Alalysis of Algorithm Efficiency 2
 
-divide and conquer分而治之
+**divide and conquer分而治之**  
 
-采用此策略, 我们可以得出binary search算法, 来和11.3的sequential search算法做比较
-
-已经merge sort算法和11.3的insert sort算法做比较
-
+采用此策略, 我们可以得出binary search算法, 来和11.3的sequential search算法做比较  
+以及merge sort算法和11.3的insert sort算法做比较  
 看效率是否提高
 
-- Binary Search
+#### Binary Search
 
-  看书中的定义, 很清晰, 注意算法定义了3个变量: index = 0, bot = 1, top = n
+假设一个array a是有序的, 从小到大排列, 我们要确定一个数字x在a中的位置index  
+我们定义bot_index是1, top_index是len(a) = n, 我们找到中间的元素mid_index来和x做比较  
+mid_index应该是(bot_index + top_index) / 2, 如果bot_index + top_index是奇数, 我们取floor值  
+如果mid_index的值等于x, 那么就结束了, 找到了位置  
+如果x小于中间的元素, 那么x就在左半区, 我们把top_index变成mid_index - 1  
+如果x大于中间的元素, 那么x就在右半区, 我们把bot_index变成mid_index + 1  
+这样一直执行下去, 直到找到为止...  
+等等, 如果x不在a里面, 我们一直这样切分下去, 最后会得到bot_index > top_index, 当达到这种情况时, 说明我们已经找遍了所有元素, 应该中止执行  
 
-- Merge Sort
+写一下伪代码Proseudo
+```
+ALGORITHM binary search
+// Input: an array a that ascending order, a item x
+// Output: the index that x in a, if x not in a, return 0
+// 备注: 在本书的算法里, array的index都是从1开始
+int bot_index = 1
+int top_index = len(a)
+while bot_index <= top_index
+  mid_index = (bot_index + top_index) / 2
+  if x == a[mid_index]:
+    return mid_index
+  if x <  a[mid_index]:
+    top_index = mid_index - 1
+  else:
+    bot_index = mid_index + 1
+return 0
+```
+
+#### The Efficiency of the Binary Search Algorithm
+
+best case的情况, 就是while执行一次就查到了  
+worst case的情况下, 就是x不在a里面, while一直执行下去, 直到bot_index > top_index.  
+while执行一次, 就是把a去掉一半, 这样cut掉的次数应该是$log_2 n$, while执行的次数应该近似于$log_2 n$  
+那么执行的次数应该是多少呢?  
+假设n是1, bot_index = mid_index = top_index = 1, 只执行1次  
+假设n是2, cut一次, bot_index = mix_index = 1, top_index = 2, worst case下, 下一次执行应该是bot_index += 1, 这样bot_index = top_index = 2, 再执行一次, 等于2  
+假设n是3, cut一次之后, 左边和右边两段都是1, 所以的次数是n=1的情况+1, 执行次数是2  
+假设n是4, cut一次之后, 左边长度是1, 右边长度是2, worst
+case下, 应在选右边继续执行, 所以次数是n=2的情况+1, 执行次数是3  
+假设n是5, cut一次之后, 左边长度是2, 右边长度也是2, 所以次数是n=2的情况+1, 执行次数是3  
+假设n是6, cut一次之后, 左边长度是2, 右边长度是3, 所以此时是n=3的情况+1, 执行此时是3  
+假设n是7, cut一次之后, 左边长度是3, 右边长度是3, 所以此时是n=3的情况+1, 执行此时是3  
+假设n是8, cut一次之后, 左边长度是3, 右边长度是4, 所以此时是n=4的情况+1, 执行此时是4  
+假设n是9, cut一次之后, 左边长度是4, 右边长度是4, 所以此时是n=4的情况+1, 执行此时是4  
+...  
+在上面的推导里, 需要注意到, 如果长度是偶数, 做切分时, 两边长度是不等的, 在worst case下, 要取长的那一段, 下面做详细表述  
+
+我们把对一个长度为n的array做binary search, while执行的此时记为$w_n$  
+如果我们对array a切分一次, 分成两半  
+假如长度是偶数, 那么左边的长度是n/2 - 1, 右边的长度是n/2  
+我们取worst case的情况, 取右边, 这样:  
+$$w_n = w_{n/2} + 1$$
+如果长度是奇数, 那么左边和右边的长度都是$(n+1)/2 - 1 = (n-1)/2 = \lfloor n/2 \rfloor $, 从而:
+$$w_n = w_{(n-1)/2} + 1 = w_{\lfloor n/2 \rfloor} + 1$$
+实际上, 偶数的情况下:
+$$w_n = w_{n/2} + 1 = w_{\lfloor n/2 \rfloor} + 1$$
+
+我们根据上面的推导, 好像能发现一个规律, while执行的次数好像满足这样的规律:  
+$$if\ 2^i \le n \lt 2^{i+1}\ then\ w_n = i + 1$$
+也就是说:
+$$w_n = \lfloor log_2 n \rfloor + 1$$
+我们试着证明一下, 采用数学归纳法:  
+当n = 1时, i = 0, $w_2 = 0 + 1 = 1$
+下面我们来证明:  
+当k>=1时, 如果$w_i = \lfloor log_2 i \rfloor + 1$, 1 <= i <= k, 那么$w_{k+1} = \lfloor log_s (k+1) \rfloor + 1$
+当k为奇数时:
+$$
+\begin{aligned}
+w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
+&= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
+&= \lfloor log_2 (k+1)/2 \rfloor + 1 + 1\ 因为(k+1)/2<=k\\
+&= \lfloor log_2 (k+1) - log_2 2 \rfloor + 2 \\
+&= \lfloor log_2 (k+1) \rfloor + 1
+\end{aligned}
+$$
+当k为偶数时
+$$
+\begin{aligned}
+w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
+&= w_{\lfloor k/2 \rfloor} + 1 因为k是偶数\\
+&= \lfloor log_2 k/2 \rfloor + 1 + 1\ 因为k/2<k\\
+&= \lfloor log_2 k - log_2 2 \rfloor + 2 \\
+&= \lfloor log_2 k - 1 \rfloor + 2 \\
+&= \lfloor log_2 k + 1 \rfloor + 1 \\
+&= \lfloor log_2 (k + 1) \rfloor + 1 \\
+\end{aligned}
+$$
+# TODO  11.4.2
+
+所以Binary Search Algorithm是worst case order $\Omega(log_2n)$  
+
+#### Merge Sort
 
   不太直观, 有点烧脑. 看Python的写法吧.

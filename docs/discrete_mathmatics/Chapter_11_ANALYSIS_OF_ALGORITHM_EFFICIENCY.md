@@ -334,9 +334,21 @@ PS: 我想, 为什么是$\Theta$呢? 我觉得, 因为上面说的都是某些�
 <a id="markdown-_114-exponential-and-logarithmic-functions-graphs-and-orders" name="_114-exponential-and-logarithmic-functions-graphs-and-orders"></a>
 ### _11.4 Exponential and Logarithmic Functions: Graphs and Orders
 
+Exponential and Logarithmic Functions在数学和计算机科学中扮演很重要的角色  
+比如在计算算法里表示执行次数, 有的算法的执行次数是输入数据大小的Exponential指数函数, 表示这个算法的效率很低  
+有的算法的执行次数是输入数据大小的Logarithmic对数函数, 表示这个算法的效率相对不错
+
 #### Graphs of Exponential Functions
 
+在7.2章节里有[Exponential Function](./docs/discrete_mathmatics/Chapter_7_Functions?id=relations-between-exponential-and-logarithmic-functions)的定义  
+我们在笛卡尔坐标系下画出指数函数的曲线, 在b>1的情况下, 曲线的增长是非常惊人的  
+
 #### Graphs of Logarithmic Functions
+
+在7.1章节里有[Logarithm Function](./docs/discrete_mathmatics/Chapter_7_Functions?id=examples-of-functions)的定义
+
+如果logarithm function的base b > 1, 在笛卡尔坐标系下函数的曲线是递增的, 那么对于两个正数$x_1$和$x_2$:
+$$if x_1 \lt x_2,\ then\ log_b (x_1) \lt log_b (x_2)$$
 
 
 <a id="markdown-_115-application-alalysis-of-algorithm-efficiency-2" name="_115-application-alalysis-of-algorithm-efficiency-2"></a>
@@ -414,12 +426,12 @@ $$w_n = \lfloor log_2 n \rfloor + 1$$
 我们试着证明一下, 采用数学归纳法:  
 当n = 1时, i = 0, $w_2 = 0 + 1 = 1$
 下面我们来证明:  
-当k>=1时, 如果$w_i = \lfloor log_2 i \rfloor + 1$, 1 <= i <= k, 那么$w_{k+1} = \lfloor log_s (k+1) \rfloor + 1$
+当k>=1时, 如果$w_i = \lfloor log_2 i \rfloor + 1$, for 1 <= i <= k, 那么$w_{k+1} = \lfloor log_s (k+1) \rfloor + 1$
 当k为奇数时:
 $$
 \begin{aligned}
 w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
-&= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
+&= w_{\lfloor (k + 1)/2 \rfloor} + 1\ 因为k是奇数, k+1是偶数\\
 &= \lfloor log_2 (k+1)/2 \rfloor + 1 + 1\ 因为(k+1)/2<=k\\
 &= \lfloor log_2 (k+1) - log_2 2 \rfloor + 2 \\
 &= \lfloor log_2 (k+1) \rfloor + 1
@@ -434,7 +446,7 @@ w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
 &= \lfloor log_2 k - log_2 2 \rfloor + 2 \\
 &= \lfloor log_2 k - 1 \rfloor + 2 \\
 &= \lfloor log_2 k + 1 \rfloor + 1 \\
-&= \lfloor log_2 (k + 1) \rfloor + 1 \\
+&= \lfloor log_2 (k + 1) \rfloor + 1\ 看11.4章节\\
 \end{aligned}
 $$
 # TODO  11.4.2

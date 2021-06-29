@@ -26,6 +26,12 @@ Functions函数
 
 #### Examples of Functions
 
+- Definition Logarithms and Logarithmic Function
+  
+  b是一个不等于1的正实数, 对于一个正实数x, the **logarithm with base b of x**, 写作$log_b x$, 它表示b能够得到x的指数(exponent):
+  $$log_b x = y \Leftrightarrow b^y = x$$
+  the **logarithmic function with base b** 是$R^+$到$R$的函数, 具体是指实数$x$到$log_b x$ 
+
 #### 函数相等
 
   如果两个函数$F:X \to Y$和$G: X \to Y$, 如果$F = G$, 则所有$x \in X$都满足$F(x) = G(x)$
@@ -65,6 +71,11 @@ Functions函数
 
 #### Relations between Exponential and Logarithmic Functions
 
+对于一个不等于1的正数b, the **exponential function with base b**, 表示为$exp_b$  
+它是一个$R$到$R^+$的函数: 对于所有real number实数x:
+$$exp_b(x) = b^x$$
+$b^0 = 1$, $b^{-x} = 1/b^x$  
+注: $R$代表实数, $R^+$代表正实数
 
 <a id="markdown-74-cardinality-with-applications-to-computability" name="74-cardinality-with-applications-to-computability"></a>
 ### 7.4 Cardinality with Applications to Computability

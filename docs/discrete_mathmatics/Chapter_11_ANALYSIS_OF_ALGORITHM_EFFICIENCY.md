@@ -445,18 +445,17 @@ $$w_n = \lfloor log_2 n \rfloor + 1$$
 我们试着证明一下, 采用数学归纳法:  
 当n = 1时, i = 0, $w_2 = 0 + 1 = 1$
 下面我们来证明:  
-当k>=1时, 如果$w_i = \lfloor log_2 i \rfloor + 1$, for 1 <= i <= k, 那么$w_{k+1} = \lfloor log_s (k+1) \rfloor + 1$
-当k为奇数时:
+当k>=1时, 如果$w_i = \lfloor log_2 i \rfloor + 1$, for 1 <= i <= k, 那么$w_{k+1} = \lfloor log_s (k+1) \rfloor + 1$  
+当k为奇数时:  
 $$
 \begin{aligned}
 w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
-&= w_{\lfloor (k + 1)/2 \rfloor} + 1\ 因为k是奇数, k+1是偶数\\
 &= \lfloor log_2 (k+1)/2 \rfloor + 1 + 1\ 因为(k+1)/2<=k\\
 &= \lfloor log_2 (k+1) - log_2 2 \rfloor + 2 \\
 &= \lfloor log_2 (k+1) \rfloor + 1
 \end{aligned}
 $$
-当k为偶数时
+当k为偶数时:  
 $$
 \begin{aligned}
 w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
@@ -464,7 +463,7 @@ w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
 &= \lfloor log_2 k/2 \rfloor + 1 + 1\ 因为k/2<k\\
 &= \lfloor log_2 k - log_2 2 \rfloor + 2 \\
 &= \lfloor log_2 k - 1 \rfloor + 2 \\
-&= \lfloor log_2 k + 1 \rfloor + 1 \\
+&= \lfloor log_2 k \rfloor + 1 \\
 &= \lfloor log_2 (k + 1) \rfloor + 1\ 看11.4章节对数的特性\\
 \end{aligned}
 $$
@@ -472,5 +471,3 @@ $$
 所以Binary Search Algorithm是worst case order $\Omega(log_2n)$  
 
 #### Merge Sort
-
-  不太直观, 有点烧脑. 看Python的写法吧.

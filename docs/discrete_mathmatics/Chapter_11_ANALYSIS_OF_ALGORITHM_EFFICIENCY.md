@@ -350,6 +350,25 @@ Exponential and Logarithmic Functions在数学和计算机科学中扮演很重�
 如果logarithm function的base b > 1, 在笛卡尔坐标系下函数的曲线是递增的, 那么对于两个正数$x_1$和$x_2$:
 $$if x_1 \lt x_2,\ then\ log_b (x_1) \lt log_b (x_2)$$
 
+Logarithm的特性:  
+- 如果$2^k \le x \lt 2^{k+1}$, 那么$\lfloor log_2 x \rfloor = k$  
+
+  证明一下:
+  $2^k \le x \lt 2^{k+1}$  
+  因为上面的特性, 对数的曲线是递增的, 所以:  
+  $log_2 (2^k) \le log_2 x \lt log_2 (2^{k+1})$  
+  $k \le log_2 x \lt k+1$  
+  所以: $\lfloor log_2 x \rfloor = k$  
+
+- 对于大于1的奇数n, $\lfloor log_2 (n-1) \rfloor = \lfloor log_2 n \rfloor$
+
+  假设$\lfloor log_2 n \rfloor = k$, 那么:  
+  $2^k \le n \lt 2^{k+1}$, 因为$n$是奇数, $2^k$是偶数, 那么:  
+  $2^k \lt n \lt 2^{k+1}$  
+  $2^k \le n-1 \lt 2^{k+1}$  
+  所以$\lfloor log_2 (n-1) \rfloor = k$  
+  所以$\lfloor log_2 (n-1) \rfloor = \lfloor log_2 n \rfloor$
+
 
 <a id="markdown-_115-application-alalysis-of-algorithm-efficiency-2" name="_115-application-alalysis-of-algorithm-efficiency-2"></a>
 ### _11.5 Application: Alalysis of Algorithm Efficiency 2
@@ -446,10 +465,9 @@ w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
 &= \lfloor log_2 k - log_2 2 \rfloor + 2 \\
 &= \lfloor log_2 k - 1 \rfloor + 2 \\
 &= \lfloor log_2 k + 1 \rfloor + 1 \\
-&= \lfloor log_2 (k + 1) \rfloor + 1\ 看11.4章节\\
+&= \lfloor log_2 (k + 1) \rfloor + 1\ 看11.4章节对数的特性\\
 \end{aligned}
 $$
-# TODO  11.4.2
 
 所以Binary Search Algorithm是worst case order $\Omega(log_2n)$  
 

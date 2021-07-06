@@ -181,7 +181,7 @@ mathematical induction与其说是一个定理theorem, 更应该说是一个公�
 
 两个应用的例子  
 - **Sum of First n Integers**  
-$$1 + 2 + ... + n = \frac{n(n+1)/2}\ for\ all\ integers\ n \ge 1$$
+$$1 + 2 + ... + n = \frac{n(n+1)}{2}\ for\ all\ integers\ n \ge 1$$
 顺便提一下**closed form**的概念, 一连串的数字想加, 最后用等号右边的式子表示, 这个式子不包括省略号, 也不包括sum这样的符号, 那么这个式子称之为closed form  
 - **Sum of a Geometric Sequence**  
 $$\sum_{i=0}^{n}r^i = \frac{r^{n+1}-1}{r-1}$$

@@ -468,6 +468,49 @@ w_{k+1} &= w_{\lfloor (k + 1)/2 \rfloor} + 1 \\
 \end{aligned}
 $$
 
-所以Binary Search Algorithm是worst case order $\Omega(log_2n)$  
+所以Binary Search Algorithm是worst case的情况下执行次数是 $log_2 n + 1$   
+那么这个算法的效率怎么表述呢? 是$\Omicron (log_2 n)$呢? 还是$\Theta (log_2 n)$呢? 
+
+假设$n \gt 2$, 算法的执行次数是$w_n = \lfloor log_2 n \rfloor + 1$, 所以:
+$$
+\begin{aligned}
+log_2 n \le &w_n \le log_2 n + 1 \\
+log_2 n \le &w_n \le log_2 n + log_2 n\ 因为n \gt 2\\
+log_2 n \le &w_n \le 2log_2 n \\
+\end{aligned}
+$$
+根据$\Theta$-notition的定义, the binary search algorithm是$\Theta\left(log_2 n\right)$  
 
 #### Merge Sort
+
+merge sort的思想是recursively:
+
+假如我们知道了长度小于k的array的排序方法, 我们怎么对一个长度为k的array进行排序?  
+其中一种方法是, 把长度为k的array切成近似相等的两半(奇偶的关系), 这两半可以用已知的方法排序.  
+我们如何将两个有序的array合并成一个有序的array呢? 答案就是**merge**
+
+我们可以找个实例来手动做一下merge, 可以发现, 有三个特点:
+1. 需要额外空间来存储merge后的数组
+2. 更有效率, 比较的次数是k-1(为什么? 做一下实例吧, 最后一个元素不需要再做比较了)
+3. recursively, 不断的split, 知道元素只剩1个
+
+写一下preseudo伪代码  
+```
+ALGORITHM merge sort
+// Input: an array a, length n
+// Output: an ascending sorted array sa, length n, item is same with a
+bot = 1, top = n
+while bot < top
+  mid = (bot+top)/2 // floor
+  call merge sort: bot = bot, top = mid
+  call merge sort: bot = mid + 1, top = top
+  // 进过上面两个步骤后, 左半边和右半边都是sorted了, 我们在对这两个部分做merge
+  // merge 上面两个call的结果(merge方法可以单独写一个算法)
+```
+
+分析一下merge sort algorithm的效率:
+对一个长度为k的array做merge sort, 比较次数记为$m_k$
+当k = 1时, 不需要做比较, $m_k = 0$  
+分成三个部分, 左半部分做merge sort, 右半部分做merge sort, 以及对两个部分做merge.  
+左半部分的长度和右半部分的长度不一样, 左半部分长度小于等于右半部分的长度, 左半部分的长度是$\lfloor k/2 \rfloor$, 右半部分的长度是$\lceil k/2 \rceil$, 这样:
+$$m_k = m_{\lfloor k/2 \rfloor} + m_{\lceil k/2 \rceil} + k - 1$$

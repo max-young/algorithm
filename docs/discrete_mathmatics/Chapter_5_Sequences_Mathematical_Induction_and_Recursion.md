@@ -283,7 +283,7 @@ In this section we given an overview of the general format of correctness proofs
   要讲k个盘子从A挪到C, 需要先讲上面的k-1个盘子从A柱挪到B柱, 再将最大的盘子从A柱挪到C柱, 再将k-1个盘子从B柱挪到C柱, 这样就完成了.  
   这是最少的挪动次数, 因为只有两种选择, 除了这种选择, 还有一种就是将k-1个盘子从A柱挪到C柱, 再将最大的盘子从A柱挪到B柱, 再将k-1个盘子从C柱挪到A柱, 再将最大的盘子从B柱挪到C柱, 最后将k-1盘子从A柱挪到C柱, 很显然步骤增多了.  
   我们用图来表示上面的挪动方法:  
-  <img src="../../_images/tower_of_hanoi.png" width=50%>  
+  <img src="./_images/tower_of_hanoi.png" width=50%>  
   所以:  
   $$[将k个盘子从A挪到C的挪动次数] = [从(a)到(b)的挪动次数] + [从(b)到(c)的挪动次数] + [从(c)到(d)的挪动次数]$$
   我们将$m_k$表示为将k个盘子从一个柱子挪到另外一个柱子的操作次数  

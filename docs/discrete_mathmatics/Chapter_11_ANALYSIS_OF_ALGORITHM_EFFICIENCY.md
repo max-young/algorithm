@@ -514,3 +514,36 @@ while bot < top
 分成三个部分, 左半部分做merge sort, 右半部分做merge sort, 以及对两个部分做merge.  
 左半部分的长度和右半部分的长度不一样, 左半部分长度小于等于右半部分的长度, 左半部分的长度是$\lfloor k/2 \rfloor$, 右半部分的长度是$\lceil k/2 \rceil$, 这样:
 $$m_k = m_{\lfloor k/2 \rfloor} + m_{\lceil k/2 \rceil} + k - 1$$
+
+这个比较复杂, 书里直接给出了结果:
+$$\frac {1}{2} nlog_2 n \le m_n \le 2nlog_2 n$$
+后面的联系也只是对这个结果进行证明, 这里有证明过程: <https://www.slader.com/textbook/9780495391326-discrete-mathematics-with-applications-fourth-edition/778/exercise-set/25/>  
+我试着用math induction做了一下:
+$$
+\begin{aligned}
+m_1 &= 0 \\
+m_2 &= m_1 + m_1 + 2 - 1 = 1 从这里开始后一个数字比当前数字大2\\
+m_3 &= m_1 + m_2 + 3 - 1 = 3 \\
+m_4 &= m_2 + m_2 + 4 - 1 = 5 从这里开始后一个数字比当前数字大3\\
+m_5 &= m_2 + m_3 + 5 - 1 = 8 \\
+m_6 &= m_3 + m_3 + 6 - 1 = 11 \\
+m_7 &= m_3 + m_4 + 7 - 1 = 14 \\
+m_8 &= m_4 + m_4 + 8 - 1 = 17 从这里开始后一个数字比当前数字大4\\
+m_9 &= m_4 + m_5 + 9 - 1 = 21 \\
+m_{10} &= m_5 + m_5 + 10 - 1 = 25 \\
+...
+\end{aligned}
+$$
+从上面发现一个规律, 以2的指数为节点规律性的变化:  
+if $2^i \lt n \le 2^{i+1}$, then $m_n = m_{2^i} + (n - 2^i)\cdot(i + 1)$  
+对于$m_n$, $n = 2^i$ 我们发现$m_n = (i - 1)2^i + 1$, 所以:  
+if $2^i \lt n \le 2^{i+1}$, then  
+$$
+\begin{aligned}
+i &= \lfloor log_2 n \rfloor \\
+m_n &= (i - 1)2^i + 1 + (n - 2^i) \cdot (i + 1) \\
+&= (i - 1 - i - 1)2^i + n\cdot i + n + 1 \\
+&= -2\cdot 2^{\lfloor log_2 n \rfloor} + n\cdot \lfloor log_2 n \rfloor + n - 1
+\end{aligned}
+$$
+证明我就不证明了. 还有上面这个等式如何推导出$\frac {1}{2} nlog_2 n \le m_n \le 2nlog_2 n$, 我也不知道.

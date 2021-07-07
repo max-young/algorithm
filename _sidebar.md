@@ -14,3 +14,4 @@
 * [Chapter 9 Counting and Probability](./docs/discrete_mathmatics/Chapter_9_Counting_and_Probability.md)
 * [Chapter 10 Graphs and Trees](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES.md)
 * [Chapter 11 Analysis of Algorithm Efficiency](./docs/discrete_mathmatics/Chapter_11_Analysis_of_Algorithm_Efficiency.md)
+* [Chapter 10 Graphs and Trees](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES.md)

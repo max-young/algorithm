@@ -10,8 +10,9 @@
 - [_2.2 Asymptopic Notations and Basic Efficiency Classes渐进标记和基本效率类型](#_22-asymptopic-notations-and-basic-efficiency-classes渐进标记和基本效率类型)
   - [Informal Introduction概念介绍](#informal-introduction概念介绍)
   - [Useful Property Involving the Asymptotic Notations一些有用的特性](#useful-property-involving-the-asymptotic-notations一些有用的特性)
-- [_2.3 Mathematical Analysis of Nonrecursive Algorithms](#_23-mathematical-analysis-of-nonrecursive-algorithms)
-- [_2.4 Mathematical Analysis of Recursive Algorithms](#_24-mathematical-analysis-of-recursive-algorithms)
+  - [Using Limits for Comparing Orders of Growth](#using-limits-for-comparing-orders-of-growth)
+- [_2.3 Mathematical Analysis of Nonrecursive Algorithms非递归算法的效率分析](#_23-mathematical-analysis-of-nonrecursive-algorithms非递归算法的效率分析)
+- [_2.4 Mathematical Analysis of Recursive Algorithms递归算法的效率分析](#_24-mathematical-analysis-of-recursive-algorithms递归算法的效率分析)
 - [_2.5 Example: Computing the nth Fibonacci Number](#_25-example-computing-the-nth-fibonacci-number)
 - [_2.6 Empirical Analysis of Algorithms](#_26-empirical-analysis-of-algorithms)
 - [_2.7 Algorithm Visualization](#_27-algorithm-visualization)
@@ -126,12 +127,70 @@ $$c_2g(n) \le t(n) \le c_1g(n)\ for\ all\ n \ge n+0$$
 
 ### Useful Property Involving the Asymptotic Notations一些有用的特性
 
+如果$t_1(n) \in O(g_1(n))$, $t_2(n) \in O(g_2(n))$, 那么:
+$$t_1(n) + t_2(n) \in O(max \left\{ g_1(n), g_2(n) \right\})$$
+这个等式也适用于$\Omega$和$\Theta$
+证明一下:
+
+$$
+\begin{aligned}
+t_1(n) &\le c_1g_1(n) \\
+t_2(n) &\le c_2g_2(n) \\
+c_3 &= max\left\{ c_1, c_2 \right\} \\
+t_1(n) &\le c_3g_1(n) \\
+t_2(n) &\le c_3g_2(n) \\
+t_1(n) + t_2(n) &\le c_3g_1(n) + c_3g_2(n) \\
+&\le c_32max\left\{ g_1(n), g_2(n) \right\} \\
+t_1(n) + t_2(n) &\in O(max \left\{ g_1(n), g_2(n) \right\})
+\end{aligned}
+$$
+
+这个定理有什么实际意义呢?  
+有的算法可以分成两部分, 我们分别对这两部分进行分析, 这个算法的效率等于其中效率低的一部分的效率  
+例如我们要算两个array的元素是否一致, 分成两部, 排序+对比, 排序的效率是$O(n^2)$, 对比的效率是$O(n)$, 那么整体的效率就是$O(n^2)$
+
+### Using Limits for Comparing Orders of Growth
+
+我们可以用极限来比较两个多项式($t(n)$和$g(n)$), 看它们是否趋近, 从而来判断算法的效率  
+[](./_images/limis_for_compare_order_of_growth.png)
+当趋近于0时, 代表效率是$O(g(n))$, 趋近于无穷, 效率是$\Omega(g(n))$, 趋近于某个常数时, 效率是$\Theta(g(n))$
+
+有些复杂的极限算法需要用到洛必达法则等等, 这里不详述
 
 <a id="markdown-_23-mathematical-analysis-of-nonrecursive-algorithms" name="_23-mathematical-analysis-of-nonrecursive-algorithms"></a>
-## _2.3 Mathematical Analysis of Nonrecursive Algorithms
+## _2.3 Mathematical Analysis of Nonrecursive Algorithms非递归算法的效率分析
+
+这里举几个例子:
+1. Example 1从一个数组里找到最大值
+  
+    ```
+    ALGORITHM max value of a array[0, 1, 2, ..., n-1]
+    // Input: an array A[0...n-1] of real numbers
+    // Output: the max value of A
+    maxv = A[0]
+    for i in 1 to n - 1:
+      if A[i] > maxv:
+        maxv = A[i]
+    return maxv
+    ```
+    我们看到这个算法, 首先把第一个元素赋值给maxv, 接下来是一个loop, 共有n-1次循环, 每次循环里面有一次比较和一次赋值(是否赋值需要根据比较情况而定)  
+    我们可以把循环里面的比较算作basic operation, 因为这个比较是最主要的操作  
+    然后我们可以发现, 循环的次数是跟input size没关系的, 也就是说, 在best case、average case、worst case情况下, 循环次数都是一样的, 所以我们不用区分这三种情况  
+    这样, 我们可以得出这个算法的basic operation的数量是:
+    $$C(n) = \sum_{1}^{n-1}1 = n - 1 \in \Theta(n)$$
+
+从上面的例子里我们可以得出非递归算法的效率分析的基本步骤:
+1. 确定一个参数来表示input size
+2. 确定算法的basic operation(一般是在loop里面)
+3. 确定basic operation的数量跟input size是否关联, 是否要区分best case, worst case, average case
+4. 用sum表达式来表达basic operation的数量
+5. 用公式、定理来确定order of growth
+
+之后还有一些稍微复杂的例子, 时间关系, 不再叙述了
 
 <a id="markdown-_24-mathematical-analysis-of-recursive-algorithms" name="_24-mathematical-analysis-of-recursive-algorithms"></a>
-## _2.4 Mathematical Analysis of Recursive Algorithms
+## _2.4 Mathematical Analysis of Recursive Algorithms递归算法的效率分析
+
 
 <a id="markdown-_25-example-computing-the-nth-fibonacci-number" name="_25-example-computing-the-nth-fibonacci-number"></a>
 ## _2.5 Example: Computing the nth Fibonacci Number

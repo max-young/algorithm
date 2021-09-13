@@ -350,20 +350,20 @@ Dijkstra's Shortest Path Algorithm是Prim's Algorithm的变体
 Algorithm Dijkastra  
 // Input: graph G, starting vertex a, ending vertex z  
     L(u)代表起点a到vertex u的最短路径(integer)  
-    $\infty$表示大于w(G)的一个数  
+    L(u)初始化为$\infty$  
     w(u, v)代表u,v两个vertex组成的edge的weight    
 // Output: L(z), z到a的最短路径  
-1. init a graph T with a vertex a, V(T)是T的vertex的集合, E(T)是T的vertex的集合  
+1. init a graph T with a vertex a, V(T)是T的vertex的集合, E(T)是T的edges的集合  
 2. L(a) = 0, G的其他顶点u的L(u) = $\infty$
 3. v = a, F = {a}, v表示最近添加到T的vertex
-4. while $z \notin V(T)$  
-    4a. $F := (F - {v}) \cup {vertices that adjacent v and not in V(T)}$  
-        这里不太好理解, F称之为fringe  
-    4b. 对于所有和v相邻的vertex并不属于V(T)的vertex u  
+4. while $z \notin V(T)$ //只要还没到z, 就一直做下面的循环  
+    4a. $F := (F - {v}) \cup {vertices\ that\ adjacent\ v\ and\ not\ in\ V(T)}$  
+        这里不太好理解, F称之为fringe, 就是把一个vertex加到T之后, 和vertex相邻且不属于T的vertices
+    4b. 对于F中的vertex u  
         if L(v) + w(v, u) < L(u) then:  
             L(u) := L(v) + w(v, u)  
-            D(u) := v (D(u)标记了edge的起点)  
-  4c. 在上一步中找到最小的L(x), 将x加到V(T), {D(x), x}加到E(T). v := x.  
+            D(u) := v (D(u)标记了uv edge的起点)  
+    4c. 在上一步中找到最小的L(x), 将x加到V(T), {D(x), x}加到E(T), 并且赋值v := x.  
 end while
 
-书中有例子, 参照例子更好理解. 这个算法实际上求得了G中所有vertices到a的最短距离
+<img src="./_images/dijkstra.jpeg" width=50%>

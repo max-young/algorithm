@@ -41,15 +41,15 @@
 
 我们通过Input Size能够计算出算法的基本操作数(basic operation), 以basic operation的数量来衡量算法的time efficiency
 
-$$T(n)\approx c_opC(n)$$
+$$T(n)\approx c_{op}C(n)$$
 
-$T(n)$表示这个算法的总计算时间, $c_op$表示在某台计算机里一个basic operation的执行时间, $C(n)$表示在input size是n的情况下basic operation的数量  
+$T(n)$表示这个算法的总计算时间, $c_{op}$表示在某台计算机里一个basic operation的执行时间, $C(n)$表示在input size是n的情况下basic operation的数量  
 为什么是约等于呢? 因为算法的执行时间除了基本操作, 还会有其他开销. 但是basic operation是主要的耗时.  
 另外, 不用的硬件里$c_op$是不一样的, 所以我们用basic operation的数量$C(n)$来衡量time efficiency
 
 举一个例子:
 
-$$C(n) = \frac{1}{2}n(n-1) = frac{1}{2}n^2 - frac{1}{2}n \ approx frac{1}{2}n^2$$
+$$C(n) = \frac{1}{2}n(n-1) = \frac{1}{2}n^2 - \frac{1}{2}n \approx \frac{1}{2}n^2$$
 
 我们看上面这个等式, 我们发现我们分析一个算法的time efficiency, 一步一步省略, 省略单个脚本操作的时间, 省略多项式的低阶部分, 等等, 最后我们把焦点放在多项式的最高阶的部分, 我们称之为order of growth, 因为input size足够大的情况下, 最高阶指数和低阶指数、对数相比, 要大得多得多.
 

@@ -1,14 +1,13 @@
-### Algorithm And Discrete Mathematics
+# Algorithm And Discrete Mathematics
+
+> hello, I'm <a href="https://maxyoung.fun/">Max Young</a>
 
 这里是我在算法学习中的一些读书笔记, 主要是关于下面两本书:  
-算法设计和分析, 以及离散数学
+《算法设计和分析》, 以及《离散数学》
 
-<!-- <div align="center"><img src="./_images/book.jpeg" width="25%"></div> -->
-![](./_images/book.jpeg)  
-[Introduction to the Design and Analysis of Algorithms](https://book.douban.com/subject/6853975/)
-
-<!-- <div align="center"><img src="./_images/book.jpeg" width="25%"></div> -->
-![](./_images/discrete_mathematics.jpg)  
-[Discrete Mathematics](https://book.douban.com/subject/5495234/)
-
-用[docsify](https://docsify.js.org/)部署, 地址是: <https://max-young.github.io/algorithm/>
+<a href="https://book.douban.com/subject/6853975/" target="_blank">
+<img src="./_images/book.jpeg" width="30%" style="margin: 10px">
+</a>
+<a href="https://book.douban.com/subject/5495234/" target="_blank">
+<img src="./_images/discrete_mathematics.jpg" width="30%" style="margin: 10px">
+</a>

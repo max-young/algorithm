@@ -1,8 +1,11 @@
 -------- Design and Analysis of Algorithms --------
 
 * [Preface](./docs/design_and_analysis_of_lgorithms/Preface.md)
-* [1-Introduction](./docs/design_and_analysis_of_lgorithms/1_Introduction.md)
-* [2-Fundamentals_of_the_Analysis_of_Algorithm_Efficiency](./docs/design_and_analysis_of_lgorithms/2_Fundamentals_of_the_Analysis_of_Algorithm_Efficiency.md)
+* [1 Introduction](docs/design_and_analysis_of_lgorithms/1_introduction/1_introduction.md)
+* 2 Fundamentals of the Analysis of Algorithm Efficiency
+  * [2.1 The Analysis Framework](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.1_the_analysis_framework.md)
+  * [2.2 Asymptotic Notations and Basis Efficiency Classes](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.2_asymptotic_notations_and_basic_efficiency_classes.md)
+  * [2.3 Mathmatical Analysis of Nonrecursive Algorithms](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.3_mathematical_analysis_of_nonrecursive_algorithms.md)
 
 --------------- Discrete Mathematics ---------------
 

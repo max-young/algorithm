@@ -290,7 +290,7 @@ In this section we given an overview of the general format of correctness proofs
   上面的等式里, 从(a)到(b)的挪动次数和从(c)到(d)的挪动次数是一样的, 都是将k-1个盘子从一个柱子挪到另外一个柱子, 尽管最大的那个盘子位置不一样, 但是最大的盘子是不动的, 不影响挪动的次数  
   从(b)到(c)就是将最大的盘子挪动一次  
   所以, 上面的等式可以转换为:
-  $$m_k = m_{k-1} + 1 + m_{k-1} if k > 1$$
+  $$m_k = m_{k-1} + 1 + m_{k-1}\ if\ k > 1$$
   上面我们加了一个限定条件$k > 1$, 因为只有盘子是2个和2个以上时才适用于这种情况. 这就是recurrence relation.  
   我们还需要一个init conditions, 这里只需要定义k = 1的情况就可以了, 显然$m_1 = 1$  
   这样, $m_1, m_2, m_3, ...$的完整的recursively define就是:
@@ -302,7 +302,7 @@ In this section we given an overview of the general format of correctness proofs
   $$
   这就是完整清晰的recursively define
 
-  后续: 在计算机上计算出挪动64个盘子的操作次数, 算出来是$1.844674 \times 10^19$, 非常惊人的数字
+  后续: 在计算机上计算出挪动64个盘子的操作次数, 算出来是$1.844674 \times 10^{19}$, 非常惊人的数字
 
 <a id="markdown-_57-solving-recurrence-relations-by-iteration" name="_57-solving-recurrence-relations-by-iteration"></a>
 ### _5.7 Solving Recurrence Relations by Iteration

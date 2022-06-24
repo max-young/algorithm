@@ -7,6 +7,8 @@
   * [2.2 Asymptotic Notations and Basis Efficiency Classes](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.2_asymptotic_notations_and_basic_efficiency_classes.md)
   * [2.3 Mathematical Analysis of Nonrecursive Algorithms](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.3_mathematical_analysis_of_nonrecursive_algorithms.md)
   * [2.4 Mathematical Analysis of Recursive Algorithms](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.4_mathematical_analysis_of_recursive_algorithms.md)
+  * [2.5 Example: Computing the nth Fibonacci Number](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.5_computing_the_nth_fibonacci_number.md)
+  * [2.6 Empirical Analysis of Algorithms算法的经验分析](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.6_empirical_analysis_of_algorithms.md)
 
 --------------- Discrete Mathematics ---------------
 

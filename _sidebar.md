@@ -21,7 +21,7 @@
   - [3.2 Sequential Search and Brute-Fore String Matching](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.2_sequential_search_and_brute_force_string_matching.md)
   - [3.3 Closest-Pair and Convex-Hull Problems by Brute Force](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.3_closest_pair_and_convec_hell_problems_by_brute_force.md)
   - [3.4 Exhaustive Search](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.4_exhaustive_search.md)
-
+  - [3.5 Depth-first Search and Breadth-First Search](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.5_depth_first_search_and_breadth_first_search.md)
 - Discrete Mathematics with Applications
   <!-- * [Discrete mathmatics](./docs/discrete_mathmatics/discrete_mathmatics.md) -->
   - [Preface](./docs/discrete_mathmatics/Preface.md)

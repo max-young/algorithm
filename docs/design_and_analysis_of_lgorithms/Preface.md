@@ -10,7 +10,7 @@
 
   读者需要经过介绍性的编程课程和标准的离散结构的课程. 
   
-  关于介绍性的编程课程, 我学习了C++
+  关于介绍性的编程课程, 可选择Python等
   
   关于离散数学, 我读了[《Discrete Mathematics with Applications》](https://book.douban.com/subject/5495234/)
 

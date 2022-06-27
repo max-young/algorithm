@@ -1,5 +1,11 @@
 - [Preface](./docs/design_and_analysis_of_lgorithms/Preface.md)
-- [1 Introduction](docs/design_and_analysis_of_lgorithms/1_introduction/1_introduction.md)
+- 1 Introduction
+  - [Preface](docs/design_and_analysis_of_lgorithms/1_introduction/preface.md)
+  - [1.1 What Is an Algorithm](docs/design_and_analysis_of_lgorithms/1_introduction/1.1_what_is_an_algorithm.md)
+  - [1.2 Fundamentals of Algorithm Problem Solving](docs/design_and_analysis_of_lgorithms/1_introduction/1.2_fundamentals_of_algorithm_problem_solving.md)
+  - [1.3 Important Problem Types](docs/design_and_analysis_of_lgorithms/1_introduction/1.3_important_problem_types.md)
+  - [1.4 Fundamental Data Structures](docs/design_and_analysis_of_lgorithms/1_introduction/1.4_fundamental_data_structures.md)
+  - [SUMMARY](docs/design_and_analysis_of_lgorithms/1_introduction/summary.md)
 - 2 Fundamentals of the Analysis of Algorithm Efficiency
   - [2.1 The Analysis Framework](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.1_the_analysis_framework.md)
   - [2.2 Asymptotic Notations and Basis Efficiency Classes](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.2_asymptotic_notations_and_basic_efficiency_classes.md)
@@ -13,6 +19,8 @@
   - [Preface](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/preface.md)
   - [3.1 Selection Sort and Bubble Sort](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.1_selection_sort_and_bubble_sort.md)
   - [3.2 Sequential Search and Brute-Fore String Matching](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.2_sequential_search_and_brute_force_string_matching.md)
+  - [3.3 Closest-Pair and Convex-Hull Problems by Brute Force](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.3_closest_pair_and_convec_hell_problems_by_brute_force.md)
+  - [3.4 Exhaustive Search](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.4_exhaustive_search.md)
 
 - Discrete Mathematics with Applications
   <!-- * [Discrete mathmatics](./docs/discrete_mathmatics/discrete_mathmatics.md) -->

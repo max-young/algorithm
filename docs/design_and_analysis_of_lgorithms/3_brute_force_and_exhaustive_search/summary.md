@@ -1,0 +1,12 @@
+- brute force是解决问题的一种直接方法，通常直接基于问题陈述和所涉及概念的定义
+- brute force的主要优势是广泛的适用性和简单性。它的主要弱点是大多数brute force算法的效率低下
+- brute force的算法写出来之后, 通常能进行适度的改进, 但一般不会影响其效率的order
+- 下面这些算法是brute force的例子:
+  - 矩阵的乘法
+  - selection sort
+  - sequential search
+  - string-match algorithm
+- exhaustive search是解决组合问题的brute force方法。它生成问题的所有组合，然后根据约束条件找到所需的组合.
+- traveling salesman problem, the knapsack problem, and the assignment problem是典型的理论上可以通过exhaustive search方法解决的问题.
+- exhaustive search对大多数问题来说都是不切实际的, 因为组合数量庞大
+- 深度优先搜索 (DFS) 和广度优先搜索 (BFS) 是两种主要的图遍历算法, 它们有助于研究图的许多重要属性, 两种算法具有相同的时间效率.

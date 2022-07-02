@@ -25,6 +25,7 @@
   - [SUMMARY](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/summary.md)
 - 4 Decrease-and-Conquer
   - [Preface](docs/design_and_analysis_of_lgorithms/4_decrease_and_conquer/preface.md)
+  - [4.1 Insertion Sort](docs/design_and_analysis_of_lgorithms/4_decrease_and_conquer/4.1_insertion_sort.md)
 - Discrete Mathematics with Applications
   <!-- * [Discrete mathmatics](./docs/discrete_mathmatics/discrete_mathmatics.md) -->
   - [Preface](./docs/discrete_mathmatics/Preface.md)

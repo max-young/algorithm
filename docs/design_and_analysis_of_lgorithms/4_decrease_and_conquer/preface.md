@@ -14,10 +14,10 @@ decrease and conquer有三种形式:
 所以我们如果用top down的方式, 就可以用recursive来解决:  
 $$
 f(n) = \left\{
-  \begin{aligned}
-  &f(n-1) \cdot a\ &if\ n \gt 0 \\
-  &1\ &if\ n = 0
-  \end{aligned}
+  \begin{array}{ll}
+  f(n-1) \cdot a &if\ n \gt 0 \\
+  1 &if\ n = 0
+  \end{array}
 \right.
 $$ 
 也可以用bottom up的方式, 用iterative来解决, 用1乘以$n$次$a$.  
@@ -36,6 +36,7 @@ a^n = \left\{
 \right.
 $$ 
 这个算法的效率是$\Theta(\log n)$
+decrease by constant factor的因子一般是2
 
 **variable size decrease**是指decrease的大小和上一个循环相关, 比如:
 $$gcd(m, n) = gcd(n, m\ mod\ n)$$

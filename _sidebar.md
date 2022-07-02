@@ -23,6 +23,8 @@
   - [3.4 Exhaustive Search](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.4_exhaustive_search.md)
   - [3.5 Depth-first Search and Breadth-First Search](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.5_depth_first_search_and_breadth_first_search.md)
   - [SUMMARY](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/summary.md)
+- 4 Decrease-and-Conquer
+  - [Preface](docs/design_and_analysis_of_lgorithms/4_decrease_and_conquer/preface.md)
 - Discrete Mathematics with Applications
   <!-- * [Discrete mathmatics](./docs/discrete_mathmatics/discrete_mathmatics.md) -->
   - [Preface](./docs/discrete_mathmatics/Preface.md)

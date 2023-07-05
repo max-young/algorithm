@@ -12,10 +12,10 @@
   - [2.3 Mathematical Analysis of Nonrecursive Algorithms](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.3_mathematical_analysis_of_nonrecursive_algorithms.md)
   - [2.4 Mathematical Analysis of Recursive Algorithms](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.4_mathematical_analysis_of_recursive_algorithms.md)
   - [2.5 Example: Computing the nth Fibonacci Number](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.5_computing_the_nth_fibonacci_number.md)
-  - [2.6 Empirical Analysis of Algorithms算法的经验分析](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.6_empirical_analysis_of_algorithms.md)
+  - [2.6 Empirical Analysis of Algorithms 算法的经验分析](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.6_empirical_analysis_of_algorithms.md)
   - [2.7 Algorithm Visualization](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.7_algorithm_visualization.md)
   - [SUMMARY](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/summary.md)
-- 3 Brute Force and Exhaustive Search蛮力和穷举查找
+- 3 Brute Force and Exhaustive Search 蛮力和穷举查找
   - [Preface](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/preface.md)
   - [3.1 Selection Sort and Bubble Sort](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.1_selection_sort_and_bubble_sort.md)
   - [3.2 Sequential Search and Brute-Fore String Matching](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.2_sequential_search_and_brute_force_string_matching.md)
@@ -26,6 +26,8 @@
 - 4 Decrease-and-Conquer
   - [Preface](docs/design_and_analysis_of_lgorithms/4_decrease_and_conquer/preface.md)
   - [4.1 Insertion Sort](docs/design_and_analysis_of_lgorithms/4_decrease_and_conquer/4.1_insertion_sort.md)
+- Examples
+  - [Convert flat data to nested tree data](docs/design_and_analysis_of_lgorithms/etc/Convert%20flat%20data%20to%20nested%20tree%20data.md)
 - Discrete Mathematics with Applications
   <!-- * [Discrete mathmatics](./docs/discrete_mathmatics/discrete_mathmatics.md) -->
   - [Preface](./docs/discrete_mathmatics/Preface.md)

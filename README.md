@@ -4,6 +4,8 @@
 
 这里是我在算法学习中的一些读书笔记, 主要是关于下面两本书:  
 《算法设计和分析》, 以及《离散数学》
+Here are some of my reading notes on algorithm learning about following two books:
+<The Design and Analysis of Algorithm>, and <Discrete Mathematics with Applications>
 
 <a href="https://book.douban.com/subject/6853975/" target="_blank">
 <img src="./_images/book.jpeg" width="30%" style="margin: 10px">

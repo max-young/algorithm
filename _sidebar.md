@@ -26,6 +26,8 @@
 - 4 Decrease-and-Conquer
   - [Preface](docs/design_and_analysis_of_lgorithms/4_decrease_and_conquer/preface.md)
   - [4.1 Insertion Sort](docs/design_and_analysis_of_lgorithms/4_decrease_and_conquer/4.1_insertion_sort.md)
+- 5 Divide-and-Conquer
+  - [5.2 Quicksort](docs/design_and_analysis_of_lgorithms/5_divide_and_conquer/5.2_quicksort.md)
 - Examples
   - [Convert flat data to nested tree data](docs/design_and_analysis_of_lgorithms/etc/Convert%20flat%20data%20to%20nested%20tree%20data.md)
 - Discrete Mathematics with Applications

@@ -1,4 +1,4 @@
-## Permutation of a String  
+## Example 12: Permutation of a String  
 
 ### Thinking Process
 
@@ -57,3 +57,23 @@ The function calls itself n times, each call creates n-1 recursive calls, then n
 This creates a tree-like structure of recursive calls with a total of n! calls.
 
 Therefore, the total time complexity is O(n * n!).
+
+## Example 13: Fibonacci Sequence
+
+The fibonacci sequence is a sequence in which each element is the sum of the two elements that precede it.
+
+the c++ code is:
+```c++
+int fib(int n)
+{
+  if (n <= 0)
+    return 0;
+  else if (n == 1)
+    return 1;
+  return fib(n - 1) + fib(n - 2);
+}
+```
+
+The time complexity pattern for recursive calls is: $O(branches^{depth})$(page 44). So the time complexity of the above code is $O(2^n)$.
+
+

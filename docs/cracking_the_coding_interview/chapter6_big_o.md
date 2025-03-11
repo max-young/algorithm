@@ -74,6 +74,4 @@ int fib(int n)
 }
 ```
 
-The time complexity pattern for recursive calls is: $O(branches^{depth})$(page 44). So the time complexity of the above code is $O(2^n)$.
-
-
+The time complexity pattern for recursive calls is: $O(branches^{depth})$ (page 44). So the time complexity of the above code is $O(2^n)$ .

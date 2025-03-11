@@ -40,4 +40,4 @@
   - [Chapter 10 Graphs and Trees](./docs/discrete_mathmatics/Chapter_10_GRAPHS_AND_TREES.md)
   - [Chapter 11 Analysis of Algorithm Efficiency](./docs/discrete_mathmatics/chapter11_analysis_of_algorithm_efficiency.md)
 - Cracking the Coding Interview
-  - [Ⅵ. Big O](./docs/cracking_the_coding_interview/6_big_o.md)
+  - [Chapter 6. Big O](./docs/cracking_the_coding_interview/chapter6_big_o.md)

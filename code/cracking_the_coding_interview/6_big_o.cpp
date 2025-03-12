@@ -9,10 +9,15 @@ int fib(int n)
   return fib(n - 1) + fib(n - 2);
 }
 
-int main()
+void printFab(int n)
 {
-  for (int i = -1; i < 10; i++)
+  for (int i = 0; i <= n; i++)
   {
     std::cout << fib(i) << std::endl;
   }
+}
+
+int main()
+{
+  printFab(10);
 }

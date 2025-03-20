@@ -15,7 +15,7 @@
   - [2.6 Empirical Analysis of Algorithms 算法的经验分析](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.6_empirical_analysis_of_algorithms.md)
   - [2.7 Algorithm Visualization](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/2.7_algorithm_visualization.md)
   - [SUMMARY](docs/design_and_analysis_of_lgorithms/2_fundamentals_of_the_analysis_of_algorithm_efficiency/summary.md)
-- 3 Brute Force and Exhaustive Search 蛮力和穷举查找
+- 3 Brute Force and Exhaustive Search
   - [Preface](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/preface.md)
   - [3.1 Selection Sort and Bubble Sort](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.1_selection_sort_and_bubble_sort.md)
   - [3.2 Sequential Search and Brute-Fore String Matching](docs/design_and_analysis_of_lgorithms/3_brute_force_and_exhaustive_search/3.2_sequential_search_and_brute_force_string_matching.md)
